@@ -9,10 +9,6 @@ public class EnemyMovement : MonoBehaviour {
 
 
 
-	// HEY YO BRAAAAAAAH
-
-
- 	bool harJensFødselsdag;
 
 	float dist = 2;
 
