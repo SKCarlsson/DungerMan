@@ -2,8 +2,7 @@
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyMovement.cs">
     <Files>
-      <File FileName="Assets/Scripts/EnemyMovement.cs" Line="24" Column="11" />
-      <File FileName="Assets/Scripts/PoshScript.cs" Line="16" Column="1" />
+      <File FileName="Assets/Scripts/EnemyMovement.cs" Line="10" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
