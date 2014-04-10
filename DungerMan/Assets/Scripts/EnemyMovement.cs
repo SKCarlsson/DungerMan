@@ -7,6 +7,9 @@ public class EnemyMovement : MonoBehaviour {
 	GameObject player2;
 	//Vector3 p1 = player.transform.position, p2 = player2.transform.position;
 
+
+	// HEY YO BRAAAAAAAH
+
 	float dist = 2;
 
 	void Start() {
