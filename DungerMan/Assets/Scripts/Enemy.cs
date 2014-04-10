@@ -3,10 +3,11 @@ using System.Collections;
 
 public abstract class Enemy : MonoBehaviour {
 	
-		public int health;
-		public int damage;
-		public int speed;
-		public int attackRange;
+		public int Health;
+		public int Damage;
+		public int Speed;
+		public int AttackRange;
+		public int SeeRange;
 
 		public abstract void ability ();
 
