@@ -8,9 +8,12 @@ public class EnemyMovement : MonoBehaviour {
 	//Vector3 p1 = player.transform.position, p2 = player2.transform.position;
 
 
+
 	// HEY YO BRAAAAAAAH
 
+
  	bool harJensFødselsdag;
+
 	float dist = 2;
 
 	void Start() {
