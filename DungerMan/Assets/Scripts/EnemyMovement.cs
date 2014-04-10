@@ -2,29 +2,30 @@
 using System.Collections;
 
 public class EnemyMovement : MonoBehaviour {
-	//private NavMeshAgent agent;
-	GameObject player = GameObject.Find ("Cube");
-	GameObject player2 = GameObject.Find ("Cylinder");
+	private NavMeshAgent agent;
+	GameObject player;
+	GameObject player2;
+	//Vector3 p1 = player.transform.position, p2 = player2.transform.position;
 
-
-	float dist = 0;
+	float dist = 2;
 
 	void Start() {
-		dist = Vector2.Distance(player.transform.position, player2.transform.position);
-
-	//agent = GetComponent<NavMeshAgent>();
-
+		player = GameObject.Find ("Cube");
+		player2 = GameObject.Find ("Cylinder");
+		agent = GetComponent<NavMeshAgent>();
+	
 	}
 	void Update() {
-
+		dist = Vector2.Distance(this.transform.position, player.transform.position);
 
 
 		print (dist);
 		//RaycastHit hit;
+		if(dist<5){
+			agent.SetDestination(player.transform.position);
+		}
 
-			//agent.SetDestination(player.transform.position);
-		/*
-		if (Input.GetMouseButtonDown(0)) {
+		/*if (Input.GetMouseButtonDown(0)) {
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			if (Physics.Raycast(ray, out hit))
 				print (hit.point);

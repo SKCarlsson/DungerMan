@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../Projekter/Unity/dunger/Assets/LookingAt.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyMovement.cs">
     <Files>
-      <File FileName="../../../../../Projekter/Unity/dunger/Assets/LookingAt.cs" Line="11" Column="52" />
+      <File FileName="Assets/Scripts/EnemyMovement.cs" Line="24" Column="11" />
+      <File FileName="Assets/Scripts/PoshScript.cs" Line="16" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
