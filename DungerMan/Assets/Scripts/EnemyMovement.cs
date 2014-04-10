@@ -6,7 +6,6 @@ public class EnemyMovement : MonoBehaviour {
 	GameObject player;
 	float dist = 0;
 
-
 	void Start() {
 		player = GameObject.Find ("Cube");
 		agent = GetComponent<NavMeshAgent>();
