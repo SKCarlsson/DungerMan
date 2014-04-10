@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour {
 	GameObject player;
 	GameObject player2;
 	//Vector3 p1 = player.transform.position, p2 = player2.transform.position;
-
+ 	bool harJensFødselsdag;
 	float dist = 2;
 
 	void Start() {
