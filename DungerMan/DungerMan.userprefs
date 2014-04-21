@@ -1,10 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../../Dropbox/Group P4 2014/Unity/4semester/Assets/IndieEffects/CSharp/Blur.cs">
+    <Files>
+      <File FileName="../../../../../../Dropbox/Group P4 2014/Unity/4semester/Assets/IndieEffects/CSharp/Blur.cs" Line="52" Column="34" />
+      <File FileName="../../../../../../Dropbox/Group P4 2014/Unity/4semester/Assets/Scripts/FogController.cs" Line="2" Column="25" />
+      <File FileName="../../../../../../Dropbox/Group P4 2014/Unity/4semester/Assets/IndieEffects/CSharp/IndieEffects.cs" Line="105" Column="7" />
+      <File FileName="../../../../../../Dropbox/Group P4 2014/Unity/4semester/Assets/Scripts/LightScript.cs" Line="25" Column="25" />
+=======
   <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../../Desktop/Unity/4semester/Assets/Scripts/FirstFloorSoundDoor.cs">
     <Files>
       <File FileName="../../../../../../Desktop/Unity/4semester/Assets/Scripts/EchoLocation.cs" Line="31" Column="22" />
       <File FileName="../../../../../../Desktop/Unity/4semester/Assets/Scripts/MicrophoneInput.cs" Line="45" Column="3" />
       <File FileName="../../../../../../Desktop/Unity/4semester/Assets/Scripts/FirstFloorSoundDoor.cs" Line="48" Column="40" />
+>>>>>>> FETCH_HEAD
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
