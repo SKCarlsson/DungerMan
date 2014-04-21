@@ -1,8 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../../Dropbox/Group P4 2014/Unity/4semester/Assets/IndieEffects/CSharp/Blur.cs">
     <Files>
-      <File FileName="Assets/Scripts/EnemyMovement.cs" Line="10" Column="2" />
+      <File FileName="../../../../../../Dropbox/Group P4 2014/Unity/4semester/Assets/IndieEffects/CSharp/Blur.cs" Line="52" Column="34" />
+      <File FileName="../../../../../../Dropbox/Group P4 2014/Unity/4semester/Assets/Scripts/FogController.cs" Line="2" Column="25" />
+      <File FileName="../../../../../../Dropbox/Group P4 2014/Unity/4semester/Assets/IndieEffects/CSharp/IndieEffects.cs" Line="105" Column="7" />
+      <File FileName="../../../../../../Dropbox/Group P4 2014/Unity/4semester/Assets/Scripts/LightScript.cs" Line="25" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
