@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PoshScript : Enemy {
-	
+public class PlayerScript : Enemy {
+
+	public int pHealth;
+
+	//protected PoshScript cc = GameObject.Find ("Posh(Clone)").GetComponent<PoshScript>();
 
 	public override void ability ()
 	{
@@ -13,20 +16,15 @@ public class PoshScript : Enemy {
 	// Use this for initialization
 	void Start () {
 
-		PoshScript Spice = new PoshScript ();
+		pHealth = 200;
 
-		Spice.health = 100;
-		Spice.damage = 30;
-		Spice.speed = 50;
-		Spice.attackRange = 10;
 
-		Spice.ability ();
-
-	
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		print ("player Health: "+ pHealth);
 	
 	}
 }

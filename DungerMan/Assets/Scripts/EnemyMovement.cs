@@ -4,17 +4,10 @@ using System.Collections;
 public class EnemyMovement : MonoBehaviour {
 	private NavMeshAgent agent;
 	GameObject player;
-	GameObject player2;
-	//Vector3 p1 = player.transform.position, p2 = player2.transform.position;
-
-
-
-
-	float dist = 2;
+	float dist = 0;
 
 	void Start() {
 		player = GameObject.Find ("Cube");
-		player2 = GameObject.Find ("Cylinder");
 		agent = GetComponent<NavMeshAgent>();
 	
 	}
