@@ -1,31 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PoshScript : Enemy {
-
-
-	PlayerScript cc;
+public class BrahScript : Enemy{
+	
 
 	public override void ability ()
 	{
 		Debug.Log ("hello");
-
+		
 	}
-
+	
 	// Use this for initialization
 	void Start () {
-		cc = GameObject.Find ("Player(Clone)").GetComponent<PlayerScript>();
 		player = GameObject.Find ("Player(Clone)");
 		agent = GetComponent<NavMeshAgent>();
-
-		Health = 100;
+		
+		Health = 500;
 		Damage = 30;
 		Speed = 50;
 		AttackRange = 2;
-		AttackSpeed = 1;
-		SeeRange = 5;
-		canAttack = false;
-	
+		SeeRange = 3;
+		
 	}
 	
 	// Update is called once per frame
@@ -33,38 +28,26 @@ public class PoshScript : Enemy {
 	{
 		dist = Vector3.Distance(this.transform.position, player.transform.position);
 		autoAttack ();
-
-		//print (canAttack);
-
-
-		if (canAttack) {
-			//cc.pHealth -= 10;
-			EnemyAttack(ref cc.pHealth);
-			
-		}
-
-
 		//print (dist);
-		//print ("posh: "+Health);
-	
+		//print ("brah: "+Health);
+		
 	}
-
+	
 	void OnCollisionEnter(Collision col)
 	{
 		// if the player collides with the key, following triggers:
 		if (col.gameObject.name == "Player(Clone)") 
 		{
 			takeDamage(50);
-
+			//die ();
 		}
 		
 	}
-
-
-
+	
+	
+	
 	IEnumerator diee(){
 		yield return new WaitForSeconds(5);
 		die();
 	}
-	
 }
