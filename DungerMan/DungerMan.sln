@@ -23,9 +23,23 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
+<<<<<<< HEAD
+																													GlobalSection(MonoDevelopProperties) = preSolution
+=======
+<<<<<<< HEAD
 																																	GlobalSection(MonoDevelopProperties) = preSolution
 =======
+<<<<<<< HEAD
+																														GlobalSection(MonoDevelopProperties) = preSolution
+=======
+>>>>>>> FETCH_HEAD
+=======
+																																	GlobalSection(MonoDevelopProperties) = preSolution
+=======
+>>>>>>> FETCH_HEAD
 																												GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> FETCH_HEAD
 =======
 																						GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> FETCH_HEAD
@@ -33,6 +47,7 @@ Global
 																						GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																										GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> FETCH_HEAD
 >>>>>>> FETCH_HEAD
 =======
 <<<<<<< HEAD
@@ -44,6 +59,9 @@ Global
 =======
 																						GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> FETCH_HEAD
+>>>>>>> FETCH_HEAD
+<<<<<<< HEAD
+=======
 >>>>>>> FETCH_HEAD
 >>>>>>> FETCH_HEAD
 		StartupItem = Assembly-CSharp.csproj

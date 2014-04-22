@@ -46,12 +46,23 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+     <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
+     <Compile Include="Assets\Scripts\EnemySpawn.cs" />
+     <Compile Include="Assets\Scripts\PlayerScript1.cs" />
+     <Compile Include="Assets\Scripts\PoshScript.cs" />
+     <Compile Include="Assets\Scripts\TouchButtonLogic.cs" />
+     <Compile Include="Assets\Scripts\TouchButtonTalk.cs" />
+     <Compile Include="Assets\Scripts\Warrior.cs" />
+     <Compile Include="Assets\Scripts\Wizard.cs" />
+=======
      <Compile Include="Assets\RockGate.cs" />
      <Compile Include="Assets\Scripts\BrahScript.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn.cs" />
-     <Compile Include="Assets\Scripts\Joystick.cs" />
+     <Compile Include="Assets\Scripts\JoyStick.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\PoshScript.cs" />
      <Compile Include="Assets\Scripts\TouchButtonLogic.cs" />
@@ -61,6 +72,7 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
       <Project>{E8D7C326-83BB-5085-0AE5-868F8364BD10}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
+>>>>>>> FETCH_HEAD
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
