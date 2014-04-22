@@ -3,7 +3,12 @@ using System.Collections;
 
 public abstract class Enemy : MonoBehaviour {
 
+		protected PlayerScript1 cc;
+
 		protected GameObject player;
+		protected GameObject player2;
+
+		protected GameObject playerNum;// variable used to switch between the two player gameobjects
 
 		protected NavMeshAgent agent;
 
@@ -13,7 +18,12 @@ public abstract class Enemy : MonoBehaviour {
 		protected int AttackRange;
 		protected int SeeRange;
 		protected int AttackSpeed;
-		protected float dist;
+		
+		private float distance; // variable used to switch between the two dist variables
+		
+		protected float dist;// distance between player 1 and the enemy
+
+		protected float dist2;// distance between player 2 and the enemy
 		protected bool canAttack = false;
 		protected bool haveWaited = true;
 
@@ -23,7 +33,7 @@ public abstract class Enemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-
+		//cc = GameObject.Find ("Player 1(Clone)").GetComponent<PlayerScript1>();
 
 		//player = GameObject.Find ("Cube");
 
@@ -31,30 +41,40 @@ public abstract class Enemy : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update (){
 
-	
-	
 	}
 
 	protected void autoAttack()
 		{
-
-		if (dist < SeeRange && dist > AttackRange) {
-						agent.SetDestination (player.transform.position);
+		// checks if distance between player 1 and the enemy is bigger than the distance between player2 and the enemy:
+		if(dist>dist2){
+			// if this is true, the distance variable gets assigned the distance between player2 and the enemy
+			distance = dist2;
+			// and the playerNum variable gets the gameobject of player2
+			playerNum = player2;
+			}
+		else {
+			// else it must be player 1, which is closest:
+				distance = dist;
+				playerNum = player;
+			}
+		// makes the enemy go to the player which is closest:
+		if (distance < SeeRange && distance > AttackRange) {
+						agent.SetDestination (playerNum.transform.position);
 						canAttack = false;
-				} else if (dist <= AttackRange) {
+				} else if (distance <= AttackRange) {
 						agent.SetDestination (this.transform.position);	
 						canAttack = true;
 				} else
 						canAttack = false;
 		}
 
-	protected void EnemyAttack(ref int playerHealth)
+	protected void Attack()
 	{
 		if (haveWaited) {
 			StartCoroutine("reload");
-						playerHealth -= Damage;
+				cc.playerHealth -= Damage;
 				}
 	}
 

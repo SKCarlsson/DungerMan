@@ -1,25 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../../Dropbox/Group P4 2014/Unity/4semester/Assets/IndieEffects/CSharp/Blur.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy.cs">
     <Files>
-      <File FileName="../../../../../../Dropbox/Group P4 2014/Unity/4semester/Assets/IndieEffects/CSharp/Blur.cs" Line="52" Column="34" />
-      <File FileName="../../../../../../Dropbox/Group P4 2014/Unity/4semester/Assets/Scripts/FogController.cs" Line="2" Column="25" />
-      <File FileName="../../../../../../Dropbox/Group P4 2014/Unity/4semester/Assets/IndieEffects/CSharp/IndieEffects.cs" Line="105" Column="7" />
-      <File FileName="../../../../../../Dropbox/Group P4 2014/Unity/4semester/Assets/Scripts/LightScript.cs" Line="25" Column="25" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../../Desktop/Unity/4semester/Assets/Scripts/FirstFloorSoundDoor.cs">
-    <Files>
-      <File FileName="../../../../../../Desktop/Unity/4semester/Assets/Scripts/EchoLocation.cs" Line="31" Column="22" />
-      <File FileName="../../../../../../Desktop/Unity/4semester/Assets/Scripts/MicrophoneInput.cs" Line="45" Column="3" />
-      <File FileName="../../../../../../Desktop/Unity/4semester/Assets/Scripts/FirstFloorSoundDoor.cs" Line="48" Column="40" />
->>>>>>> FETCH_HEAD
+      <File FileName="Assets/Scripts/PlayerScript1.cs" Line="16" Column="3" />
+      <File FileName="Assets/Scripts/EnemySpawn.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Warrior.cs" Line="16" Column="1" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="57" Column="33" />
+      <File FileName="Assets/Scripts/PoshScript.cs" Line="51" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-=======
-  <MonoDevelop.Ide.Workbench />
->>>>>>> FETCH_HEAD
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
