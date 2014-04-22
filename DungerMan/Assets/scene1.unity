@@ -316,6 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 122323fd0b4b34fb8bde01cfd5909703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touch2Watch: 64
 --- !u!131 &480569687
 GUITexture:
   m_ObjectHideFlags: 0
