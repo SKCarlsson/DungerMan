@@ -73,7 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
-  m_NavMesh: {fileID: 19400000, guid: f2b736f7da393434dab194ed249016bc, type: 2}
+  m_NavMesh: {fileID: 19400000, guid: c33e83563133e46ca943dad2a73ebe3d, type: 2}
 --- !u!1 &944400033
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a0355cbe65b490e8c4a79b6dcd824a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wa: {fileID: 0}
+  wi: {fileID: 0}
 --- !u!1 &1856838734
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,11 +366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44fdb0f903274ff98727651f96ed57c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touch2Watch: 64
-  player: {fileID: 400000, guid: ade2a179e9624422f86f38d38b030fca, type: 2}
-  playerSpeed: 2
-  maxJoyDelta: .0500000007
-  troller: {fileID: 14300000, guid: ade2a179e9624422f86f38d38b030fca, type: 2}
 --- !u!1 &1973712876
 GameObject:
   m_ObjectHideFlags: 0
