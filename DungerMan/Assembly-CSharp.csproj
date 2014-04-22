@@ -53,9 +53,12 @@
      <Compile Include="Assets\Scripts\EnemySpawn.cs" />
      <Compile Include="Assets\Scripts\Joystick.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\PlayerScript1.cs" />
      <Compile Include="Assets\Scripts\PoshScript.cs" />
      <Compile Include="Assets\Scripts\TouchButtonLogic.cs" />
      <Compile Include="Assets\Scripts\TouchButtonTalk.cs" />
+     <Compile Include="Assets\Scripts\Warrior.cs" />
+     <Compile Include="Assets\Scripts\Wizard.cs" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
   </ItemGroup>
   <ItemGroup>

@@ -2,9 +2,7 @@
 using System.Collections;
 
 public class PoshScript : Enemy {
-
-
-	PlayerScript cc;
+	
 
 	public override void ability ()
 	{
@@ -14,52 +12,62 @@ public class PoshScript : Enemy {
 
 	// Use this for initialization
 	void Start () {
-		cc = GameObject.Find ("Player(Clone)").GetComponent<PlayerScript>();
-		player = GameObject.Find ("Player(Clone)");
+
+		// gives all the variables from the enemy class some values:
+		player = GameObject.Find ("Player 1(Clone)");
+		player2 = GameObject.Find ("Player 2(Clone)");
 		agent = GetComponent<NavMeshAgent>();
+
 
 		Health = 100;
 		Damage = 30;
 		Speed = 50;
 		AttackRange = 2;
 		AttackSpeed = 1;
-		SeeRange = 5;
+		SeeRange = 3;
 		canAttack = false;
-	
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		dist = Vector3.Distance(this.transform.position, player.transform.position);
-		autoAttack ();
+		if (player != null) {
+			// updates the dist(distance between player1 and enemy) variable for use in the enemy class.
+						dist = Vector3.Distance (this.transform.position, player.transform.position);
+		if (playerNum == player) {
+				// sets the cc to be the Playerscript of player 2
+						cc = GameObject.Find ("Player 1(Clone)").GetComponent<PlayerScript1> ();
+						}
+				} 
+		if (player2 != null) {
+			// updates the dist2(distance between player2 and enemy) variable for use in the enemy class.
+						dist2 = Vector3.Distance (this.transform.position, player2.transform.position);
+		if (playerNum == player2) {
+				// sets the cc to be the Playerscript of player 2
+						cc = GameObject.Find ("Player 2(Clone)").GetComponent<PlayerScript1> ();
+						}
+				}
 
-		//print (canAttack);
+
+		// runs the autoattack function from the enemy class
+		autoAttack ();
 
 
 		if (canAttack) {
-			//cc.pHealth -= 10;
-			EnemyAttack(ref cc.pHealth);
-			
+			// runs the attack function from the enemy class, if the enemy is close enough to attack
+			Attack();
 		}
-
-
-		//print (dist);
-		//print ("posh: "+Health);
 	
 	}
 
 	void OnCollisionEnter(Collision col)
 	{
 		// if the player collides with the key, following triggers:
-		if (col.gameObject.name == "Player(Clone)") 
+		if (col.gameObject.name == "Player 1(Clone)") 
 		{
 			takeDamage(50);
-
 		}
-		
 	}
-
 
 
 	IEnumerator diee(){
