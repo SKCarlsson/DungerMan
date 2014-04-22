@@ -3,7 +3,13 @@ using System.Collections;
 
 public class TouchButtonLogic : MonoBehaviour  {
 
-	// Use this for initialization
+
+
+	public static int currTouch = 0;//so other scripts can know what touch is currently on screen
+	[HideInInspector]
+	public int touch2Watch = 64;
+
+
 	void Update ()
 	{
 	
@@ -17,6 +23,8 @@ public class TouchButtonLogic : MonoBehaviour  {
 			//Loop through all the touches on screen
 			for (int i = 0; i < Input.touchCount; i++)
 			{
+				currTouch = i;
+				Debug.Log(currTouch);
 				//executes this code for current touch (i) on screen
 				if (this.guiTexture.HitTest (Input.GetTouch (i).position)) 
 				{

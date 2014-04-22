@@ -1,6 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
+Project("{79468BBB-260B-F765-94AA-48735AC31204}") = "DungerMan", "Assembly-CSharp-firstpass-vs.csproj", "{E8D7C326-83BB-5085-0AE5-868F8364BD10}"
+EndProject
 Project("{79468BBB-260B-F765-94AA-48735AC31204}") = "DungerMan", "Assembly-CSharp-vs.csproj", "{76CAFE01-E7D1-240D-88CF-1BBF9E577D8B}"
 EndProject
 Global
@@ -9,6 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8D7C326-83BB-5085-0AE5-868F8364BD10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8D7C326-83BB-5085-0AE5-868F8364BD10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8D7C326-83BB-5085-0AE5-868F8364BD10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8D7C326-83BB-5085-0AE5-868F8364BD10}.Release|Any CPU.Build.0 = Release|Any CPU
 		{76CAFE01-E7D1-240D-88CF-1BBF9E577D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{76CAFE01-E7D1-240D-88CF-1BBF9E577D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76CAFE01-E7D1-240D-88CF-1BBF9E577D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -17,7 +23,21 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 																														GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																																		GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																												GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																						GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> FETCH_HEAD
+=======
+																						GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																										GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> FETCH_HEAD
+>>>>>>> FETCH_HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -27,6 +47,10 @@ Global
 >>>>>>> FETCH_HEAD
 =======
 																						GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> FETCH_HEAD
+>>>>>>> FETCH_HEAD
+<<<<<<< HEAD
+=======
 >>>>>>> FETCH_HEAD
 >>>>>>> FETCH_HEAD
 		StartupItem = Assembly-CSharp.csproj
