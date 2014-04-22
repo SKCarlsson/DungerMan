@@ -5,7 +5,7 @@ public class BButton : TouchButtonLogic
 	{
 
 	
-	{
+
 		void OnTouchBegan ()
 		{
 			Debug.Log ("The Touch has begun on " + this.name);
