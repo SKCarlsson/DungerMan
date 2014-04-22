@@ -315,7 +315,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1856838737}
   - 131: {fileID: 1856838736}
-  - 114: {fileID: 1856838735}
+  - 114: {fileID: 1856838738}
   m_Layer: 0
   m_Name: JoyMove
   m_TagString: Untagged
@@ -323,17 +323,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1856838735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1856838734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 376d1702bedc9432da1119eacd1ddef4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!131 &1856838736
 GUITexture:
   m_ObjectHideFlags: 0
@@ -364,6 +353,22 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1856838738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1856838734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44fdb0f903274ff98727651f96ed57c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touch2Watch: 64
+  player: {fileID: 400000, guid: ade2a179e9624422f86f38d38b030fca, type: 2}
+  playerSpeed: 2
+  maxJoyDelta: .0500000007
+  troller: {fileID: 14300000, guid: ade2a179e9624422f86f38d38b030fca, type: 2}
 --- !u!1 &1973712876
 GameObject:
   m_ObjectHideFlags: 0
