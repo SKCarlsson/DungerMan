@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TouchButtonTalk : TouchButtonLogic
+public class AButton : TouchButtonLogic
 
 {
 	void OnTouchBegan ()
