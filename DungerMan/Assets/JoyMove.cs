@@ -9,8 +9,8 @@ public class JoyMove : MonoBehaviour {
 	public bool useAxisInput = true;
 	private float h = 0;
 	private float v = 0;
-	
-	// Update is called once per frame
+
+
 	void Update () {
 	
 		if(!useAxisInput) {
