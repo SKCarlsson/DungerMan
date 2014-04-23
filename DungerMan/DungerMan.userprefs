@@ -1,32 +1,15 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerScript1.cs">
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/JoyMove.cs">
     <Files>
-      <File FileName="Assets/JoyMove.cs" Line="16" Column="7" />
-      <File FileName="Assets/Scripts/Enemy.cs" Line="77" Column="31" />
-      <File FileName="Assets/Scripts/Wizard.cs" Line="18" Column="1" />
-      <File FileName="Assets/Standard Assets/Joystick.cs" Line="108" Column="53" />
-      <File FileName="Assets/Scripts/EnemySpawn.cs" Line="73" Column="16" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemySpawn.cs">
->>>>>>> FETCH_HEAD
-    <Files>
-      <File FileName="Assets/Scripts/PoshScript.cs" Line="73" Column="15" />
-      <File FileName="Assets/Scripts/EnemySpawn.cs" Line="39" Column="19" />
-      <File FileName="Assets/Scripts/Enemy.cs" Line="83" Column="1" />
-      <File FileName="Assets/Scripts/PoshScript.cs" Line="87" Column="1" />
-      <File FileName="Assets/Standard Assets/Joystick.cs" Line="1" Column="1" />
-<<<<<<< HEAD
-      <File FileName="Assets/Scripts/PlayerScript1.cs" Line="21" Column="3" />
-=======
-      <File FileName="Assets/Scripts/PlayerScript1.cs" Line="1" Column="1" />
->>>>>>> FETCH_HEAD
->>>>>>> FETCH_HEAD
+      <File FileName="Assets/Scripts/Enemy.cs" Line="77" Column="1" />
+      <File FileName="Assets/Scripts/PoshScript.cs" Line="41" Column="7" />
+      <File FileName="Assets/Scripts/PlayerScript1.cs" Line="43" Column="5" />
+      <File FileName="Assets/Scripts/Warrior.cs" Line="20" Column="5" />
+      <File FileName="Assets/Scripts/Wizard.cs" Line="18" Column="5" />
+      <File FileName="Assets/JoyMove.cs" Line="44" Column="38" />
+      <File FileName="Assets/Standard Assets/Joystick.cs" Line="193" Column="3" />
+      <File FileName="Assets/Scripts/EnemySpawn.cs" Line="38" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

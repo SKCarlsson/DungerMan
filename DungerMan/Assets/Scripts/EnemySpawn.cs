@@ -11,7 +11,7 @@ public class EnemySpawn : MonoBehaviour {
 	public Warrior wa;
 	public Wizard wi;
 
-	int enemyCount;
+	int enemyCount= 0;
 
 
 	// Use this for initialization

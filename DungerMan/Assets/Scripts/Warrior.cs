@@ -13,9 +13,11 @@ public class Warrior : PlayerScript1 {
 	// Update is called once per frame
 	void Update () {
 
+		raycast ();
+
 		takeDamage ();
 
-		print ("warrior: "+playerHealth);
+		//print ("warrior: "+playerHealth);
 	
 	}
 
