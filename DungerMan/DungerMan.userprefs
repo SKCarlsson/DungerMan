@@ -1,27 +1,10 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/JoyMove.cs">
-    <Files>
-      <File FileName="Assets/Scripts/Enemy.cs" Line="77" Column="1" />
-      <File FileName="Assets/Scripts/PoshScript.cs" Line="41" Column="7" />
-      <File FileName="Assets/Scripts/PlayerScript1.cs" Line="43" Column="5" />
-      <File FileName="Assets/Scripts/Warrior.cs" Line="20" Column="5" />
-      <File FileName="Assets/Scripts/Wizard.cs" Line="18" Column="5" />
-      <File FileName="Assets/JoyMove.cs" Line="44" Column="38" />
-      <File FileName="Assets/Standard Assets/Joystick.cs" Line="193" Column="3" />
-      <File FileName="Assets/Scripts/EnemySpawn.cs" Line="38" Column="44" />
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GUIScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemySpawn.cs">
     <Files>
       <File FileName="Assets/Standard Assets/Joystick.cs" Line="1" Column="1" />
       <File FileName="Assets/JoyMove.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemy.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Wizard.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EnemySpawn.cs" Line="1" Column="1" />
-      <File FileName="Assets/GUIScript.cs" Line="43" Column="95" />
->>>>>>> FETCH_HEAD
+      <File FileName="Assets/Scripts/EnemySpawn.cs" Line="30" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
