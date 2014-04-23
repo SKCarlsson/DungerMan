@@ -78,9 +78,9 @@ public abstract class Enemy : MonoBehaviour {
 				}
 	}
 
-	protected void takeDamage(int amount)
+	protected void takeDamage()
 	{
-		Health -= amount;
+		Health -= cc.Damage;
 
 		if (Health <= 0) {
 			die();

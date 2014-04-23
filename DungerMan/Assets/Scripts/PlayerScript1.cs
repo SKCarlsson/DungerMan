@@ -4,7 +4,7 @@ using System.Collections;
 public abstract class PlayerScript1 : MonoBehaviour {
 
 	public int playerHealth;
-	protected int Damage;
+	public int Damage;
 	protected int Speed;
 	protected int AttackRange;
 	protected int SeeRange;

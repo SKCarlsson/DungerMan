@@ -70,8 +70,11 @@ public class PoshScript : Enemy {
 		// if the player collides with the key, following triggers:
 		if (col.gameObject.name == "Player 1(Clone)") 
 		{
-			takeDamage(50);
+			takeDamage();
 		}
+
+
+
 	}
 
 
