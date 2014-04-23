@@ -14,7 +14,7 @@ public abstract class Enemy : MonoBehaviour {
 
 		protected int Health;
 		protected int Damage;
-		protected int Speed;
+		protected float Speed;
 		protected int AttackRange;
 		protected int SeeRange;
 		protected int AttackSpeed;

@@ -21,11 +21,16 @@ public class PoshScript : Enemy {
 
 		Health = 100;
 		Damage = 30;
-		Speed = 50;
+		Speed = 3.5f;
 		AttackRange = 2;
 		AttackSpeed = 1;
 		SeeRange = 3;
 		canAttack = false;
+
+
+		// sets the speed, as this is defined by the nav mesh agent:
+		agent.speed = Speed;
+
 	}
 	
 	// Update is called once per frame

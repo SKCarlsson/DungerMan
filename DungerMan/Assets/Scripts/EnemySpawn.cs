@@ -17,14 +17,6 @@ public class EnemySpawn : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		Vector3 brahPos = transform.position; // copy to an auxiliary variable...
-		brahPos.y = 1.0f; // modify the component you want in the variable...
-		brahPos.x = Random.Range (-10.0f, 10.0f);
-		brahPos.z = Random.Range (-10.0f, 10.0f);
-
-		brah = Instantiate(Resources.Load("Brah")) as GameObject; 
-		brah.transform.position = brahPos; // and save the modified value 
-
 		// coordinates for player 1
 		Vector3 player1Pos = transform.position; // copy to an auxiliary variable...
 		player1Pos.y = 1.0f; // modify the component you want in the variable...
@@ -70,7 +62,7 @@ public class EnemySpawn : MonoBehaviour {
 		if (enemyCount < 5) {
 			
 			Vector3 poshPos = transform.position; // copy to an auxiliary variable...
-			poshPos.y = 1.0f; // modify the component you want in the variable...
+			poshPos.y = 10.0f; // modify the component you want in the variable...
 			poshPos.x = Random.Range (-10.0f, 10.0f);
 			poshPos.z = Random.Range (-10.0f, 10.0f);
 			
