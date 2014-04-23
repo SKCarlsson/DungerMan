@@ -94,26 +94,14 @@ GameObject:
 --- !u!114 &364748871
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: f7fa711a9135b46628f674546a52ae57,
-    type: 2}
-  m_PrefabInternal: {fileID: 1961884629}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 364748870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 919d4aa04e745469c861a3742b9229c0, type: 3}
+  m_Script: {fileID: 11500000, guid: a60047f47b6504df19d3d83446226dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchPad: 0
-  position: {x: 0, y: 0}
-  touchZone:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  deadZone: {x: 0, y: 0}
-  normalize: 0
-  tapCount: 0
 --- !u!131 &364748872
 GUITexture:
   m_ObjectHideFlags: 0
@@ -336,7 +324,8 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: f7fa711a9135b46628f674546a52ae57, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f7fa711a9135b46628f674546a52ae57, type: 2}
   m_RootGameObject: {fileID: 364748870}
   m_IsPrefabParent: 0
