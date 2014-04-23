@@ -51,11 +51,7 @@
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn.cs" />
-<<<<<<< HEAD
-=======
-     <Compile Include="Assets\Scripts\Joystick.cs" />
      <Compile Include="Assets\Scripts\NetworkMenu.cs" />
->>>>>>> FETCH_HEAD
      <Compile Include="Assets\Scripts\PlayerScript1.cs" />
      <Compile Include="Assets\Scripts\PoshScript.cs" />
      <Compile Include="Assets\Scripts\Warrior.cs" />
