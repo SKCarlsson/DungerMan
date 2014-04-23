@@ -104,21 +104,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchPad: 0
-  touchPadPressed: .150000006
-  touchPadReleased: .0250000004
+  position: {x: 0, y: 0}
   touchZone:
     serializedVersion: 2
     x: 0
     y: 0
     width: 0
     height: 0
-  maximumOffset: .5
   deadZone: {x: 0, y: 0}
   normalize: 0
-  roundVertical: 0
-  roundHorizontal: 0
-  roundThreshold: .5
-  position: {x: 0, y: 0}
   tapCount: 0
 --- !u!131 &364748872
 GUITexture:
