@@ -10,6 +10,10 @@ public class JoyMove : MonoBehaviour {
 	private float h = 0;
 	private float v = 0;
 
+	void Start()
+	{
+		joystick = GameObject.Find("joystick").GetComponent<Joystick>();
+	}
 
 	void Update () {
 	
