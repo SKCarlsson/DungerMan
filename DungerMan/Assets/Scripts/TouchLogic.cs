@@ -24,7 +24,7 @@ public class TouchLogic : MonoBehaviour  {
 			for (int i = 0; i < Input.touchCount; i++)
 			{
 				currTouch = i;
-				Debug.Log(currTouch);
+				//Debug.Log(currTouch);
 				//executes this code for current touch (i) on screen
 				if (this.guiTexture.HitTest (Input.GetTouch (i).position))
 				{

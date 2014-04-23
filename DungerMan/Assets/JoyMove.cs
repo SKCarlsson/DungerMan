@@ -16,14 +16,20 @@ public class JoyMove : MonoBehaviour {
 	// for the sine
 	private float c = 0;
 	private float a = 0;
+	private float C = 0;
+	private float A = 0; 
+
+	private float rotation=0;
 
 	void Start()
 	{
+
 		CPos = transform.position; 
 		basePos = transform.position; 
 
 		basePos.y = 0;
 		basePos.x = 0;
+		basePos.z = 0;
 
 		joystick = GameObject.Find("joystick").GetComponent<Joystick>();
 
@@ -31,14 +37,27 @@ public class JoyMove : MonoBehaviour {
 	}
 
 	void Update () {
+		CPos.z = 0;
+		CPos.y = 1;
+		CPos.x = 0;
 
-		CPos.y = 0;
-		CPos.x = joystick.position.x;
+		c = Vector3.Distance(basePos, joystick.position);
+		a = Vector3.Distance(CPos, joystick.position);
+		A = Mathf.Asin (a / c);
+		C = Mathf.Asin((Mathf.Sin((A)*c)/a));
+		rotation =Vector3.Angle(joystick.position, CPos);
+		if(joystick.position.x<0){
+			rotation = 360-rotation;
+		}
 
-		c = Vector3.Distance(basePos, joystick.transform.position);
-		a = Vector3.Distance(CPos, joystick.transform.position);
-
-		print(Mathf.Asin (a / c));
+		
+		print(Vector3.Angle(joystick.position, CPos));
+		this.transform.rotation = Quaternion.AngleAxis(rotation, Vector3.up);
+		//print("cPos: "+ CPos);
+		//print("joystick: "+ joystick.position);
+		//print("a:" +a);
+		//print("c:" +c);
+		//print(((a*Mathf.Sin (C))/c)*(180/Mathf.PI));
 
 		//print("x: "+joystick.position.x);
 		//print("y: "+joystick.position.y);
