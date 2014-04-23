@@ -11,23 +11,15 @@ public class EnemySpawn : MonoBehaviour {
 	public Warrior wa;
 	public Wizard wi;
 
-	int enemyCount;
+	int enemyCount= 0;
 
 
 	// Use this for initialization
 	void Start () {
 
-		Vector3 brahPos = transform.position; // copy to an auxiliary variable...
-		brahPos.y = 1.0f; // modify the component you want in the variable...
-		brahPos.x = Random.Range (-10.0f, 10.0f);
-		brahPos.z = Random.Range (-10.0f, 10.0f);
-
-		brah = Instantiate(Resources.Load("Brah")) as GameObject; 
-		brah.transform.position = brahPos; // and save the modified value 
-
 		// coordinates for player 1
 		Vector3 player1Pos = transform.position; // copy to an auxiliary variable...
-		player1Pos.y = 1.5f; // modify the component you want in the variable...
+		player1Pos.y = 1.0f; // modify the component you want in the variable...
 		player1Pos.x = 5.0f;
 		player1Pos.z = 5.0f;
 		
@@ -44,7 +36,7 @@ public class EnemySpawn : MonoBehaviour {
 
 		// coordinates for player 2
 		Vector3 player2Pos = transform.position; // copy to an auxiliary variable...
-		player2Pos.y = 1.5f; // modify the component you want in the variable...
+		player2Pos.y = 1.0f; // modify the component you want in the variable...
 		player2Pos.x = 10.0f;
 		player2Pos.z = 10.0f;
 

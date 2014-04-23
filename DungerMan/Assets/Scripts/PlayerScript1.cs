@@ -4,7 +4,7 @@ using System.Collections;
 public abstract class PlayerScript1 : MonoBehaviour {
 
 	public int playerHealth;
-	protected int Damage;
+	public int Damage;
 	protected int Speed;
 	protected int AttackRange;
 	protected int SeeRange;
@@ -37,6 +37,14 @@ public abstract class PlayerScript1 : MonoBehaviour {
 		Destroy (gameObject);
 		
 	}
+
+	protected void raycast(){
+		Vector3 fwd = this.transform.TransformDirection(Vector3.forward);
+		//if (Physics.Raycast(this.transform.position, fwd, 10))
+		//print("There is something in front of the object!");
+	}
+
+
 
 
 }

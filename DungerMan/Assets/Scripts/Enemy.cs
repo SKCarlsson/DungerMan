@@ -14,7 +14,7 @@ public abstract class Enemy : MonoBehaviour {
 
 		protected int Health;
 		protected int Damage;
-		protected int Speed;
+		protected float Speed;
 		protected int AttackRange;
 		protected int SeeRange;
 		protected int AttackSpeed;
@@ -78,9 +78,9 @@ public abstract class Enemy : MonoBehaviour {
 				}
 	}
 
-	protected void takeDamage(int amount)
+	protected void takeDamage()
 	{
-		Health -= amount;
+		Health -= cc.Damage;
 
 		if (Health <= 0) {
 			die();

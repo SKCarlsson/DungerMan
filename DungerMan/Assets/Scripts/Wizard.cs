@@ -15,7 +15,7 @@ public class Wizard : PlayerScript1 {
 
 		takeDamage ();
 
-		print ("wizard: " + playerHealth);
+		//print ("wizard: " + playerHealth);
 	
 	}
 }
