@@ -16,14 +16,20 @@ public class JoyMove : MonoBehaviour {
 	// for the sine
 	private float c = 0;
 	private float a = 0;
+	private float C = 0;
+	private float A = 0; 
+
+	private float rotation=0;
 
 	void Start()
 	{
+
 		CPos = transform.position; 
 		basePos = transform.position; 
 
 		basePos.y = 0;
 		basePos.x = 0;
+		basePos.z = 0;
 
 		joystick = GameObject.Find("joystick").GetComponent<Joystick>();
 
@@ -32,16 +38,31 @@ public class JoyMove : MonoBehaviour {
 
 	void Update () {
 
-		CPos.y = 0;
-		CPos.x = joystick.position.x;
 
-		c = Vector3.Distance(basePos, joystick.transform.position);
-		a = Vector3.Distance(CPos, joystick.transform.position);
+		CPos.z = 0;
+		CPos.y = 1;
+		CPos.x = 0;
+		// tried to make the rotation by using sine:
+		/*
+		c = Vector3.Distance(basePos, joystick.position);
+		a = Vector3.Distance(CPos, joystick.position);
+		A = Mathf.Asin (a / c);
+		C = Mathf.Asin((Mathf.Sin((A)*c)/a));*/
 
-		print(Mathf.Asin (a / c));
 
-		//print("x: "+joystick.position.x);
-		//print("y: "+joystick.position.y);
+		if (joystick.tapCount == 1) {
+			rotation =Vector3.Angle(joystick.position, CPos);
+
+			if (joystick.position.x < 0) {
+				rotation = 360 - rotation;
+					}
+
+			this.transform.rotation = Quaternion.AngleAxis (rotation, Vector3.up);
+			}
+
+
+		//print (Vector3.Angle (joystick.position, CPos));
+
 		
 
 		if(!useAxisInput) {
@@ -61,6 +82,10 @@ public class JoyMove : MonoBehaviour {
 		if(Mathf.Abs(v) > 0) {
 			rigidbody.velocity = new Vector3(rigidbody.velocity.x, 0, v * speed);
 		}
+		if (joystick.position.x == 0 && joystick.position.y == 0) {
+
+			rigidbody.velocity = new Vector3(0, 0, 0);
+				}
 
 	}
 }
