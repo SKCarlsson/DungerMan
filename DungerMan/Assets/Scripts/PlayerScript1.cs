@@ -12,13 +12,19 @@ public abstract class PlayerScript1 : MonoBehaviour {
 	protected RaycastHit hitinfo;
 	protected Enemy cc;
 	
+	protected AButton aButtonAction;
+	protected BButton bButtonAction;
+	
+	protected bool buttonWaitA = true;
+	protected bool buttonWaitB = true;
 
 	//Other scripts
 	public AButton AButtonScript;
 
+
 	// Use this for initialization
 	void Start () {
-	
+
 
 	}
 	
@@ -50,14 +56,13 @@ public abstract class PlayerScript1 : MonoBehaviour {
 		Physics.Raycast (this.transform.position, fwd, out hitinfo, 10);
 		if (hitinfo.transform.gameObject!= null) {
 			cc = hitinfo.transform.gameObject.GetComponent<Enemy> ();
-			enemyTakeDamage ();
 				}
 		Debug.DrawRay (this.transform.position, fwd,Color.green, 10);
 	}
 
 	protected void enemyTakeDamage(){
+		print ("HIT THE BUTTON");
 		cc.Health -=Damage;
-		print (cc.Health);
 	}
 
 	//Check in Abutton whether or not the boolean is true or false, if it is true, execute SpecialAttack

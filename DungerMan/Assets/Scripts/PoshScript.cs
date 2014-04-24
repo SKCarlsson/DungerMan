@@ -36,6 +36,9 @@ public class PoshScript : Enemy {
 	// Update is called once per frame
 	void Update () 
 	{
+		takeDamage();
+
+
 		if (player != null) {
 			// updates the dist(distance between player1 and enemy) variable for use in the enemy class.
 						dist = Vector3.Distance (this.transform.position, player.transform.position);
@@ -70,7 +73,7 @@ public class PoshScript : Enemy {
 		// if the player collides with the key, following triggers:
 		if (col.gameObject.name == "Player 1(Clone)") 
 		{
-			takeDamage();
+
 		}
 
 

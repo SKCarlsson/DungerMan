@@ -80,8 +80,7 @@ public abstract class Enemy : MonoBehaviour {
 
 	protected void takeDamage()
 	{
-		Health -= cc.Damage;
-
+	
 		if (Health <= 0) {
 			die();
 				}
