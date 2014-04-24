@@ -18,4 +18,13 @@ public class Wizard : PlayerScript1 {
 		//print ("wizard: " + playerHealth);
 	
 	}
+
+	public override void SpecialAttackA () 
+	{
+	
+	}
+	public override void SpecialAttackB () 
+	{
+		
+	}
 }

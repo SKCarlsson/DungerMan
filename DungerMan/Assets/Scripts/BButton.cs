@@ -1,15 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BButton : MonoBehaviour {
+public class BButton : TouchLogic {
 
-	// Use this for initialization
-	void Start () {
+	public bool touch = false;
 	
+	void OnTouchBegan () 
+	{
+		Debug.Log ("The touch has begun " + this.name);
+		touch = true;
+		//Debug.Log ("the boolean is " + touch);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
+	void OnTouchEnded () 
+	{
+		Debug.Log ("The touch has ended " + this.name);
+		touch = false;
+		//Debug.Log ("the boolean is " + touch);
+		
 	}
 }

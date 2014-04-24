@@ -10,6 +10,9 @@ public abstract class PlayerScript1 : MonoBehaviour {
 	protected int SeeRange;
 	protected int AttackSpeed;
 
+	//Other scripts
+	public AButton AButtonScript;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -43,6 +46,11 @@ public abstract class PlayerScript1 : MonoBehaviour {
 		//if (Physics.Raycast(this.transform.position, fwd, 10))
 		//print("There is something in front of the object!");
 	}
+
+
+	//Check in Abutton whether or not the boolean is true or false, if it is true, execute SpecialAttack
+	public abstract void SpecialAttackA ();
+	public abstract void SpecialAttackB ();
 
 
 
