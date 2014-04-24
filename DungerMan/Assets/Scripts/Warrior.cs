@@ -3,9 +3,13 @@ using System.Collections;
 
 public class Warrior : PlayerScript1 {
 
+
+
 	// Use this for initialization
 	void Start () {
 
+
+		Damage = 1;
 		playerHealth = 200;
 	
 	}
@@ -15,11 +19,11 @@ public class Warrior : PlayerScript1 {
 
 		raycast ();
 
-		takeDamage ();
+		enemyTakeDamage ();
 
-		//print ("warrior: "+playerHealth);
 	
 	}
+
 
 
 

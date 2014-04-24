@@ -12,7 +12,7 @@ public abstract class Enemy : MonoBehaviour {
 
 		protected NavMeshAgent agent;
 
-		protected int Health;
+		public int Health;
 		protected int Damage;
 		protected float Speed;
 		protected int AttackRange;
