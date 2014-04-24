@@ -1,8 +1,20 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="../../../../4semester/Assets/Scripts/Monster.cs">
     <Files>
       <File FileName="../../../../4semester/Assets/Scripts/Monster.cs" Line="25" Column="68" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerScript1.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Wizard.cs" Line="9" Column="19" />
+      <File FileName="Assets/Scripts/PlayerScript1.cs" Line="37" Column="2" />
+      <File FileName="Assets/JoyMove.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Warrior.cs" Line="20" Column="3" />
+      <File FileName="Assets/Scripts/PoshScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="1" Column="1" />
+>>>>>>> FETCH_HEAD
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

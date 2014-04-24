@@ -9,6 +9,12 @@ public abstract class PlayerScript1 : MonoBehaviour {
 	protected int AttackRange;
 	protected int SeeRange;
 	protected int AttackSpeed;
+	protected RaycastHit hitinfo;
+	protected Enemy cc;
+	
+
+	//Other scripts
+	public AButton AButtonScript;
 
 	// Use this for initialization
 	void Start () {
@@ -38,11 +44,25 @@ public abstract class PlayerScript1 : MonoBehaviour {
 		
 	}
 
+
 	protected void raycast(){
 		Vector3 fwd = this.transform.TransformDirection(Vector3.forward);
-		//if (Physics.Raycast(this.transform.position, fwd, 10))
-		//print("There is something in front of the object!");
+		Physics.Raycast (this.transform.position, fwd, out hitinfo, 10);
+		if (hitinfo.transform.gameObject!= null) {
+			cc = hitinfo.transform.gameObject.GetComponent<Enemy> ();
+			enemyTakeDamage ();
+				}
+		Debug.DrawRay (this.transform.position, fwd,Color.green, 10);
 	}
+
+	protected void enemyTakeDamage(){
+		cc.Health -=Damage;
+		print (cc.Health);
+	}
+
+	//Check in Abutton whether or not the boolean is true or false, if it is true, execute SpecialAttack
+	public abstract void SpecialAttackA ();
+	public abstract void SpecialAttackB ();
 
 
 
