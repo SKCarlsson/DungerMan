@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn.cs" />
      <Compile Include="Assets\Scripts\NetworkManager.cs" />
+     <Compile Include="Assets\Scripts\NetworkManager1.cs" />
      <Compile Include="Assets\Scripts\NetworkMenu.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Scripts\PlayerScript1.cs" />

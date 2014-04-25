@@ -48,9 +48,29 @@ public class NetworkManager : MonoBehaviour {
 	private void SpawnPlayer()
 	{
 		Debug.Log("Spawning Player....");
-		Network.Instantiate (Resources.Load ("Prefabs/SamplePlayer"), new Vector3(0f,2.5f,0f), Quaternion.identity, 0);
+
+		Network.Instantiate (Resources.Load ("Player 1"), new Vector3(1f,5f,5f), Quaternion.identity, 0);
+		
+		// adds the warrior script to the player1 gameobject
+		/*player1.AddComponent ("Warrior");
+		
+		player1.renderer.material = Resources.Load("Warrior", typeof(Material)) as Material;
+
+		//Network.Instantiate (Resources.Load ("Player1"), new Vector3(0f,2.5f,0f), Quaternion.identity, 0);
+
+		//Assigning Player 2's transform
 	}
 
+	/*private void SpawnPlayer2()
+	{
+		player2 = Network.Instantiate (Resources.Load ("Player 2"), new Vector3(1f,10f,10f), Quaternion.identity, 0); 
+		
+		// adds the Wizard script to the player2 gameobject
+		player2.AddComponent ("Wizard");
+		
+		player2.renderer.material = Resources.Load("Wizard", typeof(Material)) as Material;
+*/
+	}
 
 	void OnPlayerDisconnected(NetworkPlayer player)
 	{
@@ -81,8 +101,10 @@ public class NetworkManager : MonoBehaviour {
 
 		if (Network.isClient)
 		{
-			if(GUI.Button(new Rect(25,25,125,30),"Spawn"))
-			SpawnPlayer();
+			if(GUI.Button(new Rect(25,25,125,30),"Spawn")){
+				SpawnPlayer();
+				return;
+			}
 		}
 			
 		if(!Network.isServer && !Network.isClient)
@@ -92,7 +114,7 @@ public class NetworkManager : MonoBehaviour {
 				//Start server function here
 				StartServer();
 			}
-			if(GUI.Button(new Rect(25,65,250,80), "Refresh Server List"))
+			if(GUI.Button(new Rect(25,115,250,80), "Refresh Server List"))
 			{
 			//Refresh Server List Function Here
 			StartCoroutine("RefreshHostList");
@@ -104,6 +126,7 @@ public class NetworkManager : MonoBehaviour {
 				{
 					if(GUI.Button(new Rect(Screen.width/2, 65f + (30f * i), 300f, 80f), hostData[i].gameName))
 					{
+						Debug.Log ("Trying to connect");
 						Network.Connect(hostData[i]);
 					}
 				}

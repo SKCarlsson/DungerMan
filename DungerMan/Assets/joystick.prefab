@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 131: {fileID: 13100000}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: joystick
   m_TagString: joystick
@@ -40,22 +41,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchPad: 0
-  touchPadPressed: .150000006
-  touchPadReleased: .0250000004
+  position: {x: 0, y: 0}
   touchZone:
     serializedVersion: 2
     x: 0
     y: 0
     width: 0
     height: 0
-  maximumOffset: .5
   deadZone: {x: 0, y: 0}
   normalize: 0
-  roundVertical: 0
-  roundHorizontal: 0
-  roundThreshold: .5
-  position: {x: 0, y: 0}
   tapCount: 0
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c68f82b9981042c396a0814f23845db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
+  speed: 10
+  useAxisInput: 1
 --- !u!131 &13100000
 GUITexture:
   m_ObjectHideFlags: 1

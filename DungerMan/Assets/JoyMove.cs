@@ -38,6 +38,8 @@ public class JoyMove : MonoBehaviour {
 
 	void Update () {
 
+		if(!networkView.isMine)
+			return;
 
 		CPos.z = 0;
 		CPos.y = 1;

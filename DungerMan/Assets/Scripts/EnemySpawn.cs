@@ -5,11 +5,11 @@ public class EnemySpawn : MonoBehaviour {
 	GameObject posh;
 	GameObject brah;
 
-	GameObject player1;
-	GameObject player2;
+	//GameObject player1;
+	//GameObject player2;
 
-	public Warrior wa;
-	public Wizard wi;
+	//public Warrior wa;
+	//public Wizard wi;
 
 	int enemyCount= 0;
 
@@ -17,7 +17,7 @@ public class EnemySpawn : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		// coordinates for player 1
+		/*// coordinates for player 1
 		Vector3 player1Pos = transform.position; // copy to an auxiliary variable...
 		player1Pos.y = 1.0f; // modify the component you want in the variable...
 		player1Pos.x = 5.0f;
@@ -25,17 +25,17 @@ public class EnemySpawn : MonoBehaviour {
 		
 		// instantiation of player 1
 		player1 = Instantiate(Resources.Load("Player 1")) as GameObject; 
-		player1.transform.position = player1Pos; // and save the modified value 
+		player1.transform.position = player1Pos; // and save the modified value
 		
 		// adds the warrior script to the player1 gameobject
 		player1.AddComponent ("Warrior");
 		
-		player1.renderer.material = Resources.Load("Warrior", typeof(Material)) as Material;
+		player1.renderer.material = Resources.Load("Warrior", typeof(Material)) as Material;*/
 		
 
 
 		// coordinates for player 2
-		Vector3 player2Pos = transform.position; // copy to an auxiliary variable...
+		/*Vector3 player2Pos = transform.position; // copy to an auxiliary variable...
 		player2Pos.y = 1.0f; // modify the component you want in the variable...
 		player2Pos.x = 10.0f;
 		player2Pos.z = 10.0f;
@@ -48,7 +48,7 @@ public class EnemySpawn : MonoBehaviour {
 		// adds the Wizard script to the player2 gameobject
 		player2.AddComponent ("Wizard");
 
-		player2.renderer.material = Resources.Load("Wizard", typeof(Material)) as Material;
+		player2.renderer.material = Resources.Load("Wizard", typeof(Material)) as Material;*/
 
 	
 
