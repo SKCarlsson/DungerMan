@@ -25,7 +25,7 @@ public class Warrior : PlayerScript1 {
 			{
 				cc = hitinfo.transform.gameObject.GetComponent<Enemy> ();
 				StartCoroutine("buttonwaita");
-				enemyTakeDamage ();
+				enemyTakeDamage (0);
 				Mana += 15;
 				if (Mana > 100)
 				{
@@ -39,7 +39,7 @@ public class Warrior : PlayerScript1 {
 			{
 				cc = hitinfo.transform.gameObject.GetComponent<Enemy> ();
 				StartCoroutine("buttonwaitb");
-				enemyTakeDamage ();
+				enemyTakeDamage (25);
 				Mana -= 25;
 			}		}
 
