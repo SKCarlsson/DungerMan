@@ -21,16 +21,29 @@ public class Warrior : PlayerScript1 {
 	void Update () {
 
 		if(aButtonAction.touch && buttonWaitA){
-			StartCoroutine("buttonwaita");
-			enemyTakeDamage ();
+			if (hitinfo.transform.gameObject!= null) 
+			{
+				cc = hitinfo.transform.gameObject.GetComponent<Enemy> ();
+				StartCoroutine("buttonwaita");
+				enemyTakeDamage ();
+				Mana += 15;
+				if (Mana > 100)
+				{
+					Mana = 100;
+				}
+			}
+
 		}
 		if(bButtonAction.touch == true && buttonWaitB){
-			SpecialAttackB();
-		}
+			if (hitinfo.transform.gameObject!= null && Mana >= 25) 
+			{
+				cc = hitinfo.transform.gameObject.GetComponent<Enemy> ();
+				StartCoroutine("buttonwaitb");
+				enemyTakeDamage ();
+				Mana -= 25;
+			}		}
 
 		raycast ();
-
-	//	takeDamage ();
 
 	}
 

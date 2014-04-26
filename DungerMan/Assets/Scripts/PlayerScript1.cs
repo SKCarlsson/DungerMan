@@ -57,9 +57,6 @@ public abstract class PlayerScript1 : MonoBehaviour {
 	protected void raycast(){
 		Vector3 fwd = this.transform.TransformDirection(Vector3.forward);
 		Physics.Raycast (this.transform.position, fwd, out hitinfo, 10);
-		if (hitinfo.transform.gameObject!= null) {
-			cc = hitinfo.transform.gameObject.GetComponent<Enemy> ();
-				}
 		Debug.DrawRay (this.transform.position, fwd,Color.green, 10);
 	}
 
