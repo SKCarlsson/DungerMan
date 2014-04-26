@@ -22,8 +22,8 @@ public class ProjectileWarriorNormalScript : MonoBehaviour {
 	{
 		if(other.gameObject.tag =="Enemy")
 		{
-		Destroy(other);
-		Destroy(gameObject);
+			other.GetComponent<Enemy>().Health -= 50;
+			Destroy(gameObject);
 		}
 	}
 }
