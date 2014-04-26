@@ -43,7 +43,7 @@ public class Warrior : PlayerScript1 {
 
 		raycast ();
 
-		takeDamage ();
+		//takeDamage ();
 
 
 			if (hitinfo.transform.gameObject!= null && Mana >= 25) 

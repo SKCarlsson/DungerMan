@@ -65,7 +65,7 @@ public class NetworkManager : MonoBehaviour {
 		
 						player1.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
 			
-
+						player1.transform.parent = Camera.main.transform;
 
 		//Network.Instantiate (Resources.Load ("Player1"), new Vector3(0f,2.5f,0f), Quaternion.identity, 0);
 
@@ -84,6 +84,8 @@ public class NetworkManager : MonoBehaviour {
 			player2.AddComponent ("Warrior");
 			
 			player2.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
+
+			player1.transform.parent = Camera.main.transform;
 			
 	}
 

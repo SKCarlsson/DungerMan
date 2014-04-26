@@ -49,7 +49,7 @@ public abstract class PlayerScript1 : MonoBehaviour {
 
 	protected void die()
 	{
-		Destroy (gameObject);
+		Network.Destroy (gameObject);
 		
 	}
 
