@@ -19,6 +19,9 @@ public class GUIScript : MonoBehaviour
 	void start()
 	{
 		barDisplay = 1;
+
+		emptyTex = (Texture2D)Resources.Load("Textures/empty.png");
+		fullTex = (Texture2D)Resources.Load("Textures/full.png");
 	}
 	
 	void OnGUI()
