@@ -136,12 +136,12 @@ public class NetworkManager : MonoBehaviour {
 
 		if (Network.isServer && player1init == false)
 		{
-			GUI.Box(new Rect(Screen.width/2-150,Screen.height/2-100,250,80),"Choose Role:");
-			if(GUI.Button(new Rect(Screen.width/2-150,Screen.height/2-10,250,80),"Warrior")){
+			GUI.Box(new Rect(Screen.width/2-250,Screen.height/2-350,500,160),"Choose Role:");
+			if(GUI.Button(new Rect(Screen.width/2-250,Screen.height/2-100,500,160),"Warrior")){
 				SpawnPlayer();
 				player1init = true;
 			}
-			if(GUI.Button(new Rect(Screen.width/2-150,Screen.height/2+80,250,80),"Wizzard")){
+			if(GUI.Button(new Rect(Screen.width/2-250,Screen.height/2+80,500,160),"Wizzard")){
 				SpawnPlayer2();
 				player1init = true;
 			}
@@ -149,33 +149,32 @@ public class NetworkManager : MonoBehaviour {
 
 		if (Network.isClient && player2init == false) {
 
-						if (GUI.Button (new Rect (25, 25, 125, 30), "Spawn")) {
-								SpawnPlayer2 ();
+						
 
-								GUI.Box (new Rect (Screen.width / 2 - 150, Screen.height / 2 - 100, 250, 80), "Choose Role:");
-								if (GUI.Button (new Rect (Screen.width / 2 - 150, Screen.height / 2 - 10, 250, 80), "Warrior")) {
+								GUI.Box (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 350, 500, 160), "Choose Role:");
+								if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 100, 500, 160), "Warrior")) {
 										SpawnPlayer ();
 
 										EnemySpawn ();
 										player2init = true;
 								}
-								if (GUI.Button (new Rect (Screen.width / 2 - 150, Screen.height / 2 + 80, 250, 80), "Wizzard")) {
+								if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 + 80, 500, 160), "Wizzard")) {
 										SpawnPlayer2 ();
 										EnemySpawn ();
 										player2init = true;
 								}
-						}
+						
 				}
 			
 		if(!Network.isServer && !Network.isClient)
 		{
-			GUI.Box(new Rect(Screen.width/2-150,Screen.height/2-100,250,80),"Host/Refresh Servers");
-			if(GUI.Button(new Rect(Screen.width/2-150,Screen.height/2-10,250,80),"Start New Server"))
+			GUI.Box(new Rect(Screen.width/2-600,Screen.height/2-350,500,160),"Host/Refresh Servers");
+			if(GUI.Button(new Rect(Screen.width/2-600,Screen.height/2-100,500,160),"Start New Server"))
 			{
 				//Start server function here
 				StartServer();
 			}
-			if(GUI.Button(new Rect(Screen.width/2-150,Screen.height/2+80,250,80), "Refresh Server List"))
+			if(GUI.Button(new Rect(Screen.width/2-600,Screen.height/2+80,500,160), "Refresh Server List"))
 			{
 			//Refresh Server List Function Here
 			StartCoroutine("RefreshHostList");
@@ -185,7 +184,7 @@ public class NetworkManager : MonoBehaviour {
 			{
 				for(int i = 0; i<hostData.Length; i++)
 				{
-					if(GUI.Button(new Rect(Screen.width/2-150,Screen.height/2-10,250,80), hostData[i].gameName))
+					if(GUI.Button(new Rect(Screen.width/2+100,Screen.height/2-100,500,160), hostData[i].gameName))
 					{
 						Debug.Log ("Trying to connect");
 						Network.Connect(hostData[i]);
