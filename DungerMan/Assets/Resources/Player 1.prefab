@@ -15,7 +15,6 @@ GameObject:
   - 114: {fileID: 11400002}
   - 148: {fileID: 14800000}
   - 114: {fileID: 11400000}
-  - 143: {fileID: 14300000}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -30,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .646378756, y: 1.88825035, z: -2.73415422}
+  m_LocalPosition: {x: 3.23971748, y: .5, z: -.219741493}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,7 +45,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 74bd539efbad348fd8e6fb3006140d8f, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -114,20 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba42ae5f3490a945a25030e83abe5d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!143 &14300000
-CharacterController:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  serializedVersion: 2
-  m_Height: 1
-  m_Radius: .5
-  m_SlopeLimit: 45
-  m_StepOffset: .300000012
-  m_SkinWidth: .0799999982
-  m_MinMoveDistance: 10
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!148 &14800000
 NetworkView:
   m_ObjectHideFlags: 1

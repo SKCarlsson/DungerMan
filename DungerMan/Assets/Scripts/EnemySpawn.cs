@@ -57,22 +57,11 @@ public class EnemySpawn : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		enemyCount = GameObject.FindGameObjectsWithTag("Posh").Length;
-
-		if (enemyCount < 5) {
-			
-			Vector3 poshPos = transform.position; // copy to an auxiliary variable...
-			poshPos.y = 1.0f; // modify the component you want in the variable...
-			poshPos.x = Random.Range (-10.0f, 10.0f);
-			poshPos.z = Random.Range (-10.0f, 10.0f);
-			
-			posh = Instantiate(Resources.Load("Posh")) as GameObject; 
-			posh.transform.position = poshPos; // and save the modified value 
 
 
 
 				}
 
 	
-	}
+
 }

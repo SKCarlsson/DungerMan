@@ -46,6 +46,7 @@ public abstract class Enemy : MonoBehaviour {
 	}
 
 	protected void autoAttack()
+		// maybe an array of players can be made so that we only need one player prefab
 		{
 		// checks if distance between player 1 and the enemy is bigger than the distance between player2 and the enemy:
 		if(dist>dist2){

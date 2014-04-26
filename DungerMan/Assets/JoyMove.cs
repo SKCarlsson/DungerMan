@@ -23,6 +23,9 @@ public class JoyMove : MonoBehaviour {
 
 	void Start()
 	{
+		if(!networkView.isMine)
+			return;
+
 
 		CPos = transform.position; 
 		basePos = transform.position; 
@@ -38,8 +41,6 @@ public class JoyMove : MonoBehaviour {
 
 	void Update () {
 
-		if(!networkView.isMine)
-			return;
 
 		CPos.z = 0;
 		CPos.y = 1;

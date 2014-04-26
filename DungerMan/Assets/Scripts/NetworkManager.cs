@@ -7,6 +7,8 @@ public class NetworkManager : MonoBehaviour {
 	bool isRefreshing = false;
 	float refreshRequestLength = 3.0f;
 	HostData[] hostData;
+	private int enemyCount = 0;
+	private GameObject posh;
 
 	private void StartServer()
 	{
@@ -72,6 +74,27 @@ public class NetworkManager : MonoBehaviour {
 */
 	}
 
+	private void EnemySpawn(){
+
+			
+	
+				
+			while (enemyCount < 5) {
+			enemyCount = GameObject.FindGameObjectsWithTag ("Posh").Length;
+
+			Network.Instantiate (Resources.Load ("Posh"), new Vector3 (1f, Random.Range (-10.0f, 10.0f), Random.Range (-10.0f, 10.0f)), Quaternion.identity, 0);
+						/*	Vector3 poshPos = transform.position; // copy to an auxiliary variable...
+			poshPos.y = 1.0f; // modify the component you want in the variable...
+			poshPos.x = Random.Range (-10.0f, 10.0f);
+			poshPos.z = Random.Range (-10.0f, 10.0f);
+			
+			posh = Instantiate(Resources.Load("Posh")) as GameObject; 
+			posh.transform.position = poshPos; // and save the modified value*/ 
+
+
+				}
+		}
+
 	void OnPlayerDisconnected(NetworkPlayer player)
 	{
 		Debug.Log("Player disconnected from: " + player.ipAddress + ":" + player.port);
@@ -103,6 +126,7 @@ public class NetworkManager : MonoBehaviour {
 		{
 			if(GUI.Button(new Rect(25,25,125,30),"Spawn")){
 				SpawnPlayer();
+				EnemySpawn();
 				return;
 			}
 		}
@@ -133,4 +157,5 @@ public class NetworkManager : MonoBehaviour {
 			}
 		}
 	}
+
 }
