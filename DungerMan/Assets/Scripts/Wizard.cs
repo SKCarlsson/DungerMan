@@ -8,6 +8,9 @@ public class Wizard : PlayerScript1 {
 
 		playerHealth = 150;
 	
+
+		//Energy - Mana
+		Mana = 100;
 	}
 	
 	// Update is called once per frame

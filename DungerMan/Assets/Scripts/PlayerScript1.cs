@@ -21,6 +21,9 @@ public abstract class PlayerScript1 : MonoBehaviour {
 	//Other scripts
 	public AButton AButtonScript;
 
+	//Energy
+	protected int Mana;
+
 
 	// Use this for initialization
 	void Start () {

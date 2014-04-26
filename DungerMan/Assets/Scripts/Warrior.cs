@@ -12,6 +12,9 @@ public class Warrior : PlayerScript1 {
 
 		Damage = 50;
 		playerHealth = 200;
+
+		//Energy - Rage
+		Mana = 0;
 	}
 	
 	// Update is called once per frame
