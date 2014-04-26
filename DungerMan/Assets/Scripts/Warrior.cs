@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Warrior : PlayerScript1 {
 
-
 	void Start () {
 
 		aButtonAction = GameObject.Find ("AButton").GetComponent<AButton> ();
@@ -21,7 +20,7 @@ public class Warrior : PlayerScript1 {
 	void Update () {
 		print (aButtonAction.touch);
 
-		if(aButtonAction.touch && buttonWaitA){
+		if((aButtonAction.touch && buttonWaitA)){
 			if (hitinfo.transform.gameObject!= null) 
 			{
 				cc = hitinfo.transform.gameObject.GetComponent<Enemy> ();
@@ -32,6 +31,9 @@ public class Warrior : PlayerScript1 {
 				{
 					Mana = 100;
 				}
+
+				Instantiate((GameObject)Resources.Load ("ProjectileWarriorNormal"), new Vector3(this.transform.position.x, 1, this.transform.position.z + 1), this.transform.rotation);
+				Debug.Log("WOOOOOOKRS");
 			}
 
 		}
@@ -55,7 +57,8 @@ public class Warrior : PlayerScript1 {
 			}		
 
 		raycast ();
-	
+
+
 	}
 
 	public override void SpecialAttackA () 
