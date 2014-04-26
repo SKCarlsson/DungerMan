@@ -43,7 +43,7 @@ public class GUIScript : MonoBehaviour
 	void Update()
 	{
 		if (GameObject.Find("Player 1(Clone)").GetComponent<Warrior>()){
-		barDisplay = GameObject.Find("Player 1(Clone)").GetComponent<Warrior>().playerHealth / 200f;
+			barDisplay = GameObject.Find("Player 1(Clone)").GetComponent<Warrior>().playerHealth / 200f;
 		}
 		if (GameObject.Find("Player 1(Clone)").GetComponent<Wizard>()){
 			barDisplay = GameObject.Find("Player 1(Clone)").GetComponent<Wizard>().playerHealth / 200f;
