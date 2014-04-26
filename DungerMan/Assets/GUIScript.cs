@@ -38,6 +38,8 @@ public class GUIScript : MonoBehaviour
 		
 		GUI.EndGroup();
 		GUI.EndGroup();
+
+
 	}
 	
 	void Update()
