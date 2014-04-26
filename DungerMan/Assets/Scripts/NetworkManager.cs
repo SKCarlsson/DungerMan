@@ -10,6 +10,9 @@ public class NetworkManager : MonoBehaviour {
 	private int enemyCount = 0;
 	private GameObject posh;
 
+	bool player1init = false;
+	bool player2init = false;
+
 	private void StartServer()
 	{
 		Network.InitializeServer(16, 25001, false);
@@ -19,7 +22,6 @@ public class NetworkManager : MonoBehaviour {
 	void OnServerInitialized()
 	{
 		Debug.Log ("Server is initialized!!!!!");
-		SpawnPlayer();
 	}
 
 	void OnMasterServerEvent(MasterServerEvent masterServerEvent)
@@ -51,27 +53,12 @@ public class NetworkManager : MonoBehaviour {
 	{
 		Debug.Log("Spawning Player....");
 
-		Network.Instantiate (Resources.Load ("Player 1"), new Vector3(1f,5f,5f), Quaternion.identity, 0);
-		
-		// adds the warrior script to the player1 gameobject
-		/*player1.AddComponent ("Warrior");
-		
-		player1.renderer.material = Resources.Load("Warrior", typeof(Material)) as Material;
-
-		//Network.Instantiate (Resources.Load ("Player1"), new Vector3(0f,2.5f,0f), Quaternion.identity, 0);
-
-		//Assigning Player 2's transform
+		Network.Instantiate (Resources.Load ("Player 1"), new Vector3(5f,1f,5f), Quaternion.identity, 0);
 	}
 
-	/*private void SpawnPlayer2()
+	private void SpawnPlayer2()
 	{
-		player2 = Network.Instantiate (Resources.Load ("Player 2"), new Vector3(1f,10f,10f), Quaternion.identity, 0); 
-		
-		// adds the Wizard script to the player2 gameobject
-		player2.AddComponent ("Wizard");
-		
-		player2.renderer.material = Resources.Load("Wizard", typeof(Material)) as Material;
-*/
+		Network.Instantiate (Resources.Load ("Player 2"), new Vector3(6f,1f,6f), Quaternion.identity, 0); 
 	}
 
 	private void EnemySpawn(){
@@ -122,23 +109,43 @@ public class NetworkManager : MonoBehaviour {
 		else if (Network.isClient)
 			GUILayout.Label ("Running as a client.");
 
-		if (Network.isClient)
+		if (Network.isServer && player1init == false)
 		{
-			if(GUI.Button(new Rect(25,25,125,30),"Spawn")){
+			GUI.Box(new Rect(Screen.width/2-150,Screen.height/2-100,250,80),"Choose Role:");
+			if(GUI.Button(new Rect(Screen.width/2-150,Screen.height/2-10,250,80),"Warrior")){
+				SpawnPlayer();
+				player1init = true;
+			}
+			if(GUI.Button(new Rect(Screen.width/2-150,Screen.height/2+80,250,80),"Wizzard")){
+				SpawnPlayer2();
+				player1init = true;
+			}
+		}
+
+		if (Network.isClient && player2init == false)
+		{
+			GUI.Box(new Rect(Screen.width/2-150,Screen.height/2-100,250,80),"Choose Role:");
+			if(GUI.Button(new Rect(Screen.width/2-150,Screen.height/2-10,250,80),"Warrior")){
 				SpawnPlayer();
 				EnemySpawn();
-				return;
+				player2init = true;
+			}
+			if(GUI.Button(new Rect(Screen.width/2-150,Screen.height/2+80,250,80),"Wizzard")){
+				SpawnPlayer2();
+				EnemySpawn();
+				player2init = true;
 			}
 		}
 			
 		if(!Network.isServer && !Network.isClient)
 		{
-			if(GUI.Button(new Rect(25,25,250,80),"Start New Server"))
+			GUI.Box(new Rect(Screen.width/2-150,Screen.height/2-100,250,80),"Host/Refresh Servers");
+			if(GUI.Button(new Rect(Screen.width/2-150,Screen.height/2-10,250,80),"Start New Server"))
 			{
 				//Start server function here
 				StartServer();
 			}
-			if(GUI.Button(new Rect(25,115,250,80), "Refresh Server List"))
+			if(GUI.Button(new Rect(Screen.width/2-150,Screen.height/2+80,250,80), "Refresh Server List"))
 			{
 			//Refresh Server List Function Here
 			StartCoroutine("RefreshHostList");
@@ -148,7 +155,7 @@ public class NetworkManager : MonoBehaviour {
 			{
 				for(int i = 0; i<hostData.Length; i++)
 				{
-					if(GUI.Button(new Rect(Screen.width/2, 65f + (30f * i), 300f, 80f), hostData[i].gameName))
+					if(GUI.Button(new Rect(Screen.width/2-150,Screen.height/2-10,250,80), hostData[i].gameName))
 					{
 						Debug.Log ("Trying to connect");
 						Network.Connect(hostData[i]);
