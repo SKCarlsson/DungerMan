@@ -20,7 +20,7 @@ public class ProjectileWarriorNormalScript : MonoBehaviour {
 
 	void OnCollisionEnter(GameObject other)
 	{
-		if(other.gameObject.tag("Enemy"))
+		if(other.gameObject.tag =="Enemy")
 		{
 		Destroy(other);
 		Destroy(gameObject);
