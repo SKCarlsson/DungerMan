@@ -149,8 +149,7 @@ public class NetworkManager : MonoBehaviour {
 
 		if (Network.isClient && player2init == false) {
 
-						if (GUI.Button (new Rect (25, 25, 125, 30), "Spawn")) {
-								SpawnPlayer2 ();
+						
 
 								GUI.Box (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 350, 500, 160), "Choose Role:");
 								if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 100, 500, 160), "Warrior")) {
@@ -164,7 +163,7 @@ public class NetworkManager : MonoBehaviour {
 										EnemySpawn ();
 										player2init = true;
 								}
-						}
+						
 				}
 			
 		if(!Network.isServer && !Network.isClient)
