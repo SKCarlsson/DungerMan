@@ -28,6 +28,7 @@ public abstract class PlayerScript1 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		Instantiate((GameObject)Resources.Load ("Posh"), new Vector3(5, 1, 5), this.transform.rotation);
 
 	}
 	
