@@ -21,6 +21,9 @@ public class Warrior : PlayerScript1 {
 		print (aButtonAction.touch);
 
 		if((aButtonAction.touch && buttonWaitA)){
+			Debug.Log("WOOOOOOKRS");
+			Instantiate((GameObject)Resources.Load ("ProjectileWarriorNormal"), new Vector3(this.transform.position.x, 1, this.transform.position.z + 1), this.transform.rotation);
+
 			if (hitinfo.transform.gameObject!= null) 
 			{
 				cc = hitinfo.transform.gameObject.GetComponent<Enemy> ();
