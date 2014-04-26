@@ -21,8 +21,6 @@ public class Warrior : PlayerScript1 {
 		print (aButtonAction.touch);
 
 		if((aButtonAction.touch && buttonWaitA)){
-			Debug.Log("WOOOOOOKRS");
-			Instantiate((GameObject)Resources.Load ("ProjectileWarriorNormal"), new Vector3(this.transform.position.x, 1, this.transform.position.z + 1), this.transform.rotation);
 
 			if (hitinfo.transform.gameObject!= null) 
 			{
@@ -34,10 +32,7 @@ public class Warrior : PlayerScript1 {
 				{
 					Mana = 100;
 				}
-				Vector3 frontPlayer = transform.TransformPoint(Vector3.forward * 1);
-				Instantiate((GameObject)Resources.Load ("ProjectileWarriorNormal"), frontPlayer, Quaternion.identity);
-				StartCoroutine("buttonwaita");
-				Debug.Log("WOOOOOOKRS");
+
 			}
 
 		}
