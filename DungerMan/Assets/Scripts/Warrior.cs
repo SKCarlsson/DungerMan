@@ -12,6 +12,9 @@ public class Warrior : PlayerScript1 {
 
 		Damage = 50;
 		playerHealth = 200;
+
+		//Energy - Rage
+		Mana = 0;
 	}
 	
 	// Update is called once per frame
@@ -19,10 +22,21 @@ public class Warrior : PlayerScript1 {
 		print (aButtonAction.touch);
 
 		if(aButtonAction.touch && buttonWaitA){
-			StartCoroutine("buttonwaita");
-			enemyTakeDamage ();
+			if (hitinfo.transform.gameObject!= null) 
+			{
+				cc = hitinfo.transform.gameObject.GetComponent<Enemy> ();
+				StartCoroutine("buttonwaita");
+				enemyTakeDamage (0);
+				Mana += 15;
+				if (Mana > 100)
+				{
+					Mana = 100;
+				}
+			}
+
 		}
 		if(bButtonAction.touch == true && buttonWaitB){
+<<<<<<< HEAD
 			print("DONE");
 			SpecialAttackB();
 		}
@@ -31,6 +45,18 @@ public class Warrior : PlayerScript1 {
 
 		takeDamage ();
 
+=======
+			if (hitinfo.transform.gameObject!= null && Mana >= 25) 
+			{
+				cc = hitinfo.transform.gameObject.GetComponent<Enemy> ();
+				StartCoroutine("buttonwaitb");
+				enemyTakeDamage (25);
+				Mana -= 25;
+			}		}
+
+		raycast ();
+
+>>>>>>> FETCH_HEAD
 	}
 
 	public override void SpecialAttackA () 
