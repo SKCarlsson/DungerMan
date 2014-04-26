@@ -36,7 +36,7 @@ public class Warrior : PlayerScript1 {
 
 		}
 		if(bButtonAction.touch == true && buttonWaitB){
-<<<<<<< HEAD
+
 			print("DONE");
 			SpecialAttackB();
 		}
@@ -45,18 +45,17 @@ public class Warrior : PlayerScript1 {
 
 		takeDamage ();
 
-=======
+
 			if (hitinfo.transform.gameObject!= null && Mana >= 25) 
 			{
 				cc = hitinfo.transform.gameObject.GetComponent<Enemy> ();
 				StartCoroutine("buttonwaitb");
 				enemyTakeDamage (25);
 				Mana -= 25;
-			}		}
+			}		
 
 		raycast ();
-
->>>>>>> FETCH_HEAD
+	
 	}
 
 	public override void SpecialAttackA () 

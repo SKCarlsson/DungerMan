@@ -51,15 +51,12 @@ public class NetworkManager : MonoBehaviour {
 			Debug.Log ("Wooot...  a server found?");
 	}
 
-	void Update(){
-		print (player1);
-		}
+
 
 	private void SpawnPlayer()
 	{
 		Debug.Log("Spawning Player....");
 
-<<<<<<< HEAD
 						Network.Instantiate (Resources.Load ("Player 1"), new Vector3 (5f, 1f, 5f), Quaternion.identity, 0);
 
 						player1 = GameObject.Find ("Player 1(Clone)");
@@ -74,15 +71,9 @@ public class NetworkManager : MonoBehaviour {
 
 		//Assigning Player 2's transform
 	
-=======
-		Network.Instantiate (Resources.Load ("Player 1"), new Vector3(5f,1f,5f), Quaternion.identity, 0);
-	}
->>>>>>> FETCH_HEAD
 
-	private void SpawnPlayer2()
-	{
-		Network.Instantiate (Resources.Load ("Player 2"), new Vector3(6f,1f,6f), Quaternion.identity, 0); 
 	}
+	
 
 	private void SpawnPlayer2()
 	{
@@ -156,25 +147,25 @@ public class NetworkManager : MonoBehaviour {
 			}
 		}
 
-		if (Network.isClient && player2init == false)
-		{
-<<<<<<< HEAD
-			if(GUI.Button(new Rect(25,25,125,30),"Spawn")){
-				SpawnPlayer2();
-=======
-			GUI.Box(new Rect(Screen.width/2-150,Screen.height/2-100,250,80),"Choose Role:");
-			if(GUI.Button(new Rect(Screen.width/2-150,Screen.height/2-10,250,80),"Warrior")){
-				SpawnPlayer();
->>>>>>> FETCH_HEAD
-				EnemySpawn();
-				player2init = true;
-			}
-			if(GUI.Button(new Rect(Screen.width/2-150,Screen.height/2+80,250,80),"Wizzard")){
-				SpawnPlayer2();
-				EnemySpawn();
-				player2init = true;
-			}
-		}
+		if (Network.isClient && player2init == false) {
+
+						if (GUI.Button (new Rect (25, 25, 125, 30), "Spawn")) {
+								SpawnPlayer2 ();
+
+								GUI.Box (new Rect (Screen.width / 2 - 150, Screen.height / 2 - 100, 250, 80), "Choose Role:");
+								if (GUI.Button (new Rect (Screen.width / 2 - 150, Screen.height / 2 - 10, 250, 80), "Warrior")) {
+										SpawnPlayer ();
+
+										EnemySpawn ();
+										player2init = true;
+								}
+								if (GUI.Button (new Rect (Screen.width / 2 - 150, Screen.height / 2 + 80, 250, 80), "Wizzard")) {
+										SpawnPlayer2 ();
+										EnemySpawn ();
+										player2init = true;
+								}
+						}
+				}
 			
 		if(!Network.isServer && !Network.isClient)
 		{
@@ -205,3 +196,4 @@ public class NetworkManager : MonoBehaviour {
 	}
 
 }
+
