@@ -90,8 +90,9 @@ public abstract class Enemy : MonoBehaviour {
 
 	protected void die()
 	{
+		print ("diie");
+		Network.Destroy (gameObject);
 		Destroy (gameObject);
-
 		}
 
 	IEnumerator reload(){

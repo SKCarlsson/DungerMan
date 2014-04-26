@@ -13,6 +13,7 @@ GameObject:
   - 23: {fileID: 2300000}
   - 195: {fileID: 19500000}
   - 114: {fileID: 11400002}
+  - 148: {fileID: 14800000}
   m_Layer: 0
   m_Name: Posh
   m_TagString: Posh
@@ -70,6 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb92962ea107044518934224b22419dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 0
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -82,6 +84,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: .5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!148 &14800000
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 400000}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!195 &19500000
 NavMeshAgent:
   m_ObjectHideFlags: 1

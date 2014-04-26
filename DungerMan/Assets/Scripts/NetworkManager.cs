@@ -9,6 +9,8 @@ public class NetworkManager : MonoBehaviour {
 	HostData[] hostData;
 	private int enemyCount = 0;
 	private GameObject posh;
+	private GameObject player1 = null;
+	private GameObject player2 =null;
 
 	private void StartServer()
 	{
@@ -47,21 +49,28 @@ public class NetworkManager : MonoBehaviour {
 			Debug.Log ("Wooot...  a server found?");
 	}
 
+	void Update(){
+		print (player1);
+		}
+
 	private void SpawnPlayer()
 	{
 		Debug.Log("Spawning Player....");
 
-		Network.Instantiate (Resources.Load ("Player 1"), new Vector3(1f,5f,5f), Quaternion.identity, 0);
+						Network.Instantiate (Resources.Load ("Player 1"), new Vector3 (5f, 1f, 5f), Quaternion.identity, 0);
+
+						player1 = GameObject.Find ("Player 1(Clone)");
+						// adds the warrior script to the player1 gameobject
+						player1.AddComponent ("Warrior");
 		
-		// adds the warrior script to the player1 gameobject
-		/*player1.AddComponent ("Warrior");
-		
-		player1.renderer.material = Resources.Load("Warrior", typeof(Material)) as Material;
+						player1.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
+			
+
 
 		//Network.Instantiate (Resources.Load ("Player1"), new Vector3(0f,2.5f,0f), Quaternion.identity, 0);
 
 		//Assigning Player 2's transform
-	}
+	
 
 	/*private void SpawnPlayer2()
 	{
@@ -74,16 +83,27 @@ public class NetworkManager : MonoBehaviour {
 */
 	}
 
+	private void SpawnPlayer2()
+	{
+			Network.Instantiate (Resources.Load ("Player 2"), new Vector3 (7f, 1f, 5f), Quaternion.identity, 0);
+			
+			player2 = GameObject.Find ("Player 2(Clone)");
+			// adds the warrior script to the player1 gameobject
+			player2.AddComponent ("Warrior");
+			
+			player2.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
+			
+	}
+
 	private void EnemySpawn(){
 
-			
-	
 				
 			while (enemyCount < 5) {
-			enemyCount = GameObject.FindGameObjectsWithTag ("Posh").Length;
 
-			Network.Instantiate (Resources.Load ("Posh"), new Vector3 (1f, Random.Range (-10.0f, 10.0f), Random.Range (-10.0f, 10.0f)), Quaternion.identity, 0);
-						/*	Vector3 poshPos = transform.position; // copy to an auxiliary variable...
+
+			Network.Instantiate (Resources.Load ("Posh"), new Vector3 ( Random.Range (-10.0f, 10.0f),1f, Random.Range (-10.0f, 10.0f)), Quaternion.identity, 0);
+			enemyCount = GameObject.FindGameObjectsWithTag ("Posh").Length;
+			/*	Vector3 poshPos = transform.position; // copy to an auxiliary variable...
 			poshPos.y = 1.0f; // modify the component you want in the variable...
 			poshPos.x = Random.Range (-10.0f, 10.0f);
 			poshPos.z = Random.Range (-10.0f, 10.0f);
@@ -125,7 +145,7 @@ public class NetworkManager : MonoBehaviour {
 		if (Network.isClient)
 		{
 			if(GUI.Button(new Rect(25,25,125,30),"Spawn")){
-				SpawnPlayer();
+				SpawnPlayer2();
 				EnemySpawn();
 				return;
 			}

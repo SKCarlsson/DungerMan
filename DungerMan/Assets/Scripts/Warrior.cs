@@ -16,18 +16,20 @@ public class Warrior : PlayerScript1 {
 	
 	// Update is called once per frame
 	void Update () {
+		print (aButtonAction.touch);
 
 		if(aButtonAction.touch && buttonWaitA){
 			StartCoroutine("buttonwaita");
 			enemyTakeDamage ();
 		}
 		if(bButtonAction.touch == true && buttonWaitB){
+			print("DONE");
 			SpecialAttackB();
 		}
 
 		raycast ();
 
-	//	takeDamage ();
+		takeDamage ();
 
 	}
 
