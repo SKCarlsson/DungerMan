@@ -18,7 +18,7 @@ public class Warrior : PlayerScript1 {
 	
 	// Update is called once per frame
 	void Update () {
-		print (aButtonAction.touch);
+		//print (aButtonAction.touch);
 
 		if((aButtonAction.touch && buttonWaitA)){
 			Debug.Log("WOOOOOOKRS");
