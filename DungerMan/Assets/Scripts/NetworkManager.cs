@@ -164,13 +164,6 @@ public class NetworkManager : MonoBehaviour {
 			Network.Disconnect(200);
 	}
 
-	public void PointStart()
-	{
-
-		Network.Instantiate (Resources.Load ("Points"), new Vector3 (7f, 1f, 5f), Quaternion.identity, 0);
-
-	}
-
 
 	public void OnGUI()
 	{
@@ -199,13 +192,11 @@ public class NetworkManager : MonoBehaviour {
 			GUI.Box (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 350, 500, 160), "Choose Role:");
 			if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 100, 500, 160), "Warrior")) {
 				SpawnPlayer ();
-				PointStart();
 				EnemySpawn ();
 				player2init = true;
 			}
 			if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 + 80, 500, 160), "Wizzard")) {
 				SpawnPlayer2 ();
-				PointStart();
 				EnemySpawn ();
 				player2init = true;
 			}
