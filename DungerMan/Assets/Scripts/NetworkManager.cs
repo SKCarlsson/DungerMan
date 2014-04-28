@@ -22,6 +22,10 @@ public class NetworkManager : MonoBehaviour {
 	bool player2init = false;
 
 
+
+
+
+
 	void Awake(){
 		rotation = cam.transform.rotation;
 		}
@@ -92,11 +96,15 @@ public class NetworkManager : MonoBehaviour {
 			
 			player1.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
 
+<<<<<<< HEAD
 			camo = Instantiate (cam, new Vector3 (7, 21, 5), Quaternion.Euler (90, 0, 0)) as Camera;
 			
 			camo.transform.parent = player1.transform;
 		
 		}
+=======
+		Network.Instantiate (Resources.Load ("Player 1"), new Vector3 (5f, 1f, 5f), Quaternion.identity, 0);
+>>>>>>> FETCH_HEAD
 
 		else  {
 			print("player 2");
@@ -104,9 +112,30 @@ public class NetworkManager : MonoBehaviour {
 			
 						player2 = GameObject.Find ("Player 2(Clone)");
 						// adds the warrior script to the player1 gameobject
+<<<<<<< HEAD
 						player2.AddComponent ("Warrior");
 			
 						player2.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
+=======
+						player1.AddComponent ("Warrior");
+
+		player1.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
+			
+					
+	/* Code for instantiating sprites as GameObjects
+		//How to instantiate a sprite in the form of a gameobject
+		public Sprite sprite;
+		
+		void Start()
+		{
+			GameObject go = new GameObject("Test");
+			SpriteRenderer renderer = go.AddComponent<SpriteRenderer>();
+			renderer.sprite = sprite;
+		}*/
+
+					
+		camo = Instantiate(cam, new Vector3(5, 21, 5), Quaternion.Euler(180, 0, 0)) as Camera;
+>>>>>>> FETCH_HEAD
 						
 						
 						camo2 = Instantiate (cam, new Vector3 (5, 21, 5), Quaternion.Euler (90, 0, 0)) as Camera;
@@ -155,7 +184,7 @@ public class NetworkManager : MonoBehaviour {
 
 	private void EnemySpawn(){
 
-				
+
 			while (enemyCount < 5) {
 
 
@@ -192,13 +221,6 @@ public class NetworkManager : MonoBehaviour {
 			Network.Disconnect(200);
 	}
 
-	public void PointStart()
-	{
-
-		Network.Instantiate (Resources.Load ("Points"), new Vector3 (7f, 1f, 5f), Quaternion.identity, 0);
-
-	}
-
 
 	public void OnGUI()
 	{
@@ -227,13 +249,11 @@ public class NetworkManager : MonoBehaviour {
 			GUI.Box (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 350, 500, 160), "Choose Role:");
 			if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 100, 500, 160), "Warrior")) {
 				SpawnPlayer ();
-				PointStart();
 				EnemySpawn ();
 				player2init = true;
 			}
 			if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 + 80, 500, 160), "Wizzard")) {
 				SpawnPlayer2 ();
-				PointStart();
 				EnemySpawn ();
 				player2init = true;
 			}

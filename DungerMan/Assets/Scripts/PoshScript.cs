@@ -39,6 +39,7 @@ public class PoshScript : Enemy {
 	{
 
 		takeDamage();
+		OnGUI ();
 
 
 		if (players [0] != null) {
@@ -79,6 +80,11 @@ public class PoshScript : Enemy {
 						cc = GameObject.Find ("Player 2(Clone)").GetComponent<PlayerScript1> ();
 						}
 				}*/
+
+		if(Health <= 0){
+			Points += 10;
+			Debug.Log("Points Updated: " + Points);
+		}
 
 
 		// runs the autoattack function from the enemy class

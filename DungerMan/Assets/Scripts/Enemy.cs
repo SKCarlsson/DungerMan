@@ -9,7 +9,9 @@ public abstract class Enemy : MonoBehaviour {
 	protected GameObject[] players;
 	protected GameObject player;
 	protected GameObject player2;
-	public PointScript pointScript;
+
+	public float Points = 0;
+
 
 	protected GameObject playerNum;// variable used to switch between the two player gameobjects
 
@@ -29,19 +31,11 @@ public abstract class Enemy : MonoBehaviour {
 	protected float dist2;// distance between player 2 and the enemy
 	protected bool canAttack = false;
 	protected bool haveWaited = true;
-
+	public void update(){
+		Debug.Log("Points: " + Points);
+	}
 	public abstract void ability ();
 	//protected PlayerScript cc = GameObject.Find ("Player(Clone)").GetComponent<PlayerScript>();
-	
-	// Use this for initialization
-	private void Awake () {
-		pointScript = GetComponent<PointScript>();
-	}
-
-	// Update is called once per frame
-	void Update (){
-
-	}
 
 	protected void autoAttack()
 		// maybe an array of players can be made so that we only need one player prefab
@@ -117,12 +111,15 @@ public abstract class Enemy : MonoBehaviour {
 
 	}
 
+
+
 	public void die()
 	{
 		print ("diie");
 		Network.Destroy (gameObject);
 		Destroy (gameObject);
-		pointScript.points += 10;
+
+
 		}
 
 	IEnumerator reload(){
@@ -130,6 +127,12 @@ public abstract class Enemy : MonoBehaviour {
 		yield return new WaitForSeconds(AttackSpeed);
 		haveWaited = true;
 		
+	}
+
+	public void OnGUI(){
+		if(GameObject.FindGameObjectsWithTag ("Player").Length >= 1)
+		GUI.Box(new Rect(Screen.width/2,Screen.height/8,250,80),"Points: " + Points);
+		Debug.Log("Points Updated");
 	}
 
 
