@@ -12,7 +12,10 @@ GameObject:
   - 65: {fileID: 6500000}
   - 23: {fileID: 2300000}
   - 114: {fileID: 11400000}
+<<<<<<< HEAD
   - 54: {fileID: 5400000}
+=======
+>>>>>>> FETCH_HEAD
   m_Layer: 9
   m_Name: ProjectileWarriorNormal
   m_TagString: Projectile
