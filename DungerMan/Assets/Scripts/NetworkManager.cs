@@ -19,6 +19,7 @@ public class NetworkManager : MonoBehaviour {
 
 	bool player1init = false;
 	bool player2init = false;
+	bool pointStart = false;
 
 	void Awake(){
 		rotation = cam.transform.rotation;
@@ -66,13 +67,6 @@ public class NetworkManager : MonoBehaviour {
 			Debug.Log ("No active servers have been found.");
 		else
 			Debug.Log ("Wooot...  a server found?");
-	}
-
-	private void SpawnPoints(){
-
-		points = GameObject.Find ("Miscellanous");
-		// adds the warrior script to the player1 gameobject
-		points.AddComponent ("Miscellanous");
 	}
 
 
@@ -161,6 +155,8 @@ public class NetworkManager : MonoBehaviour {
 
 	public void OnGUI()
 	{
+		if (pointStart == true)
+			GUI.Box(new Rect(Screen.width/2-125,Screen.height/8,250,80),"Points: " + points);
 		if (Network.isServer)
 			GUILayout.Label ("Running as a server.");
 		else if (Network.isClient)
