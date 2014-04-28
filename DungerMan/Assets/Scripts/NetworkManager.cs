@@ -103,7 +103,7 @@ public class NetworkManager : MonoBehaviour {
 			
 			player2.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
 			
-			camo = Instantiate(cam, new Vector3(5, 21, 5), Quaternion.Euler(90, 0, 0)) as Camera;
+			camo = Instantiate(cam, new Vector3(7, 21, 5), Quaternion.Euler(90, 0, 0)) as Camera;
 		
 			camo.transform.parent = player2.transform;
 

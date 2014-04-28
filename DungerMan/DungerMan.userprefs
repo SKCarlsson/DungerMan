@@ -1,22 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/NetworkManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/NetworkManager.cs" Line="30" Column="38" />
-      <File FileName="Assets/Scripts/NetworkManager.cs" Line="223" Column="1" />
-      <File FileName="Assets/Scripts/Warrior.cs" Line="21" Column="5" />
-      <File FileName="Assets/Scripts/PlayerScript1.cs" Line="1" Column="1" />
-      <File FileName="Assets/ProjectileWarriorNormalScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/test.cs" Line="1" Column="1" />
-      <File FileName="Assets/JoyMove.cs" Line="1" Column="1" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Warrior.cs">
-    <Files>
-      <File FileName="Assets/Scripts/ProjectileWarriorNormalScript.cs" Line="8" Column="28" />
-      <File FileName="Assets/Scripts/Warrior.cs" Line="37" Column="51" />
-      <File FileName="Assets/Scripts/PlayerScript1.cs" Line="1" Column="1" />
->>>>>>> FETCH_HEAD
+      <File FileName="Assets/Scripts/NetworkManager.cs" Line="96" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
