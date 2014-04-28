@@ -5,6 +5,8 @@ public abstract class Enemy : MonoBehaviour {
 
 	protected PlayerScript1 cc;
 
+
+	protected GameObject[] players;
 	protected GameObject player;
 	protected GameObject player2;
 	public PointScript pointScript;
@@ -44,6 +46,36 @@ public abstract class Enemy : MonoBehaviour {
 	protected void autoAttack()
 		// maybe an array of players can be made so that we only need one player prefab
 		{
+
+		// checks if distance between player 1 and the enemy is bigger than the distance between player2 and the enemy:
+		if(dist>dist2){
+			// if this is true, the distance variable gets assigned the distance between player2 and the enemy
+			distance = dist2;
+			// and the playerNum variable gets the gameobject of player2
+			playerNum = players[1];
+		}
+		else {
+			// else it must be player 1, which is closest:
+			distance = dist;
+			playerNum = players[0];
+		}
+		// makes the enemy go to the player which is closest:
+		if (distance < SeeRange && distance > AttackRange) {
+						agent.SetDestination (playerNum.transform.position);
+						canAttack = false;
+				} else if (distance <= AttackRange) {
+						agent.SetDestination (this.transform.position);	
+						canAttack = true;
+				} else
+						canAttack = false;
+
+
+
+
+
+
+		// old shit
+		/*
 		// checks if distance between player 1 and the enemy is bigger than the distance between player2 and the enemy:
 		if(dist>dist2){
 			// if this is true, the distance variable gets assigned the distance between player2 and the enemy
@@ -65,6 +97,7 @@ public abstract class Enemy : MonoBehaviour {
 						canAttack = true;
 				} else
 						canAttack = false;
+						*/
 		}
 
 	protected void Attack()

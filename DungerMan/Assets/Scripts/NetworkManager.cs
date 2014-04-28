@@ -10,11 +10,13 @@ public class NetworkManager : MonoBehaviour {
 	private int enemyCount = 0;
 	public Camera cam;
 	private Camera camo;
+	private Camera camo2;
 
 	private GameObject posh;
 	private GameObject player1 = null;
 	private GameObject player2 = null;
 	private Quaternion rotation;
+	private Quaternion rotation2;
 
 	bool player1init = false;
 	bool player2init = false;
@@ -22,12 +24,18 @@ public class NetworkManager : MonoBehaviour {
 
 	void Awake(){
 		rotation = cam.transform.rotation;
+		}
 
+	void Update(){
+		print (player1);
+		print (player2);
 
 		}
 
 	void LateUpdate(){
-
+	
+			
+		camo2.transform.rotation = rotation;
 		camo.transform.rotation = rotation;
 
 		}
@@ -72,43 +80,76 @@ public class NetworkManager : MonoBehaviour {
 
 	private void SpawnPlayer()
 	{
-		Debug.Log("Spawning Player....");
+		if(GameObject.FindGameObjectsWithTag("Player").Length ==0) {
+			print("player 1");
+			Debug.Log ("Spawning Player....");
+			
+			Network.Instantiate (Resources.Load ("Player 1"), new Vector3 (7f, 1f, 5f), Quaternion.identity, 0);
+			
+			player1 = GameObject.Find ("Player 1(Clone)");
+			// adds the warrior script to the player1 gameobject
+			player1.AddComponent ("Warrior");
+			
+			player1.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
 
-						Network.Instantiate (Resources.Load ("Player 1"), new Vector3 (5f, 1f, 5f), Quaternion.identity, 0);
-
-						player1 = GameObject.Find ("Player 1(Clone)");
-						// adds the warrior script to the player1 gameobject
-						player1.AddComponent ("Warrior");
+			camo = Instantiate (cam, new Vector3 (7, 21, 5), Quaternion.Euler (90, 0, 0)) as Camera;
+			
+			camo.transform.parent = player1.transform;
 		
-						player1.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
-			
-					
-		//if (!networkView.isMine) {
+		}
 
-					
-		camo = Instantiate(cam, new Vector3(5, 21, 5), Quaternion.Euler(180, 0, 0)) as Camera;
-						
-						camo.transform.parent = player1.transform;
+		else  {
+			print("player 2");
+						Network.Instantiate (Resources.Load ("Player 2"), new Vector3 (5f, 1f, 5f), Quaternion.identity, 0);
 			
+						player2 = GameObject.Find ("Player 2(Clone)");
+						// adds the warrior script to the player1 gameobject
+						player2.AddComponent ("Warrior");
+			
+						player2.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
+						
+						
+						camo2 = Instantiate (cam, new Vector3 (5, 21, 5), Quaternion.Euler (90, 0, 0)) as Camera;
+			
+						camo2.transform.parent = player2.transform;
+			
+				}
+
 
 	}
-	
 
 	private void SpawnPlayer2()
 	{
-			Network.Instantiate (Resources.Load ("Player 2"), new Vector3 (7f, 1f, 5f), Quaternion.identity, 0);
+		if(GameObject.FindGameObjectsWithTag("Player").Length ==0) {
 			
-			player2 = GameObject.Find ("Player 2(Clone)");
-			// adds the warrior script to the player1 gameobject
-			player2.AddComponent ("Wizard");
+						Network.Instantiate (Resources.Load ("Player 2"), new Vector3 (7f, 1f, 5f), Quaternion.identity, 0);
 			
-			player2.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
+						player2 = GameObject.Find ("Player 2(Clone)");
+						// adds the warrior script to the player1 gameobject
+						player2.AddComponent ("Wizard");
 			
-			camo = Instantiate(cam, new Vector3(7, 21, 5), Quaternion.Euler(90, 0, 0)) as Camera;
+						player2.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
+			
+			
+						camo2 = Instantiate (cam, new Vector3 (7, 21, 5), Quaternion.Euler (90, 0, 0)) as Camera;
+			
+						camo2.transform.parent = player2.transform;
+			
+				} else {
+						Network.Instantiate (Resources.Load ("Player 1"), new Vector3 (5f, 1f, 5f), Quaternion.identity, 0);
+			
+						player1 = GameObject.Find ("Player 1(Clone)");
+						// adds the warrior script to the player1 gameobject
+						player1.AddComponent ("Wizard");
+			
+						player1.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
+
+
+						camo = Instantiate (cam, new Vector3 (5, 21, 5), Quaternion.Euler (90, 0, 0)) as Camera;
 		
-			camo.transform.parent = player2.transform;
-
-
+						camo.transform.parent = player1.transform;
+	
+				}
 			
 	}
 

@@ -12,6 +12,8 @@ public class PoshScript : Enemy {
 	// Use this for initialization
 	void Start () {
 
+		players = GameObject.FindGameObjectsWithTag("Player");
+
 		// gives all the variables from the enemy class some values:
 		player = GameObject.Find ("Player 1(Clone)");
 		player2 = GameObject.Find ("Player 2(Clone)");
@@ -39,7 +41,29 @@ public class PoshScript : Enemy {
 		takeDamage();
 
 
-		if (player != null) {
+		if (players [0] != null) {
+			dist = Vector3.Distance (this.transform.position, players[0].transform.position);
+			if (playerNum == players[0]) {
+				// sets the cc to be the Playerscript of player 2
+				cc = players[0].GetComponent<PlayerScript1> ();
+			}		
+		}
+		if (players[1] != null) {
+			// updates the dist2(distance between player2 and enemy) variable for use in the enemy class.
+			dist2 = Vector3.Distance (this.transform.position, players[1].transform.position);
+			if (playerNum == players[1]) {
+				// sets the cc to be the Playerscript of player 2
+				cc = players[1].GetComponent<PlayerScript1> ();
+			}
+		}
+
+
+
+
+
+
+
+		/*if (player != null) {
 			// updates the dist(distance between player1 and enemy) variable for use in the enemy class.
 						dist = Vector3.Distance (this.transform.position, player.transform.position);
 		if (playerNum == player) {
@@ -54,7 +78,7 @@ public class PoshScript : Enemy {
 				// sets the cc to be the Playerscript of player 2
 						cc = GameObject.Find ("Player 2(Clone)").GetComponent<PlayerScript1> ();
 						}
-				}
+				}*/
 
 
 		// runs the autoattack function from the enemy class
