@@ -19,7 +19,9 @@ public class NetworkManager : MonoBehaviour {
 	bool player1init = false;
 	bool player2init = false;
 
-
+	//Wall around arena
+	public float zCor = 48f;
+	public float xCor = 48f;
 
 
 
@@ -27,6 +29,7 @@ public class NetworkManager : MonoBehaviour {
 	void Awake(){
 		rotation = cam.transform.rotation;
 
+	
 
 		}
 
@@ -73,6 +76,17 @@ public class NetworkManager : MonoBehaviour {
 	}
 
 
+	private void Walls () 
+	{
+				//Instantiating Right wall of arena
+
+		float zCor = 48f;
+		for (int i = 0; i < 13; i ++) {
+		Network.Instantiate (Resources.Load ("Cube"), new Vector3 (48f, 0f, zCor), Quaternion.identity, 0);
+		zCor -= 8;
+		}
+
+	}
 
 	private void SpawnPlayer()
 	{
@@ -87,22 +101,11 @@ public class NetworkManager : MonoBehaviour {
 		player1.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
 			
 					
-	/* Code for instantiating sprites as GameObjects
-		//How to instantiate a sprite in the form of a gameobject
-		public Sprite sprite;
-		
-		void Start()
-		{
-			GameObject go = new GameObject("Test");
-			SpriteRenderer renderer = go.AddComponent<SpriteRenderer>();
-			renderer.sprite = sprite;
-		}*/
-
-					
 		camo = Instantiate(cam, new Vector3(5, 21, 5), Quaternion.Euler(180, 0, 0)) as Camera;
 						
 						camo.transform.parent = player1.transform;
-			
+
+		
 
 	}
 	
