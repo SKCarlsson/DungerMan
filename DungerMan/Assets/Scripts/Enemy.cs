@@ -4,6 +4,7 @@ using System.Collections;
 public abstract class Enemy : MonoBehaviour {
 
 		protected PlayerScript1 cc;
+		protected Miscellanous ms;
 
 		protected GameObject player;
 		protected GameObject player2;
@@ -92,6 +93,7 @@ public abstract class Enemy : MonoBehaviour {
 	{
 		print ("diie");
 		Network.Destroy (gameObject);
+		ms.points += 10;
 		Destroy (gameObject);
 		}
 
