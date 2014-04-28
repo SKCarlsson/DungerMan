@@ -18,6 +18,10 @@ public class Warrior : PlayerScript1 {
 	
 	// Update is called once per frame
 	void Update () {
+
+		Instantiate((GameObject)Resources.Load("ProjectileWarriorNormal"), transform.position + transform.forward*1.5f, transform.rotation);
+
+
 		print (aButtonAction.touch);
 
 		if((aButtonAction.touch && buttonWaitA)){
@@ -34,6 +38,9 @@ public class Warrior : PlayerScript1 {
 				}
 
 			}
+			Instantiate((GameObject)Resources.Load("ProjectileWarriorNormal"), transform.position + transform.forward*1.5f, transform.rotation);
+
+
 
 		}
 		if(bButtonAction.touch == true && buttonWaitB){

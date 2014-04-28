@@ -48,7 +48,6 @@
   <ItemGroup>
      <Compile Include="Assets\GUIScript.cs" />
      <Compile Include="Assets\JoyMove.cs" />
-     <Compile Include="Assets\ProjectileWarriorNormalScript.cs" />
      <Compile Include="Assets\RockGate.cs" />
      <Compile Include="Assets\Scripts\AButton.cs" />
      <Compile Include="Assets\Scripts\BButton.cs" />
@@ -60,6 +59,7 @@
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Scripts\PlayerScript1.cs" />
      <Compile Include="Assets\Scripts\PoshScript.cs" />
+     <Compile Include="Assets\Scripts\ProjectileWarriorNormalScript.cs" />
      <Compile Include="Assets\Scripts\TouchLogic.cs" />
      <Compile Include="Assets\Scripts\Warrior.cs" />
      <Compile Include="Assets\Scripts\Wizard.cs" />

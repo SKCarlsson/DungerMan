@@ -24,6 +24,8 @@ public abstract class PlayerScript1 : MonoBehaviour {
 	//Energy
 	protected int Mana;
 
+	//
+
 
 	// Use this for initialization
 	void Start () {
