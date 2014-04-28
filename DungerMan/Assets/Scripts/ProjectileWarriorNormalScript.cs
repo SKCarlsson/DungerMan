@@ -5,7 +5,7 @@ public class ProjectileWarriorNormalScript : Warrior {
 
 	// Use this for initialization
 	void Start () {
-		Invoke("SelfDestruct", 2f);
+		Invoke("SelfDestruct", 0.3f);
 	}
 	
 	// Update is called once per frame
