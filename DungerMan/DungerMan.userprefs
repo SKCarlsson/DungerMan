@@ -1,9 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Bars.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="Assets\Scripts\Enemy.cs" Line="34" Column="3" />
       <File FileName="Assets\Scripts\PoshScript.cs" Line="63" Column="4" />
+=======
+      <File FileName="Assets/HealthBar.cs" Line="19" Column="15" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PoshScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Bars.cs" Line="31" Column="43" />
+>>>>>>> af2b61168ac5079906ded2d8446cc07a4cdbb88e
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
