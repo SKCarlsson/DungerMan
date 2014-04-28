@@ -19,6 +19,9 @@ public class NetworkManager : MonoBehaviour {
 	bool player1init = false;
 	bool player2init = false;
 
+	public Sprite sprite;
+
+
 	void Awake(){
 		rotation = cam.transform.rotation;
 
@@ -73,17 +76,26 @@ public class NetworkManager : MonoBehaviour {
 	{
 		Debug.Log("Spawning Player....");
 
-						Network.Instantiate (Resources.Load ("Player 1"), new Vector3 (5f, 1f, 5f), Quaternion.identity, 0);
+		Network.Instantiate (Resources.Load ("Player 1"), new Vector3 (5f, 1f, 5f), Quaternion.identity, 0);
 
 						player1 = GameObject.Find ("Player 1(Clone)");
 						// adds the warrior script to the player1 gameobject
 						player1.AddComponent ("Warrior");
-		
-						player1.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
+
+		player1.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
 			
 					
-		//if (!networkView.isMine) {
-
+	/* Code for instantiating sprites as GameObjects
+		//How to instantiate a sprite in the form of a gameobject
+		public Sprite sprite;
+		
+		void Start()
+		{
+			GameObject go = new GameObject("Test");
+			SpriteRenderer renderer = go.AddComponent<SpriteRenderer>();
+			renderer.sprite = sprite;
+		}
+	}*/
 					
 		camo = Instantiate(cam, new Vector3(5, 21, 5), Quaternion.Euler(180, 0, 0)) as Camera;
 						
@@ -99,7 +111,7 @@ public class NetworkManager : MonoBehaviour {
 			
 			player2 = GameObject.Find ("Player 2(Clone)");
 			// adds the warrior script to the player1 gameobject
-			player2.AddComponent ("Warrior");
+			player2.AddComponent ("Wizard");
 			
 			player2.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
 			
@@ -113,12 +125,12 @@ public class NetworkManager : MonoBehaviour {
 
 	private void EnemySpawn(){
 
-				
+
 			while (enemyCount < 5) {
 
 
-			Network.Instantiate (Resources.Load ("Posh"), new Vector3 ( Random.Range (-10.0f, 10.0f),1f, Random.Range (-10.0f, 10.0f)), Quaternion.identity, 0);
-			enemyCount = GameObject.FindGameObjectsWithTag ("Posh").Length;
+			Network.Instantiate (Resources.Load ("ZombieEnemy"), new Vector3 ( Random.Range (-10.0f, 10.0f),1f, Random.Range (-10.0f, 10.0f)), Quaternion.identity, 0);
+			enemyCount = GameObject.FindGameObjectsWithTag ("ZombieEnemy").Length;
 			/*	Vector3 poshPos = transform.position; // copy to an auxiliary variable...
 			poshPos.y = 1.0f; // modify the component you want in the variable...
 			poshPos.x = Random.Range (-10.0f, 10.0f);
