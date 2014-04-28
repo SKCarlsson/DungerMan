@@ -13,13 +13,12 @@ public class NetworkManager : MonoBehaviour {
 
 	private GameObject posh;
 	private GameObject player1 = null;
-	private GameObject player2 =null;
+	private GameObject player2 = null;
 	private Quaternion rotation;
-	public float points = 0;
 
 	bool player1init = false;
 	bool player2init = false;
-	bool pointStart = false;
+
 
 	void Awake(){
 		rotation = cam.transform.rotation;
@@ -152,11 +151,16 @@ public class NetworkManager : MonoBehaviour {
 			Network.Disconnect(200);
 	}
 
+	public void PointStart()
+	{
+
+		Network.Instantiate (Resources.Load ("Points"), new Vector3 (7f, 1f, 5f), Quaternion.identity, 0);
+
+	}
+
 
 	public void OnGUI()
 	{
-		if (pointStart == true)
-			GUI.Box(new Rect(Screen.width/2-125,Screen.height/8,250,80),"Points: " + points);
 		if (Network.isServer)
 			GUILayout.Label ("Running as a server.");
 		else if (Network.isClient)
@@ -167,14 +171,10 @@ public class NetworkManager : MonoBehaviour {
 			GUI.Box(new Rect(Screen.width/2-250,Screen.height/2-350,500,160),"Choose Role:");
 			if(GUI.Button(new Rect(Screen.width/2-250,Screen.height/2-100,500,160),"Warrior")){
 				SpawnPlayer();
-//				SpawnPoints();
-				pointStart = true;
 				player1init = true;
 			}
 			if(GUI.Button(new Rect(Screen.width/2-250,Screen.height/2+80,500,160),"Wizzard")){
 				SpawnPlayer2();
-				//SpawnPoints();
-				pointStart = true;
 				player1init = true;
 			}
 		}
@@ -183,19 +183,21 @@ public class NetworkManager : MonoBehaviour {
 
 						
 
-								GUI.Box (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 350, 500, 160), "Choose Role:");
-								if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 100, 500, 160), "Warrior")) {
-										SpawnPlayer ();
-										EnemySpawn ();
-										player2init = true;
-								}
-								if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 + 80, 500, 160), "Wizzard")) {
-										SpawnPlayer2 ();
-										EnemySpawn ();
-										player2init = true;
-								}
+			GUI.Box (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 350, 500, 160), "Choose Role:");
+			if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 100, 500, 160), "Warrior")) {
+				SpawnPlayer ();
+				PointStart();
+				EnemySpawn ();
+				player2init = true;
+			}
+			if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 + 80, 500, 160), "Wizzard")) {
+				SpawnPlayer2 ();
+				PointStart();
+				EnemySpawn ();
+				player2init = true;
+			}
 						
-				}
+		}
 			
 		if(!Network.isServer && !Network.isClient)
 		{

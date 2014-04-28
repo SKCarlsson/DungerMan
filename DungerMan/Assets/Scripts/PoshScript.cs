@@ -3,8 +3,6 @@ using System.Collections;
 
 public class PoshScript : Enemy {
 
-	public NetworkManager nm;
-
 	public override void ability ()
 	{
 		Debug.Log ("hello");
@@ -37,9 +35,8 @@ public class PoshScript : Enemy {
 	// Update is called once per frame
 	void Update () 
 	{
+
 		takeDamage();
-
-
 
 
 		if (player != null) {
