@@ -19,51 +19,37 @@ public class Warrior : PlayerScript1 {
 	// Update is called once per frame
 	void Update () {
 
-		Instantiate((GameObject)Resources.Load("ProjectileWarriorNormal"), transform.position + transform.forward*1.5f, transform.rotation);
+		//Instantiate((GameObject)Resources.Load("ProjectileWarriorNormal"), transform.position + transform.forward*1.5f, transform.rotation);
 
 
-		print (aButtonAction.touch);
+		//print (aButtonAction.touch);
 		//print (aButtonAction.touch);
 
 		if((aButtonAction.touch && buttonWaitA)){
 
-			if (hitinfo.transform.gameObject!= null) 
-			{
-				cc = hitinfo.transform.gameObject.GetComponent<Enemy> ();
-				StartCoroutine("buttonwaita");
-				enemyTakeDamage (0);
-				Mana += 15;
-				if (Mana > 100)
-				{
-					Mana = 100;
-				}
-
-			}
+			StartCoroutine("buttonwaita");
 			Instantiate((GameObject)Resources.Load("ProjectileWarriorNormal"), transform.position + transform.forward*1.5f, transform.rotation);
-
+			if (Mana >= 75){
+				Mana = 100;
+			} else {
+				Mana += 25;
+			}
 
 
 		}
 		if(bButtonAction.touch == true && buttonWaitB){
-
-			print("DONE");
-			SpecialAttackB();
+			if (Mana >= 75){
+				StartCoroutine("buttonwaitb");
+				Instantiate((GameObject)Resources.Load("ProjectileWarriorSpecial"), transform.position + transform.forward*3f, transform.rotation);
+				Mana -= 75;
+			} else {
+				Debug.Log ("Not enough rage!");
+			}
 		}
 
-		raycast ();
-
-		//takeDamage ();
 
 
-			if (hitinfo.transform.gameObject!= null && Mana >= 25) 
-			{
-				cc = hitinfo.transform.gameObject.GetComponent<Enemy> ();
-				StartCoroutine("buttonwaitb");
-				enemyTakeDamage (25);
-				Mana -= 25;
-			}		
-
-		raycast ();
+			
 
 
 	}

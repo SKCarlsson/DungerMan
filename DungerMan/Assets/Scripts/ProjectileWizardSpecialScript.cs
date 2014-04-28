@@ -1,29 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ProjectileWarriorNormalScript : Warrior {
-
+public class ProjectileWizardSpecialScript : Wizard {
+	
 	// Use this for initialization
 	void Start () {
-		Invoke("SelfDestruct", 0.3f);
+		Invoke("SelfDestruct", 1.5f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
-
+	
 	void SelfDestruct()
 	{
 		Destroy(gameObject);
 	}
-
+	
 	void OnCollisionEnter(Collision other)
 	{
 		if(other.collider.tag =="Posh")
 		{
-			other.collider.GetComponent<Enemy>().Health -= 50;
-			Destroy(gameObject);
+			other.collider.GetComponent<Enemy>().Health -= 100;
 		}
 		Debug.Log(other.collider.GetComponent<Enemy>().Health);
 	}

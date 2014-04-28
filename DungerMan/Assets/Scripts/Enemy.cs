@@ -3,41 +3,37 @@ using System.Collections;
 
 public abstract class Enemy : MonoBehaviour {
 
-		protected PlayerScript1 cc;
+	protected PlayerScript1 cc;
 
-		protected GameObject player;
-		protected GameObject player2;
+	protected GameObject player;
+	protected GameObject player2;
+	public PointScript pointScript;
 
-		protected GameObject playerNum;// variable used to switch between the two player gameobjects
+	protected GameObject playerNum;// variable used to switch between the two player gameobjects
 
-		protected NavMeshAgent agent;
+	protected NavMeshAgent agent;
 
-		public int Health;
-		protected int Damage;
-		protected float Speed;
-		protected int AttackRange;
-		protected int SeeRange;
-		protected int AttackSpeed;
-		
-		private float distance; // variable used to switch between the two dist variables
-		
-		protected float dist;// distance between player 1 and the enemy
+	public int Health;
+	protected int Damage;
+	protected float Speed;
+	protected int AttackRange;
+	protected int SeeRange;
+	protected int AttackSpeed;
+	
+	private float distance; // variable used to switch between the two dist variables
+	
+	protected float dist;// distance between player 1 and the enemy
 
-		protected float dist2;// distance between player 2 and the enemy
-		protected bool canAttack = false;
-		protected bool haveWaited = true;
+	protected float dist2;// distance between player 2 and the enemy
+	protected bool canAttack = false;
+	protected bool haveWaited = true;
 
-		public abstract void ability ();
-		//protected PlayerScript cc = GameObject.Find ("Player(Clone)").GetComponent<PlayerScript>();
+	public abstract void ability ();
+	//protected PlayerScript cc = GameObject.Find ("Player(Clone)").GetComponent<PlayerScript>();
 	
 	// Use this for initialization
-	void Start () {
-
-		//cc = GameObject.Find ("Player 1(Clone)").GetComponent<PlayerScript1>();
-
-		//player = GameObject.Find ("Cube");
-
-
+	private void Awake () {
+		pointScript = GetComponent<PointScript>();
 	}
 
 	// Update is called once per frame
@@ -88,11 +84,12 @@ public abstract class Enemy : MonoBehaviour {
 
 	}
 
-	protected void die()
+	public void die()
 	{
 		print ("diie");
 		Network.Destroy (gameObject);
 		Destroy (gameObject);
+		pointScript.points += 10;
 		}
 
 	IEnumerator reload(){

@@ -54,12 +54,17 @@
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn.cs" />
+     <Compile Include="Assets\Scripts\Miscellanous.cs" />
      <Compile Include="Assets\Scripts\NetworkManager.cs" />
      <Compile Include="Assets\Scripts\NetworkMenu.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Scripts\PlayerScript1.cs" />
+     <Compile Include="Assets\Scripts\PointScript.cs" />
      <Compile Include="Assets\Scripts\PoshScript.cs" />
      <Compile Include="Assets\Scripts\ProjectileWarriorNormalScript.cs" />
+     <Compile Include="Assets\Scripts\ProjectileWarriorSpecialScript.cs" />
+     <Compile Include="Assets\Scripts\ProjectileWizardNormalScript.cs" />
+     <Compile Include="Assets\Scripts\ProjectileWizardSpecialScript.cs" />
      <Compile Include="Assets\Scripts\TouchLogic.cs" />
      <Compile Include="Assets\Scripts\Warrior.cs" />
      <Compile Include="Assets\Scripts\Wizard.cs" />

@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class PoshScript : Enemy {
-	
 
 	public override void ability ()
 	{
@@ -36,6 +35,7 @@ public class PoshScript : Enemy {
 	// Update is called once per frame
 	void Update () 
 	{
+
 		takeDamage();
 
 
