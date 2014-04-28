@@ -341,6 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2000000, guid: 11ef62110e95349778c5036d9f6f0634, type: 2}
+  sprite: {fileID: 0}
 --- !u!4 &1349811524
 Transform:
   m_ObjectHideFlags: 0

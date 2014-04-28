@@ -11,13 +11,12 @@ GameObject:
   - 33: {fileID: 3300000}
   - 135: {fileID: 13500000}
   - 23: {fileID: 2300000}
-  - 195: {fileID: 19500000}
-  - 114: {fileID: 11400002}
-  - 148: {fileID: 14800000}
   - 114: {fileID: 11400000}
-  m_Layer: 0
-  m_Name: Posh
-  m_TagString: Posh
+  - 54: {fileID: 5400000}
+  - 114: {fileID: 11400002}
+  m_Layer: 9
+  m_Name: ProjectileWizardSpecial
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +28,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.53143215, y: .602472186, z: 1.28732586}
+  m_LocalScale: {x: 12.0827198, y: .781917512, z: 12.0827198}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!23 &2300000
@@ -45,7 +44,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 74bd539efbad348fd8e6fb3006140d8f, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -61,6 +60,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &5400000
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,12 +83,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fef2ea23c393d4738b431497c63be024, type: 3}
+  m_Script: {fileID: 11500000, guid: 48fe195b54baa4dd7b9d419c9e2782ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
-  adjustment: 2.29999995
+  playerHealth: 0
+  Damage: 0
+  AButtonScript: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,11 +97,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb92962ea107044518934224b22419dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c03ce05d47a7404899d2f9006e87417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 0
-  nm: {fileID: 0}
+  playerHealth: 0
+  Damage: 0
+  AButtonScript: {fileID: 0}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -100,38 +115,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: .5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!148 &14800000
-NetworkView:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_StateSynchronization: 1
-  m_Observed: {fileID: 400000}
-  m_ViewID:
-    m_ID: 0
-    m_Type: 0
---- !u!195 &19500000
-NavMeshAgent:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_Radius: .500000119
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: .5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
