@@ -61,7 +61,7 @@
      <Compile Include="Assets\Scripts\NetworkMenu.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Scripts\PlayerScript1.cs" />
-     <Compile Include="Assets\Scripts\Points.cs" />
+     <Compile Include="Assets\Scripts\PointScript.cs" />
      <Compile Include="Assets\Scripts\PoshScript.cs" />
      <Compile Include="Assets\Scripts\ProjectileWarriorNormalScript.cs" />
      <Compile Include="Assets\Scripts\TouchLogic.cs" />

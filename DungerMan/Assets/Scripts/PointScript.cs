@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Points : MonoBehaviour {
+public class PointScript : MonoBehaviour {
 
 	public float points = 0;
 
