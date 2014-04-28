@@ -1,17 +1,11 @@
 ﻿<Properties>
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy.cs">
     <Files>
-      <File FileName="Assets\Scripts\Enemy.cs" Line="81" Column="28" />
-      <File FileName="Assets\Scripts\NetworkManager.cs" Line="223" Column="1" />
-      <File FileName="Assets\Scripts\PoshScript.cs" Line="70" Column="2" />
+      <File FileName="Assets\Scripts\Enemy.cs" Line="34" Column="3" />
+      <File FileName="Assets\Scripts\PoshScript.cs" Line="63" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
->>>>>>> 0b43e9c07b67e180d8cb583c6b6258deba24ba2e
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

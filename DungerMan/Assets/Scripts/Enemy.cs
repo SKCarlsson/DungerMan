@@ -29,7 +29,9 @@ public abstract class Enemy : MonoBehaviour {
 	protected float dist2;// distance between player 2 and the enemy
 	protected bool canAttack = false;
 	protected bool haveWaited = true;
-
+	public void update(){
+		Debug.Log("Points: " + Points);
+	}
 	public abstract void ability ();
 	//protected PlayerScript cc = GameObject.Find ("Player(Clone)").GetComponent<PlayerScript>();
 
@@ -76,17 +78,12 @@ public abstract class Enemy : MonoBehaviour {
 
 	}
 
-	public void update(){
-		GUI.Box(new Rect(Screen.width/2,Screen.height/8,250,80),"Points: " + Points);
-		Debug.Log("GUI Updated");
-	}
+
 
 	public void die()
 	{
 		print ("diie");
 		Network.Destroy (gameObject);
-		Points += 10;
-		Debug.Log("Points Updated: " + Points);
 		Destroy (gameObject);
 
 
@@ -99,11 +96,11 @@ public abstract class Enemy : MonoBehaviour {
 		
 	}
 
-	/*public void OnGUI(){
+	public void OnGUI(){
 		if(GameObject.FindGameObjectsWithTag ("Player").Length >= 1)
 		GUI.Box(new Rect(Screen.width/2,Screen.height/8,250,80),"Points: " + Points);
 		Debug.Log("Points Updated");
-	}*/
+	}
 
 
 }
