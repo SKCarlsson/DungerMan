@@ -37,7 +37,7 @@ public class Wizard : PlayerScript1 {
 		if(bButtonAction.touch == true && buttonWaitB){
 			if (Mana >= 100){
 				StartCoroutine("buttonwaitb");
-				Instantiate((GameObject)Resources.Load("ProjectileWizardSpecial"), transform.position + transform.forward*6f, transform.rotation);
+				Instantiate((GameObject)Resources.Load("ProjectileWizardSpecial"), transform.position + transform.forward*8f, transform.rotation);
 				Mana -= 100;
 			} else {
 				Debug.Log ("Not enough Mana!");
