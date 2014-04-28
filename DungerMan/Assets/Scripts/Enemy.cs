@@ -4,7 +4,6 @@ using System.Collections;
 public abstract class Enemy : MonoBehaviour {
 
 		protected PlayerScript1 cc;
-		public Miscellanous ms;
 
 		protected GameObject player;
 		protected GameObject player2;
@@ -35,7 +34,6 @@ public abstract class Enemy : MonoBehaviour {
 	void Start () {
 
 		//cc = GameObject.Find ("Player 1(Clone)").GetComponent<PlayerScript1>();
-		ms = GameObject.Find ("Miscellanous").GetComponent<Miscellanous>();
 
 		//player = GameObject.Find ("Cube");
 
@@ -94,7 +92,6 @@ public abstract class Enemy : MonoBehaviour {
 	{
 		print ("diie");
 		Network.Destroy (gameObject);
-		ms.points += 10;
 		Destroy (gameObject);
 		}
 

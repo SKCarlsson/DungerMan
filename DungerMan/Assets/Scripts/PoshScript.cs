@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class PoshScript : Enemy {
-	
+
+	public NetworkManager nm;
 
 	public override void ability ()
 	{
@@ -37,6 +38,8 @@ public class PoshScript : Enemy {
 	void Update () 
 	{
 		takeDamage();
+
+
 
 
 		if (player != null) {

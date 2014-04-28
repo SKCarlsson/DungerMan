@@ -15,7 +15,7 @@ public class NetworkManager : MonoBehaviour {
 	private GameObject player1 = null;
 	private GameObject player2 =null;
 	private Quaternion rotation;
-	private GameObject points;
+	public float points = 0;
 
 	bool player1init = false;
 	bool player2init = false;
@@ -167,12 +167,14 @@ public class NetworkManager : MonoBehaviour {
 			GUI.Box(new Rect(Screen.width/2-250,Screen.height/2-350,500,160),"Choose Role:");
 			if(GUI.Button(new Rect(Screen.width/2-250,Screen.height/2-100,500,160),"Warrior")){
 				SpawnPlayer();
-				SpawnPoints();
+//				SpawnPoints();
+				pointStart = true;
 				player1init = true;
 			}
 			if(GUI.Button(new Rect(Screen.width/2-250,Screen.height/2+80,500,160),"Wizzard")){
 				SpawnPlayer2();
-				SpawnPoints();
+				//SpawnPoints();
+				pointStart = true;
 				player1init = true;
 			}
 		}
@@ -184,7 +186,6 @@ public class NetworkManager : MonoBehaviour {
 								GUI.Box (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 350, 500, 160), "Choose Role:");
 								if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 100, 500, 160), "Warrior")) {
 										SpawnPlayer ();
-
 										EnemySpawn ();
 										player2init = true;
 								}
