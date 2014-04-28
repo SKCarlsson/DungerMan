@@ -14,7 +14,6 @@ GameObject:
   - 195: {fileID: 19500000}
   - 114: {fileID: 11400002}
   - 148: {fileID: 14800000}
-  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: Posh
   m_TagString: Posh
@@ -61,20 +60,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fef2ea23c393d4738b431497c63be024, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
-  adjustment: 2.29999995
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86,8 +71,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb92962ea107044518934224b22419dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointScript: {fileID: 0}
   Health: 0
-  nm: {fileID: 0}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

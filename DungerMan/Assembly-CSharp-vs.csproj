@@ -47,10 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\GUIScript.cs" />
-     <Compile Include="Assets\HealthBarNew.cs" />
      <Compile Include="Assets\JoyMove.cs" />
-     <Compile Include="Assets\ProjectileWarriorSpecialScript.cs" />
-     <Compile Include="Assets\ProjectileWizardNormalScript.cs" />
      <Compile Include="Assets\RockGate.cs" />
      <Compile Include="Assets\Scripts\AButton.cs" />
      <Compile Include="Assets\Scripts\BButton.cs" />
@@ -65,6 +62,9 @@
      <Compile Include="Assets\Scripts\PointScript.cs" />
      <Compile Include="Assets\Scripts\PoshScript.cs" />
      <Compile Include="Assets\Scripts\ProjectileWarriorNormalScript.cs" />
+     <Compile Include="Assets\Scripts\ProjectileWarriorSpecialScript.cs" />
+     <Compile Include="Assets\Scripts\ProjectileWizardNormalScript.cs" />
+     <Compile Include="Assets\Scripts\ProjectileWizardSpecialScript.cs" />
      <Compile Include="Assets\Scripts\TouchLogic.cs" />
      <Compile Include="Assets\Scripts\Warrior.cs" />
      <Compile Include="Assets\Scripts\Wizard.cs" />
