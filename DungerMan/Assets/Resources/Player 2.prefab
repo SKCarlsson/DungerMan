@@ -14,7 +14,7 @@ GameObject:
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400000}
   - 148: {fileID: 14800000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .656400681, y: 1.87796307, z: -2.70533562}
+  m_LocalPosition: {x: 7.27418995, y: .5, z: -3.42566156}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

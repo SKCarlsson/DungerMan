@@ -8,12 +8,28 @@ public class NetworkManager : MonoBehaviour {
 	float refreshRequestLength = 3.0f;
 	HostData[] hostData;
 	private int enemyCount = 0;
+	public Camera cam;
+	private Camera camo;
+
 	private GameObject posh;
 	private GameObject player1 = null;
 	private GameObject player2 =null;
+	private Quaternion rotation;
 
 	bool player1init = false;
 	bool player2init = false;
+
+	void Awake(){
+		rotation = cam.transform.rotation;
+
+
+		}
+
+	void LateUpdate(){
+
+		camo.transform.rotation = rotation;
+
+		}
 
 	private void StartServer()
 	{
@@ -65,12 +81,14 @@ public class NetworkManager : MonoBehaviour {
 		
 						player1.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
 			
-						player1.transform.parent = Camera.main.transform;
+					
+		//if (!networkView.isMine) {
 
-		//Network.Instantiate (Resources.Load ("Player1"), new Vector3(0f,2.5f,0f), Quaternion.identity, 0);
-
-		//Assigning Player 2's transform
-	
+					
+		camo = Instantiate(cam, new Vector3(5, 21, 5), Quaternion.Euler(180, 0, 0)) as Camera;
+						
+						camo.transform.parent = player1.transform;
+			
 
 	}
 	
@@ -84,8 +102,12 @@ public class NetworkManager : MonoBehaviour {
 			player2.AddComponent ("Warrior");
 			
 			player2.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
+			
+			camo = Instantiate(cam, new Vector3(7, 21, 5), Quaternion.Euler(90, 0, 0)) as Camera;
+		
+			camo.transform.parent = player2.transform;
 
-			player1.transform.parent = Camera.main.transform;
+
 			
 	}
 
