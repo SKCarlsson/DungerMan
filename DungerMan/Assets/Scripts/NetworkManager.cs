@@ -99,7 +99,7 @@ public class NetworkManager : MonoBehaviour {
 			
 			player2 = GameObject.Find ("Player 2(Clone)");
 			// adds the warrior script to the player1 gameobject
-			player2.AddComponent ("Warrior");
+			player2.AddComponent ("Wizard");
 			
 			player2.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
 			
