@@ -1,6 +1,22 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PointScript.cs">
+=======
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HealthBar.js">
+    <Files>
+      <File FileName="Assets/HealthBar.js" Line="52" Column="1" />
+      <File FileName="Assets/Scripts/Wizard.cs" Line="40" Column="112" />
+      <File FileName="Assets/Scripts/ProjectileWarriorNormalScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Warrior.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PoshScript.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NetworkManager.cs">
+>>>>>>> 8f184211c34db3c50641c7cc2d1732793b050e28
     <Files>
       <File FileName="Assets\Scripts\Enemy.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemy.cs" Line="1" Column="1" />
@@ -8,7 +24,11 @@
       <File FileName="Assets\Scripts\Warrior.cs" Line="1" Column="1" />
       <File FileName="Assets\ProjectileWarriorSpecialScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PoshScript.cs" Line="1" Column="1" />
+<<<<<<< HEAD
       <File FileName="Assets\Scripts\PointScript.cs" Line="6" Column="8" />
+=======
+>>>>>>> FETCH_HEAD
+>>>>>>> 8f184211c34db3c50641c7cc2d1732793b050e28
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
