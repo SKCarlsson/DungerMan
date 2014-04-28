@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ProjectileWarriorNormalScript : MonoBehaviour {
+public class ProjectileWarriorNormalScript : Warrior {
 
 	// Use this for initialization
 	void Start () {
@@ -18,12 +18,13 @@ public class ProjectileWarriorNormalScript : MonoBehaviour {
 		Destroy(gameObject);
 	}
 
-	void OnCollisionEnter(GameObject other)
+	void OnCollisionEnter(Collision other)
 	{
-		if(other.gameObject.tag =="Enemy")
+		if(other.collider.tag =="Posh")
 		{
-			other.GetComponent<Enemy>().Health -= 50;
+			other.collider.GetComponent<Enemy>().Health -= 50;
 			Destroy(gameObject);
 		}
+		Debug.Log(other.collider.GetComponent<Enemy>().Health);
 	}
 }

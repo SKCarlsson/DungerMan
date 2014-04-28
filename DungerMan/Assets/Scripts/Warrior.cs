@@ -19,7 +19,7 @@ public class Warrior : PlayerScript1 {
 	// Update is called once per frame
 	void Update () {
 
-		Instantiate((GameObject)Resources.Load("ProjectileWarriorNormal"), transform.position + transform.forward*1.5f, transform.rotation);
+		//Instantiate((GameObject)Resources.Load("ProjectileWarriorNormal"), transform.position + transform.forward*1.5f, transform.rotation);
 
 
 		print (aButtonAction.touch);
@@ -27,20 +27,21 @@ public class Warrior : PlayerScript1 {
 
 		if((aButtonAction.touch && buttonWaitA)){
 
-			if (hitinfo.transform.gameObject!= null) 
-			{
-				cc = hitinfo.transform.gameObject.GetComponent<Enemy> ();
-				StartCoroutine("buttonwaita");
-				enemyTakeDamage (0);
-				Mana += 15;
-				if (Mana > 100)
-				{
-					Mana = 100;
-				}
+//			if (hitinfo.transform.gameObject!= null) 
+//			{
+//				cc = hitinfo.transform.gameObject.GetComponent<Enemy> ();
+//				StartCoroutine("buttonwaita");
+//				enemyTakeDamage (0);
+//				Mana += 15;
+//				if (Mana > 100)
+//				{
+//					Mana = 100;
+//				}
+//
+//			}
 
-			}
+			StartCoroutine("buttonwaita");
 			Instantiate((GameObject)Resources.Load("ProjectileWarriorNormal"), transform.position + transform.forward*1.5f, transform.rotation);
-
 
 
 		}
