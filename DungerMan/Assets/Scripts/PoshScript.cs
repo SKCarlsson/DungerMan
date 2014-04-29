@@ -38,10 +38,11 @@ public class PoshScript : Enemy {
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	public void Update () 
 	{
 
-		takeDamage();
+		networkView.RPC ("takeDamage", RPCMode.AllBuffered, null);
+		//takeDamage();
 		//OnGUI (); THIS DOES SO THEY WONT ATTACK GOD DAMMIT MIKE.
 
 

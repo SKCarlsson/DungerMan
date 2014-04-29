@@ -4,7 +4,7 @@ using System.Collections;
 public abstract class Enemy : MonoBehaviour {
 
 	protected PlayerScript1 cc;
-	protected ScoreScript ss;
+	public ScoreScript ss;
 
 
 	protected GameObject[] players;
@@ -25,7 +25,7 @@ public abstract class Enemy : MonoBehaviour {
 	protected int SeeRange;
 	protected int AttackSpeed;
 
-	protected int enemyPoint;	// points for kind of enemy killed
+	public int enemyPoint;	// points for kind of enemy killed
 	protected float dist;// distance between player 1 and the enemy
 	protected float dist2;// distance between player 2 and the enemy
 	protected bool canAttack = false;
@@ -80,15 +80,17 @@ public abstract class Enemy : MonoBehaviour {
 				}
 	}
 
-	protected void takeDamage()
+	[RPC]
+	public void takeDamage()
 	{
 	
 		if (Health <= 0) {
-			die();
+			networkView.RPC ("die", RPCMode.AllBuffered, null);
+			//die();
 				}
 
 	}
-
+	[RPC]
 	public void die()
 	{
 		enemyCount += 1;
