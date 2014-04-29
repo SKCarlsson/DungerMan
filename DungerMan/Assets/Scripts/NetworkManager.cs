@@ -13,6 +13,7 @@ public class NetworkManager : MonoBehaviour {
 	private Camera camo;
 	private Camera camo2;
 
+	private bool scoreIsSpawned = true;
 	private GameObject posh;
 	private GameObject player1 = null;
 	private GameObject player2 = null;
@@ -34,14 +35,15 @@ public class NetworkManager : MonoBehaviour {
 
 
 	void Awake(){
-				rotation = cam.transform.rotation;
+				rotation = cam.transform.rotation;			
+
 		}
 
 	void Update(){
 
 
-		if ( GameObject.Find ("Player 2(Clone)") != null ||  GameObject.Find ("Player 1(Clone)") != null && GameObject.Find ("Player 2(Clone)") != null ){
-			EnemySpawn();
+		if ( GameObject.Find ("Player 1(Clone)") != null && GameObject.Find ("Player 2(Clone)") != null ){
+			//EnemySpawn();
 		}
 
 	}
@@ -89,8 +91,17 @@ public class NetworkManager : MonoBehaviour {
 			Debug.Log ("Wooot...  a server found?");
 	}
 
+	private void SpawnScore(){
+		if (scoreIsSpawned) {
+					scoreIsSpawned = false;
+					Network.Instantiate (Resources.Load ("Score"), new Vector3 (0f, 0f, 0f), Quaternion.identity, 0);
+				}
+		}
+
+
 	private void SpawnWalls() 
 	{
+		Debug.Log("spawning walla");
 		//Right side of arena
 		for(int i = 0; i < 13; i++)
 		{
@@ -165,7 +176,7 @@ public class NetworkManager : MonoBehaviour {
 	{
 				if (GameObject.FindGameObjectsWithTag ("Player").Length == 0) {
 
-			
+
 						Network.Instantiate (Resources.Load ("Player 1"), new Vector3 (7f, 1f, 5f), Quaternion.identity, 0);
 			
 						player1 = GameObject.Find ("Player 1(Clone)");
@@ -253,9 +264,9 @@ public class NetworkManager : MonoBehaviour {
 			if(GUI.Button(new Rect(Screen.width/2-250,Screen.height/2-100,500,160),"Warrior")){
 				SpawnPlayer();
 				SpawnWalls();
-				EnemySpawn();
 				player1init = true;
 			}
+
 			if(GUI.Button(new Rect(Screen.width/2-250,Screen.height/2+80,500,160),"Wizzard")){
 				SpawnPlayer2();
 				SpawnWalls();
@@ -270,13 +281,15 @@ public class NetworkManager : MonoBehaviour {
 			GUI.Box (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 350, 500, 160), "Choose Role:");
 			if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 100, 500, 160), "Warrior")) {
 				SpawnPlayer ();
-				EnemySpawn ();
 				player2init = true;
+				SpawnScore();
+				EnemySpawn();
 			}
 			if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 + 80, 500, 160), "Wizzard")) {
 				SpawnPlayer2 ();
-				EnemySpawn ();
 				player2init = true;
+				SpawnScore();
+				EnemySpawn();
 			}
 						
 		}

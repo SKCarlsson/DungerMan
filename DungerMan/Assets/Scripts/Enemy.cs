@@ -40,7 +40,7 @@ public abstract class Enemy : MonoBehaviour {
 	//protected PlayerScript cc = GameObject.Find ("Player(Clone)").GetComponent<PlayerScript>();
 
 	void Update(){
-		print (Points);
+
 	}
 
 
@@ -106,11 +106,7 @@ public abstract class Enemy : MonoBehaviour {
 		
 	}
 
-	public void OnGUI(){
-		if(GameObject.FindGameObjectsWithTag ("Player").Length >= 1)
-		GUI.Box(new Rect(Screen.width/2,Screen.height/8,250,80),"Points: " + ss.points);
-		Debug.Log("Points Updated");
-	}
+
 
 
 }
