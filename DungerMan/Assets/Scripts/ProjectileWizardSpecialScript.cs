@@ -18,7 +18,7 @@ public class ProjectileWizardSpecialScript : Wizard {
 		Destroy(gameObject);
 	}
 	
-	void OnCollisionEnter(Collision other)
+	void OnCollisionExit(Collision other)
 	{
 		if(other.collider.tag =="Posh")
 		{

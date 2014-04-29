@@ -18,7 +18,7 @@ public class ProjectileWarriorSpecialScript : Warrior {
 		Destroy(gameObject);
 	}
 	
-	void OnCollisionEnter(Collision other)
+	void OnCollisionExit(Collision other)
 	{
 		if(other.collider.tag =="Posh")
 		{

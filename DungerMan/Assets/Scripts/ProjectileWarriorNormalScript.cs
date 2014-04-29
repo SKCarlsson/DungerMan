@@ -5,7 +5,7 @@ public class ProjectileWarriorNormalScript : Warrior {
 
 	// Use this for initialization
 	void Start () {
-		Invoke("SelfDestruct", 0.3f);
+		Invoke("SelfDestruct", 0.1f);
 	}
 	
 	// Update is called once per frame
@@ -18,12 +18,12 @@ public class ProjectileWarriorNormalScript : Warrior {
 		Destroy(gameObject);
 	}
 
-	void OnCollisionEnter(Collision other)
+	void OnCollisionExit(Collision other)
 	{
+		Destroy(gameObject);
 		if(other.collider.tag =="Posh")
 		{
 			other.collider.GetComponent<Enemy>().takeDamage(75);
-			Destroy(gameObject);
 		}
 	}
 }

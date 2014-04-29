@@ -18,12 +18,13 @@ public class ProjectileWizardNormalScript : Wizard {
 		Destroy(gameObject);
 	}
 	
-	void OnCollisionEnter(Collision other)
+	void OnCollisionExit(Collision other)
 	{
+		Destroy(gameObject);
 		if(other.collider.tag =="Posh")
 		{
 			other.collider.GetComponent<Enemy>().takeDamage(40);
-			Destroy(gameObject);
+
 		}
 		Debug.Log(other.collider.GetComponent<Enemy>().Health);
 	}
