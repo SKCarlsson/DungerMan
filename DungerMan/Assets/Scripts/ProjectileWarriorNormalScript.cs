@@ -25,6 +25,5 @@ public class ProjectileWarriorNormalScript : Warrior {
 			other.collider.GetComponent<Enemy>().Health -= 50;
 			Destroy(gameObject);
 		}
-		Debug.Log(other.collider.GetComponent<Enemy>().Health);
 	}
 }

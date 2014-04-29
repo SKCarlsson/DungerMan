@@ -24,6 +24,5 @@ public class ProjectileWarriorSpecialScript : Warrior {
 		{
 			other.collider.GetComponent<Enemy>().Health -= 100;
 		}
-		Debug.Log(other.collider.GetComponent<Enemy>().Health);
 	}
 }
