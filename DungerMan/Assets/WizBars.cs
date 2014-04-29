@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Bars : MonoBehaviour
+public class WizBars : MonoBehaviour
 {
 	
 	Rect box = new Rect(10, 10, 200, 40);
@@ -28,26 +28,26 @@ public class Bars : MonoBehaviour
 		background.SetPixel(0, 0, Color.red);
 		foreground.SetPixel(0, 0, Color.green);
 		ragebackground.SetPixel(0,0,Color.black);
-		rageforeground.SetPixel(0,0,Color.red);
+		rageforeground.SetPixel(0,0,Color.blue);
 		
 		background.Apply();
 		foreground.Apply();
 		ragebackground.Apply();
 		rageforeground.Apply();
-		maxHealth = 200;
-		health = 200;
+		maxHealth = 100;
+		health = 100;
 		maxRage = 100;
-		rage = 0;
+		rage = 100;
 	}
 	
 	void Update()
 	{
 		//health += Input.GetAxisRaw("Horizontal");
-		health = this.gameObject.GetComponent<Warrior>().playerHealth;
-		rage = this.gameObject.GetComponent<Warrior>().Mana;
+		health = this.gameObject.GetComponent<Wizard>().playerHealth;
+		rage = this.gameObject.GetComponent<Wizard>().Mana;
 		if (health < 0) health = 0;
 		if (health > maxHealth) health = maxHealth;
-
+		
 	}
 	
 	void OnGUI()

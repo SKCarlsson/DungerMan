@@ -37,7 +37,8 @@ public class TouchLogic : MonoBehaviour  {
 						
 						
 					}
-					if (Input.GetTouch (i).phase == TouchPhase.Ended)
+					//if (Input.GetTouch (i).phase == TouchPhase.Ended)
+					else
 					{
 						//need to send message because function is not present in script
 						this.SendMessage("OnTouchEnded");

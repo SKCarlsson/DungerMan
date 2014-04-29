@@ -26,6 +26,7 @@ public class NetworkManager : MonoBehaviour {
 
 	private int zCor = 48;
 	private int xCor = 48;
+	public Quaternion rotationWall = Quaternion.Euler(0, 90, 0);
 
 
 
@@ -93,28 +94,28 @@ public class NetworkManager : MonoBehaviour {
 		//Right side of arena
 		for(int i = 0; i < 13; i++)
 		{
-			Network.Instantiate (Resources.Load ("Cube"), new Vector3 (48, 0, zCor), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("rock_01"), new Vector3 (48, 0, zCor), Quaternion.identity, 0);
 			zCor -= 8;
 		}
 		zCor = 48;
 		//Top side of arena
 		for(int i = 0; i < 13; i++)
 		{
-			Network.Instantiate (Resources.Load ("Cube"), new Vector3 (xCor, 0, 48), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("rock_01"), new Vector3 (xCor, 0, 48), Quaternion.identity, 0);
 			xCor -= 8;
 		}
 		xCor = 48;
 		//Left side of arena
 		for(int i = 0; i < 13; i++)
 		{
-			Network.Instantiate (Resources.Load ("Cube"), new Vector3 (-48, 0, zCor), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("rock_01"), new Vector3 (-48, 0, zCor), Quaternion.identity, 0);
 			zCor -= 8;
 		}
 		zCor = 48;
-
+		//Bottom side of arena
 		for(int i = 0; i < 13; i++)
 		{
-			Network.Instantiate (Resources.Load ("Cube"), new Vector3 (xCor, 0, -48), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("rock_01"), new Vector3 (xCor, 0, -48), Quaternion.identity, 0);
 			xCor -= 8;
 		}
 		xCor = 48;
@@ -133,6 +134,7 @@ public class NetworkManager : MonoBehaviour {
 			player1 = GameObject.Find ("Player 1(Clone)");
 			// adds the warrior script to the player1 gameobject
 			player1.AddComponent ("Warrior");
+			player1.AddComponent("Bars");
 
 			//player1.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
 
@@ -149,6 +151,8 @@ public class NetworkManager : MonoBehaviour {
 						// adds the warrior script to the player1 gameobject
 
 						player2.AddComponent ("Warrior");
+						player2.AddComponent("Bars");
+				
 			
 						//player2.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
 						
@@ -170,7 +174,8 @@ public class NetworkManager : MonoBehaviour {
 						player1 = GameObject.Find ("Player 1(Clone)");
 						// adds the warrior script to the player1 gameobject
 						player1.AddComponent ("Wizard");
-			
+						player1.AddComponent("WizBars");
+
 						//player1.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
 
 						camo = Instantiate (cam, new Vector3 (7, 21, 5), Quaternion.Euler (90, 0, 0)) as Camera;
@@ -184,6 +189,8 @@ public class NetworkManager : MonoBehaviour {
 						player2 = GameObject.Find ("Player 2(Clone)");
 						// adds the warrior script to the player1 gameobject
 						player2.AddComponent ("Wizard");
+						player2.AddComponent("WizBars");
+
 			
 						//player2.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
 
@@ -252,6 +259,7 @@ public class NetworkManager : MonoBehaviour {
 			if(GUI.Button(new Rect(Screen.width/2-250,Screen.height/2-100,500,160),"Warrior")){
 				SpawnPlayer();
 				SpawnWalls();
+				EnemySpawn();
 				player1init = true;
 			}
 			if(GUI.Button(new Rect(Screen.width/2-250,Screen.height/2+80,500,160),"Wizzard")){
