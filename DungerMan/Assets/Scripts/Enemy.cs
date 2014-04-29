@@ -4,6 +4,7 @@ using System.Collections;
 public abstract class Enemy : MonoBehaviour {
 
 	protected PlayerScript1 cc;
+	protected ScoreScript ss;
 
 
 	protected GameObject[] players;
@@ -23,21 +24,23 @@ public abstract class Enemy : MonoBehaviour {
 	protected int AttackRange;
 	protected int SeeRange;
 	protected int AttackSpeed;
-	
-	private float distance; // variable used to switch between the two dist variables
-	
-	protected float dist;// distance between player 1 and the enemy
 
+	protected int enemyPoint;	// points for kind of enemy killed
+	protected float dist;// distance between player 1 and the enemy
 	protected float dist2;// distance between player 2 and the enemy
 	protected bool canAttack = false;
 	protected bool haveWaited = true;
-	public void update(){
-		Debug.Log("Points: " + Points);
-	}
+
+	private float distance; // variable used to switch between the two dist variables
+
+	private int enemyCount = 0; // number of enemies killed
+
 	public abstract void ability ();
+
 	//protected PlayerScript cc = GameObject.Find ("Player(Clone)").GetComponent<PlayerScript>();
 
 	void Update(){
+		print (Points);
 	}
 
 
@@ -88,6 +91,8 @@ public abstract class Enemy : MonoBehaviour {
 
 	public void die()
 	{
+		enemyCount += 1;
+		ss.points += enemyPoint;
 		print ("diie");
 		Network.Destroy (gameObject);
 		Destroy (gameObject);
@@ -103,7 +108,7 @@ public abstract class Enemy : MonoBehaviour {
 
 	public void OnGUI(){
 		if(GameObject.FindGameObjectsWithTag ("Player").Length >= 1)
-		GUI.Box(new Rect(Screen.width/2,Screen.height/8,250,80),"Points: " + Points);
+		GUI.Box(new Rect(Screen.width/2,Screen.height/8,250,80),"Points: " + ss.points);
 		Debug.Log("Points Updated");
 	}
 
