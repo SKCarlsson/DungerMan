@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Bars : MonoBehaviour
+public class WizBars : MonoBehaviour
 {
 	
 	Rect box = new Rect(10, 10, 200, 40);
@@ -13,7 +13,7 @@ public class Bars : MonoBehaviour
 	private Texture2D foreground2;
 	
 	public float health = 50;
-	public int maxHealth = 200;
+	public int maxHealth = 100;
 	public float mana = 50;
 	public int maxMana = 100;
 	
@@ -28,20 +28,20 @@ public class Bars : MonoBehaviour
 		background.SetPixel(0, 0, Color.red);
 		foreground.SetPixel(0, 0, Color.green);
 		background2.SetPixel(0, 0, Color.black);
-		foreground2.SetPixel(0, 0, Color.red);
+		foreground2.SetPixel(0, 0, Color.blue);
 		
 		background.Apply();
 		foreground.Apply();
 		background2.Apply();
 		foreground2.Apply();
-
-
+		
+		
 	}
 	
 	void Update()
 	{
-		health = this.gameObject.GetComponent<Warrior>().playerHealth;
-		mana = this.gameObject.GetComponent<Warrior>().Mana;
+		health = this.gameObject.GetComponent<Wizard>().playerHealth;
+		mana = this.gameObject.GetComponent<Wizard>().Mana;
 	}
 	
 	void OnGUI()

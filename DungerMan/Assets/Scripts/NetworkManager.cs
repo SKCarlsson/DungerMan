@@ -164,7 +164,7 @@ public class NetworkManager : MonoBehaviour {
 
 						player2.AddComponent ("Warrior");
 
-							player1.AddComponent("Bars");
+						player1.AddComponent("Bars");
 			
 						//player2.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
 						
