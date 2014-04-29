@@ -86,14 +86,11 @@ public abstract class Enemy : MonoBehaviour {
 
 	}
 
-
-
 	public void die()
 	{
 		print ("diie");
 		Network.Destroy (gameObject);
 		Destroy (gameObject);
-
 
 		}
 

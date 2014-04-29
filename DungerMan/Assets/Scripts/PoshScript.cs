@@ -15,8 +15,8 @@ public class PoshScript : Enemy {
 		players = GameObject.FindGameObjectsWithTag("Player");
 
 		// gives all the variables from the enemy class some values:
-		player = GameObject.Find ("Player 1(Clone)");
-		player2 = GameObject.Find ("Player 2(Clone)");
+		//player = GameObject.Find ("Player 1(Clone)");
+		//player2 = GameObject.Find ("Player 2(Clone)");
 		agent = GetComponent<NavMeshAgent>();
 
 
