@@ -56,17 +56,8 @@ public abstract class PlayerScript1 : MonoBehaviour {
 		
 	}
 
+	
 
-	protected void raycast(){
-		Vector3 fwd = this.transform.TransformDirection(Vector3.forward);
-		Physics.Raycast (this.transform.position, fwd, out hitinfo, 10);
-		Debug.DrawRay (this.transform.position, fwd,Color.green, 10);
-	}
-
-	protected void enemyTakeDamage(int extraDamage){
-		print ("HIT THE BUTTON");
-		cc.Health -=Damage + extraDamage;
-	}
 
 	//Check in Abutton whether or not the boolean is true or false, if it is true, execute SpecialAttack
 	public abstract void SpecialAttackA ();
