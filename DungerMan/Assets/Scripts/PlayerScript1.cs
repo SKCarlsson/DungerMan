@@ -4,11 +4,9 @@ using System.Collections;
 public abstract class PlayerScript1 : MonoBehaviour {
 
 	public int playerHealth;
-	public int Damage;
 	protected int Speed;
-	protected int AttackRange;
-	protected int SeeRange;
-	protected int AttackSpeed;
+	protected float AttackSpeed;
+	protected float SpecialAttackSpeed;
 	protected RaycastHit hitinfo;
 	protected Enemy cc;
 	
@@ -34,9 +32,7 @@ public abstract class PlayerScript1 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 		Instantiate((GameObject)Resources.Load ("Posh"), new Vector3(5, 1, 5), this.transform.rotation);
-
 	}
 	
 	// Update is called once per frame
@@ -47,39 +43,15 @@ public abstract class PlayerScript1 : MonoBehaviour {
 
 
 	protected void takeDamage()
-	{
-		
+	{	
 		if (playerHealth <= 0) {
 			die();
-		}
-		
+		}	
 	}
 
 	protected void die()
 	{
 		Network.Destroy (gameObject);
-		
 	}
-
-
-	protected void raycast(){
-		Vector3 fwd = this.transform.TransformDirection(Vector3.forward);
-		Physics.Raycast (this.transform.position, fwd, out hitinfo, 10);
-		Debug.DrawRay (this.transform.position, fwd,Color.green, 10);
-	}
-
-	protected void enemyTakeDamage(int extraDamage){
-		print ("HIT THE BUTTON");
-		cc.Health -=Damage + extraDamage;
-	}
-
-
-
-	//Check in Abutton whether or not the boolean is true or false, if it is true, execute SpecialAttack
-	//public abstract void SpecialAttackA ();
-	//public abstract void SpecialAttackB ();
-
-
-
 
 }

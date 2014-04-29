@@ -4,40 +4,33 @@ using System.Collections;
 public abstract class Enemy : MonoBehaviour {
 
 	protected PlayerScript1 cc;
-	public ScoreScript ss;
+	protected ScoreScript ss;
 
 
-	protected GameObject[] players;
-	protected GameObject player;
-	protected GameObject player2;
-
-	public float Points = 0;
-
-
+	protected GameObject[] players; // array of players is used for the players to find out who is closest. 
 	protected GameObject playerNum;// variable used to switch between the two player gameobjects
 
-	protected NavMeshAgent agent;
+	// 
+	protected NavMeshAgent agent; // the navmesh thinghy that makes the enemies attack
 
+	// attributes of the enemies
 	public int Health;
 	protected int Damage;
 	protected float Speed;
 	protected int AttackRange;
 	protected int SeeRange;
-	protected int AttackSpeed;
+	protected int AttackSpeed;	// time before being able to attack again
+	protected int enemyPoint;	// points for kind of enemy killed
 
-	public int enemyPoint;	// points for kind of enemy killed
 	protected float dist;// distance between player 1 and the enemy
 	protected float dist2;// distance between player 2 and the enemy
-	protected bool canAttack = false;
-	protected bool haveWaited = true;
-
+	protected bool canAttack = false; // the enemy can attack if this is true
+	protected bool haveWaited = true; // the variable 
 	private float distance; // variable used to switch between the two dist variables
 
 	private int enemyCount = 0; // number of enemies killed
 
 	public abstract void ability ();
-
-	//protected PlayerScript cc = GameObject.Find ("Player(Clone)").GetComponent<PlayerScript>();
 
 	void Update(){
 
@@ -45,9 +38,8 @@ public abstract class Enemy : MonoBehaviour {
 
 
 	protected void autoAttack()
-		// maybe an array of players can be made so that we only need one player prefab
+	
 		{
-
 		// checks if distance between player 1 and the enemy is bigger than the distance between player2 and the enemy:
 		if(dist>dist2){
 			// if this is true, the distance variable gets assigned the distance between player2 and the enemy
@@ -64,20 +56,22 @@ public abstract class Enemy : MonoBehaviour {
 		if (distance < SeeRange && distance > AttackRange) {
 						agent.SetDestination (playerNum.transform.position);
 						canAttack = false;
-				} else if (distance <= AttackRange) {
+				} 
+				// if the enemy is in the attackrange, canAttack becomes true, and it will stop
+				else if (distance <= AttackRange) {
 						agent.SetDestination (this.transform.position);	
 						canAttack = true;
 				} else
 						canAttack = false;
 
 		}
-
+	// attack function deals damage to the player, which is in attackrange. 
 	protected void Attack()
 	{
 		if (haveWaited) {
-			StartCoroutine("reload");
+			StartCoroutine("reload"); 
 				cc.playerHealth -= Damage;
-				}
+		}
 	}
 
 
@@ -88,20 +82,22 @@ public abstract class Enemy : MonoBehaviour {
 		networkView.RPC ("net_takeDamage", RPCMode.All, damage);
 
 
-		if (Health <= 0) {
-			die();
-				}
-
 	}
+
 	[RPC]
 	public void net_takeDamage(int damage){
 		Health -= damage;
+
+		if (Health <= 0) {
+			die();
+		}
+
 	}
 
 	protected void die()
 	{
 		enemyCount += 1;
-		ss.addPoint();
+		ss.addPoint(enemyPoint);
 		print ("diie");
 		Network.Destroy (gameObject);
 		Destroy (gameObject);

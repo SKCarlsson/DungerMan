@@ -5,7 +5,6 @@ public class HealthBarz : MonoBehaviour {
 	
 	int health;
 	
-	
 	// Use this for initialization
 	void Start () {
 		

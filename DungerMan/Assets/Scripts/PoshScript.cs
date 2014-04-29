@@ -14,14 +14,12 @@ public class PoshScript : Enemy {
 
 		ss = GameObject.Find ("Score(Clone)").GetComponent<ScoreScript>();
 
-		players = GameObject.FindGameObjectsWithTag("Player");
+		players = GameObject.FindGameObjectsWithTag("Player"); // puts the gameobjects with the player tag into the array
 
-		// gives all the variables from the enemy class some values:
-		//player = GameObject.Find ("Player 1(Clone)");
-		//player2 = GameObject.Find ("Player 2(Clone)");
 		agent = GetComponent<NavMeshAgent>();
 
 
+		// assigns values to the variables of this enemy:
 		Health = 100;
 		Damage = 10;
 		Speed = 3.5f;
@@ -29,8 +27,7 @@ public class PoshScript : Enemy {
 		AttackSpeed = 1;
 		SeeRange = 1000;
 		canAttack = false;
-		enemyPoint = 10;
-
+		enemyPoint = 5;
 
 		// sets the speed, as this is defined by the nav mesh agent:
 		agent.speed = Speed;
@@ -40,11 +37,7 @@ public class PoshScript : Enemy {
 	// Update is called once per frame
 	public void Update () 
 	{
-
-		//takeDamage();
-		//OnGUI (); THIS DOES SO THEY WONT ATTACK GOD DAMMIT MIKE.
-
-
+		// if player 1 is in the game, the dist variable is set to the distance between the enemy and the player
 		if (players [0] != null) {
 			dist = Vector3.Distance (this.transform.position, players[0].transform.position);
 			if (playerNum == players[0]) {
@@ -61,35 +54,14 @@ public class PoshScript : Enemy {
 			}
 		}
 
-
-
 		// runs the autoattack function from the enemy class
 		autoAttack ();
-
 
 		if (canAttack) {
 			// runs the attack function from the enemy class, if the enemy is close enough to attack
 			Attack();
 		}
 	
-	}
-
-	void OnCollisionEnter(Collision col)
-	{
-		// if the player collides with the key, following triggers:
-		if (col.gameObject.name == "Player 1(Clone)") 
-		{
-
-		}
-
-
-
-	}
-
-
-	IEnumerator diee(){
-		yield return new WaitForSeconds(5);
-		die();
 	}
 	
 }

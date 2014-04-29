@@ -4,6 +4,7 @@ using System.Collections;
 public class JoyMove : MonoBehaviour {
 
 	// Use this for initialization
+	private PlayerScript1 ps;
 	public Joystick joystick;
 	public float speed = 10;
 	public bool useAxisInput = true;
@@ -11,29 +12,16 @@ public class JoyMove : MonoBehaviour {
 	private float v = 0;
 
 	Vector3 CPos;
-	Vector3 basePos;
-
-	// for the sine
-	private float c = 0;
-	private float a = 0;
-	private float C = 0;
-	private float A = 0; 
-
+	
 	private float rotation=0;
 
 	void Start()
 	{
+		// does so it is only the player with the phone who can control this:
 		if(!networkView.isMine)
 			return;
 
-
 		CPos = transform.position; 
-		basePos = transform.position; 
-
-		basePos.y = 0;
-		basePos.x = 0;
-		basePos.z = 0;
-
 		joystick = GameObject.Find("joystick").GetComponent<Joystick>();
 
 
@@ -41,16 +29,10 @@ public class JoyMove : MonoBehaviour {
 
 	void Update () {
 
-
+		// Cpos is used to make a startingpoint for creating the angle
 		CPos.z = 0;
 		CPos.y = 1;
 		CPos.x = 0;
-		// tried to make the rotation by using sine:
-		/*
-		c = Vector3.Distance(basePos, joystick.position);
-		a = Vector3.Distance(CPos, joystick.position);
-		A = Mathf.Asin (a / c);
-		C = Mathf.Asin((Mathf.Sin((A)*c)/a));*/
 
 
 		if (joystick.tapCount == 1) {
@@ -59,16 +41,13 @@ public class JoyMove : MonoBehaviour {
 			if (joystick.position.x < 0) {
 				rotation = 360 - rotation;
 					}
-
+			// uses the angle of the joystick to turn the player
 			this.transform.rotation = Quaternion.AngleAxis (rotation, Vector3.up);
 			}
 
 
-		//print (Vector3.Angle (joystick.position, CPos));
-
-		
-
 		if(!useAxisInput) {
+			// assigns the position of the joystick to h and v
 			h = joystick.position.x;
 			v = joystick.position.y;
 		}
@@ -77,8 +56,7 @@ public class JoyMove : MonoBehaviour {
 			v = Input.GetAxis("Vertical");
 		}
 
-	
-
+		// uses the position of the joystick to move the player:  
 		if(Mathf.Abs(h) > 0) {
 			rigidbody.velocity = new Vector3(h * speed, 0, rigidbody.velocity.y);
 		}

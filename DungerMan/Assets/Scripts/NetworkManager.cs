@@ -11,14 +11,12 @@ public class NetworkManager : MonoBehaviour {
 	private int enemyCount = 0;
 	public Camera cam;
 	private Camera camo;
-	private Camera camo2;
 
 	private bool scoreIsSpawned = true;
 	private GameObject posh;
 	private GameObject player1 = null;
 	private GameObject player2 = null;
 	private Quaternion rotation;
-	private Quaternion rotation2;
 
 	bool player1init = false;
 	bool player2init = false;
@@ -28,11 +26,7 @@ public class NetworkManager : MonoBehaviour {
 	private int zCor = 48;
 	private int xCor = 48;
 	public Quaternion rotationWall = Quaternion.Euler(0, 90, 0);
-
-
-
-
-
+	
 
 	void Awake(){
 				rotation = cam.transform.rotation;			
@@ -40,7 +34,6 @@ public class NetworkManager : MonoBehaviour {
 		}
 
 	void Update(){
-
 
 		if ( GameObject.Find ("Player 1(Clone)") != null && GameObject.Find ("Player 2(Clone)") != null ){
 			EnemySpawn();
@@ -181,9 +174,9 @@ public class NetworkManager : MonoBehaviour {
 				if (GameObject.FindGameObjectsWithTag ("Player").Length == 0) {
 
 
-						Network.Instantiate (Resources.Load ("Player 1"), new Vector3 (7f, 1f, 5f), Quaternion.identity, 0);
+						Network.Instantiate (Resources.Load ("Player 3"), new Vector3 (7f, 1f, 5f), Quaternion.identity, 0);
 			
-						player1 = GameObject.Find ("Player 1(Clone)");
+						player1 = GameObject.Find ("Player 3(Clone)");
 						// adds the warrior script to the player1 gameobject
 						player1.AddComponent ("Wizard");
 
@@ -197,9 +190,9 @@ public class NetworkManager : MonoBehaviour {
 			
 				} 
 		else {
-						Network.Instantiate (Resources.Load ("Player 2"), new Vector3 (5f, 1f, 5f), Quaternion.identity, 0);
+						Network.Instantiate (Resources.Load ("Player 4"), new Vector3 (5f, 1f, 5f), Quaternion.identity, 0);
 			
-						player2 = GameObject.Find ("Player 2(Clone)");
+						player2 = GameObject.Find ("Player 4(Clone)");
 						// adds the warrior script to the player1 gameobject
 						player2.AddComponent ("Wizard");
 

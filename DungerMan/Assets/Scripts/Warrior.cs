@@ -2,9 +2,10 @@
 using System.Collections;
 
 public class Warrior : PlayerScript1 {
-	public AudioSource hitWarrior;
+	private AudioSource hitWarrior;
 
 	void Start () {
+
 		hitWarrior = (AudioSource)gameObject.AddComponent("AudioSource");
 		AudioClip myHitWarrior;
 		myHitWarrior = (AudioClip)Resources.Load ("Sounds/Warrior Sound");
@@ -13,13 +14,12 @@ public class Warrior : PlayerScript1 {
 		aButtonAction = GameObject.Find ("AButton").GetComponent<AButton> ();
 		bButtonAction = GameObject.Find ("BButton").GetComponent<BButton> ();
 
-		//animBool = false;
-		Damage = 50;
 		playerHealth = 200;
+		AttackSpeed = 1f;
+		SpecialAttackSpeed = 5f;
 
 		//Energy - Rage
 		Mana = 0;
-
 		StartCoroutine("Regen");
 
 
@@ -27,12 +27,6 @@ public class Warrior : PlayerScript1 {
 	
 	// Update is called once per frame
 	void Update () {
-
-		//Instantiate((GameObject)Resources.Load("ProjectileWarriorNormal"), transform.position + transform.forward*1.5f, transform.rotation);
-
-
-		//print (aButtonAction.touch);
-		//print (aButtonAction.touch);
 
 		if((aButtonAction.touch && buttonWaitA)){
 			animation.Play("WarriorAtk");
@@ -61,18 +55,14 @@ public class Warrior : PlayerScript1 {
 				Debug.Log ("Not enough rage!");
 			}
 		}
-		//animBool = false;
-
 
 		//Regen
 		if (playerHealth>= 200){
-			playerHealth = 100;
+			playerHealth = 200;
 		}
 		if (playerHealth<= 0){
 			playerHealth = 0;
 		}
-			
-
 
 	}
 
@@ -97,17 +87,17 @@ public class Warrior : PlayerScript1 {
 			playerHealth += 20;
 			Debug.Log ("ITS WORKING!!" + playerHealth);	
 	}*/
-
+	// used to make some cooldown time for the button
 	IEnumerator buttonwaita(){
 		buttonWaitA = false;
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(AttackSpeed);
 		buttonWaitA = true;
 	}
 
-
+	// used to make some cooldown time for the button
 	IEnumerator buttonwaitb(){
 		buttonWaitB = false;
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(SpecialAttackSpeed);
 		buttonWaitB = true;
 	}
 

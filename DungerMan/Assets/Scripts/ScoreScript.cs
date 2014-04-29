@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ScoreScript : MonoBehaviour {
 
-	public int points = 0;
+	private int points = 0;
 
 
 	// Use this for initialization
@@ -18,13 +18,13 @@ public class ScoreScript : MonoBehaviour {
 	
 	}
 
-	public void addPoint(){
-		networkView.RPC ("net_addPoints", RPCMode.All, null);
+	public void addPoint(int enemyPoints){
+		networkView.RPC ("net_addPoints", RPCMode.All, enemyPoints);
 	}
 
 	[RPC]
-	public void net_addPoints(){
-		points++;
+	public void net_addPoints(int enemyPoints){
+		points +=enemyPoints;
 	}
 
 	public void OnGUI(){

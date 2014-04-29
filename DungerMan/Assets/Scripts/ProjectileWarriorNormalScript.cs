@@ -10,7 +10,7 @@ public class ProjectileWarriorNormalScript : Warrior {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
 
 	void SelfDestruct()

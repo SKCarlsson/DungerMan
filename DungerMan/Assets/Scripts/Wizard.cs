@@ -2,8 +2,9 @@
 using System.Collections;
 
 public class Wizard : PlayerScript1 {
-	public AudioSource hitWarlock;
-	bool replenish = true;
+	private AudioSource hitWarlock;
+	private bool replenish = true;
+
 	void Start () {
 		hitWarlock = (AudioSource)gameObject.AddComponent("AudioSource");
 		AudioClip myHitWarlock;
@@ -13,9 +14,10 @@ public class Wizard : PlayerScript1 {
 		aButtonAction = GameObject.Find ("AButton").GetComponent<AButton> ();
 		bButtonAction = GameObject.Find ("BButton").GetComponent<BButton> ();
 		
-		
-		Damage = 25;
+
 		playerHealth = 100;
+		AttackSpeed = 0.25f;
+		SpecialAttackSpeed = 5f;
 		
 		//Energy - Rage
 		Mana = 0;
@@ -27,12 +29,7 @@ public class Wizard : PlayerScript1 {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		print ("You have "+Mana+" Mana.");
-		
-		//print (aButtonAction.touch);
-		//print (aButtonAction.touch);
-		
+
 		if((aButtonAction.touch && buttonWaitA)){
 			if (Mana >= 10){
 				animation.Play("WizardAtk");
@@ -93,17 +90,17 @@ public class Wizard : PlayerScript1 {
 			playerHealth += 5;
 		}
 	}
-	
+	// used to make some cooldown time for the button
 	IEnumerator buttonwaita(){
 		buttonWaitA = false;
-		yield return new WaitForSeconds(0.25f);
+		yield return new WaitForSeconds(AttackSpeed);
 		buttonWaitA = true;
 	}
 	
-	
+	// used to make some cooldown time for the button
 	IEnumerator buttonwaitb(){
 		buttonWaitB = false;
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(SpecialAttackSpeed);
 		buttonWaitB = true;
 	}
 	
