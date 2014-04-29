@@ -37,6 +37,10 @@ public abstract class Enemy : MonoBehaviour {
 	public abstract void ability ();
 	//protected PlayerScript cc = GameObject.Find ("Player(Clone)").GetComponent<PlayerScript>();
 
+	void Update(){
+	}
+
+
 	protected void autoAttack()
 		// maybe an array of players can be made so that we only need one player prefab
 		{
@@ -63,35 +67,6 @@ public abstract class Enemy : MonoBehaviour {
 				} else
 						canAttack = false;
 
-
-
-
-
-
-		// old shit
-		/*
-		// checks if distance between player 1 and the enemy is bigger than the distance between player2 and the enemy:
-		if(dist>dist2){
-			// if this is true, the distance variable gets assigned the distance between player2 and the enemy
-			distance = dist2;
-			// and the playerNum variable gets the gameobject of player2
-			playerNum = player2;
-			}
-		else {
-			// else it must be player 1, which is closest:
-				distance = dist;
-				playerNum = player;
-			}
-		// makes the enemy go to the player which is closest:
-		if (distance < SeeRange && distance > AttackRange) {
-						agent.SetDestination (playerNum.transform.position);
-						canAttack = false;
-				} else if (distance <= AttackRange) {
-						agent.SetDestination (this.transform.position);	
-						canAttack = true;
-				} else
-						canAttack = false;
-						*/
 		}
 
 	protected void Attack()
