@@ -59,13 +59,13 @@ public class ScoreScript : MonoBehaviour {
 	
 	}
 
-	public void addPoint(){
-		networkView.RPC ("net_addPoints", RPCMode.All, null);
+	public void addPoint(int enemyPoint){
+		networkView.RPC ("net_addPoints", RPCMode.All, enemyPoint);
 	}
 
 	[RPC]
-	public void net_addPoints(){
-		points++;
+	public void net_addPoints(int enemyPoint){
+		points += enemyPoint;
 	}
 
 	public void OnGUI(){
