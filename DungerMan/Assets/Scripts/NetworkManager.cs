@@ -253,6 +253,7 @@ public class NetworkManager : MonoBehaviour {
 			if(GUI.Button(new Rect(Screen.width/2-250,Screen.height/2-100,500,160),"Warrior")){
 				SpawnPlayer();
 				SpawnWalls();
+				EnemySpawn();
 				player1init = true;
 			}
 			if(GUI.Button(new Rect(Screen.width/2-250,Screen.height/2+80,500,160),"Wizzard")){
