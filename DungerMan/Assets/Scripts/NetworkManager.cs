@@ -26,6 +26,7 @@ public class NetworkManager : MonoBehaviour {
 
 	private int zCor = 48;
 	private int xCor = 48;
+	public Quaternion rotationWall = Quaternion.Euler(0, 90, 0);
 
 
 
@@ -93,28 +94,28 @@ public class NetworkManager : MonoBehaviour {
 		//Right side of arena
 		for(int i = 0; i < 13; i++)
 		{
-			Network.Instantiate (Resources.Load ("Cube"), new Vector3 (48, 0, zCor), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("rock_01"), new Vector3 (48, 0, zCor), Quaternion.identity, 0);
 			zCor -= 8;
 		}
 		zCor = 48;
 		//Top side of arena
 		for(int i = 0; i < 13; i++)
 		{
-			Network.Instantiate (Resources.Load ("Cube"), new Vector3 (xCor, 0, 48), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("rock_01"), new Vector3 (xCor, 0, 48), Quaternion.identity, 0);
 			xCor -= 8;
 		}
 		xCor = 48;
 		//Left side of arena
 		for(int i = 0; i < 13; i++)
 		{
-			Network.Instantiate (Resources.Load ("Cube"), new Vector3 (-48, 0, zCor), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("rock_01"), new Vector3 (-48, 0, zCor), Quaternion.identity, 0);
 			zCor -= 8;
 		}
 		zCor = 48;
-
+		//Bottom side of arena
 		for(int i = 0; i < 13; i++)
 		{
-			Network.Instantiate (Resources.Load ("Cube"), new Vector3 (xCor, 0, -48), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("rock_01"), new Vector3 (xCor, 0, -48), Quaternion.identity, 0);
 			xCor -= 8;
 		}
 		xCor = 48;
