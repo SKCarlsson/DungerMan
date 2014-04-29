@@ -23,7 +23,7 @@ public class PoshScript : Enemy {
 
 
 		Health = 100;
-		Damage = 30;
+		Damage = 10;
 		Speed = 3.5f;
 		AttackRange = 2;
 		AttackSpeed = 1;

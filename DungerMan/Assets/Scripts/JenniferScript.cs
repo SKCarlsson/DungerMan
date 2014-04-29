@@ -22,8 +22,8 @@ public class JenniferScript : Enemy {
 		agent = GetComponent<NavMeshAgent>();
 		
 		
-		Health = 100;
-		Damage = 30;
+		Health = 40;
+		Damage = 15;
 		Speed = 3.5f;
 		AttackRange = 6;
 		AttackSpeed = 2;

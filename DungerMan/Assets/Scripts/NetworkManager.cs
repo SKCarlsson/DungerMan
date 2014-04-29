@@ -229,10 +229,21 @@ public class NetworkManager : MonoBehaviour {
 			waveCount +=1;	
 			} 
 		else if (enemyCount <= 0 && waveCount >= 5 && waveCount < 10) {
-			Network.Instantiate (Resources.Load ("Jennifer"), new Vector3 (-10f, 1f, -10f), Quaternion.identity, 0);
-			Network.Instantiate (Resources.Load ("Jennifer"), new Vector3 (10f, 1f, -10f), Quaternion.identity, 0);
-			Network.Instantiate (Resources.Load ("Jennifer"), new Vector3 (-10f, 1f, 10f), Quaternion.identity, 0);
-			Network.Instantiate (Resources.Load ("Jennifer"), new Vector3 (10f, 1f, 10f), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("Jennifer"), new Vector3 (-15f, 1f, -15f), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("Jennifer"), new Vector3 (15f, 1f, -15f), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("Jennifer"), new Vector3 (-15f, 1f, 15f), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("Jennifer"), new Vector3 (15f, 1f, 15f), Quaternion.identity, 0);
+			waveCount +=1;
+		}
+		else if (enemyCount <= 0 && waveCount >= 10 && waveCount < 15) {
+			Network.Instantiate (Resources.Load ("Jennifer"), new Vector3 (-20f, 1f, -20f), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("Jennifer"), new Vector3 (20f, 1f, -20f), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("Jennifer"), new Vector3 (-20f, 1f, 20f), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("Jennifer"), new Vector3 (20f, 1f, 20f), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("Posh"), new Vector3 (-10f, 1f, -10f), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("Posh"), new Vector3 (10f, 1f, -10f), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("Posh"), new Vector3 (-10f, 1f, 10f), Quaternion.identity, 0);
+			Network.Instantiate (Resources.Load ("Posh"), new Vector3 (10f, 1f, 10f), Quaternion.identity, 0);
 			waveCount +=1;
 		}
 

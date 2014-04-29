@@ -11,8 +11,8 @@ GameObject:
   - 148: {fileID: 14800000}
   - 195: {fileID: 19500000}
   - 114: {fileID: 11400002}
-  - 114: {fileID: 11400000}
   - 65: {fileID: 6500000}
+  - 114: {fileID: 11400000}
   m_Layer: 11
   m_Name: Jennifer
   m_TagString: Posh
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b48fadf314d414697bf812b65cab225b, type: 3}
+  m_Script: {fileID: 11500000, guid: d18e5d87daeba4f5091bb78f142d6141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11400002

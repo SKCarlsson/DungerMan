@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\GUIScript.cs" />
      <Compile Include="Assets\Scripts\HealthBarz.cs" />
+     <Compile Include="Assets\Scripts\HealthBarzJennifer.cs" />
      <Compile Include="Assets\Scripts\JenniferScript.cs" />
      <Compile Include="Assets\Scripts\JoyMove.cs" />
      <Compile Include="Assets\Scripts\LevelDesign.cs" />
