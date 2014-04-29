@@ -2,8 +2,13 @@
 using System.Collections;
 
 public class Wizard : PlayerScript1 {
+	public AudioSource hitWarlock;
 	bool replenish = true;
 	void Start () {
+		hitWarlock = (AudioSource)gameObject.AddComponent("AudioSource");
+		AudioClip myHitWarlock;
+		myHitWarlock = (AudioClip)Resources.Load ("Sounds/Warlock Sound");
+		hitWarlock.clip = myHitWarlock;
 		
 		aButtonAction = GameObject.Find ("AButton").GetComponent<AButton> ();
 		bButtonAction = GameObject.Find ("BButton").GetComponent<BButton> ();
@@ -29,6 +34,7 @@ public class Wizard : PlayerScript1 {
 			if (Mana >= 10){
 				StartCoroutine("buttonwaita");
 				Instantiate((GameObject)Resources.Load("ProjectileWizardNormal"), transform.position + transform.forward*1.5f, transform.rotation);
+				hitWarlock.Play();
 				Mana -= 10;
 			} else {
 				Debug.Log ("Not enough Mana!");

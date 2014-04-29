@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HealthBar : PoshScript {
+public class HealthBar : MonoBehaviour {
 
-
+	int health;
 
 
 	// Use this for initialization
@@ -13,8 +13,10 @@ public class HealthBar : PoshScript {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		health = this.gameObject.GetComponent<PoshScript>().Health;
 	}
+
+
 
 	void OnGUI(){
 		GUI.color = Color.red;
@@ -23,7 +25,9 @@ public class HealthBar : PoshScript {
 		screenPosition.y = Screen.height - (screenPosition.y + 1);// inverts y
 		
 		Rect rect = new Rect(screenPosition.x - 50, screenPosition.y - 50, 100, 24);// makes a rect centered at the player ( 100x24 )
-		
-		GUI.Box(rect, Health+" | 100");
+		Rect healthRect = new Rect(screenPosition.x - 50, screenPosition.y - 50, health, 24);
+
+		GUI.Box(healthRect, "");
+		GUI.TextField(rect, health + " | 100");
 	}
 }
