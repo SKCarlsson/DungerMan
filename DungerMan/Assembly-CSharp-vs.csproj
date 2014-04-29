@@ -59,8 +59,6 @@
      <Compile Include="Assets\Scripts\JoyMove.cs" />
      <Compile Include="Assets\Scripts\LevelDesign.cs" />
      <Compile Include="Assets\Scripts\NetworkManager.cs" />
-     <Compile Include="Assets\Scripts\NetworkMenu.cs" />
-     <Compile Include="Assets\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Scripts\PlayerScript1.cs" />
      <Compile Include="Assets\Scripts\PoshScript.cs" />
      <Compile Include="Assets\Scripts\ProjectileWarriorNormalScript.cs" />

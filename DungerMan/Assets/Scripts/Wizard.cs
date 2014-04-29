@@ -20,6 +20,9 @@ public class Wizard : PlayerScript1 {
 		//Energy - Rage
 		Mana = 0;
 		StartCoroutine("ReplenishMana");
+
+		//Regen
+		StartCoroutine("Regen");
 	}
 	
 	// Update is called once per frame
@@ -50,6 +53,10 @@ public class Wizard : PlayerScript1 {
 				Debug.Log ("Not enough Mana!");
 			}
 		}
+
+		if(playerHealth >= 100){
+			playerHealth = 100;
+		}
 	}
 	
 /*	public override void SpecialAttackA () 
@@ -73,6 +80,14 @@ public class Wizard : PlayerScript1 {
 			} else {
 				Mana += 5;
 			}
+		}
+	}
+
+	IEnumerator Regen(){
+		bool regen = true;
+		while (regen){
+			yield return new WaitForSeconds(2);
+			playerHealth += 5;
 		}
 	}
 	

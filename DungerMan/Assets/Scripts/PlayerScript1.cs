@@ -27,7 +27,9 @@ public abstract class PlayerScript1 : MonoBehaviour {
 	//Animation bool
 	public bool animBool;
 
-	//
+	//Regen
+	public int regenTime = 1;
+	public int regenAmount = 1;
 
 
 	// Use this for initialization
@@ -70,6 +72,8 @@ public abstract class PlayerScript1 : MonoBehaviour {
 		print ("HIT THE BUTTON");
 		cc.Health -=Damage + extraDamage;
 	}
+
+
 
 	//Check in Abutton whether or not the boolean is true or false, if it is true, execute SpecialAttack
 	//public abstract void SpecialAttackA ();

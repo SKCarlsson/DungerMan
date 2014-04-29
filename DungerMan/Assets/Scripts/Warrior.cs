@@ -19,6 +19,10 @@ public class Warrior : PlayerScript1 {
 
 		//Energy - Rage
 		Mana = 0;
+
+		StartCoroutine("Regen");
+
+
 	}
 	
 	// Update is called once per frame
@@ -60,10 +64,21 @@ public class Warrior : PlayerScript1 {
 		//animBool = false;
 
 
-
+		//Regen
+		if (playerHealth>= 100){
+			playerHealth = 100;
+		}
 			
 
 
+	}
+
+	IEnumerator Regen(){
+		bool regen = true;
+		while (regen){
+			yield return new WaitForSeconds(2);
+			playerHealth += 10;
+		}
 	}
 
 	/*public override void SpecialAttackA () 
