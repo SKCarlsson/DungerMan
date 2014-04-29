@@ -13,9 +13,9 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 65: {fileID: 6500000}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Jennifer
-  m_TagString: Untagged
+  m_TagString: Posh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200000}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: shotgunzombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}

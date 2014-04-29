@@ -57,6 +57,9 @@ public class Wizard : PlayerScript1 {
 		if(playerHealth >= 100){
 			playerHealth = 100;
 		}
+		if(playerHealth <= 0){
+			playerHealth = 0;
+		}
 	}
 	
 /*	public override void SpecialAttackA () 
@@ -78,7 +81,7 @@ public class Wizard : PlayerScript1 {
 			if (Mana > 100){
 				Mana = 100;
 			} else {
-				Mana += 5;
+				Mana += 15;
 			}
 		}
 	}

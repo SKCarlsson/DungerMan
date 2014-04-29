@@ -27,7 +27,7 @@ public class PoshScript : Enemy {
 		Speed = 3.5f;
 		AttackRange = 2;
 		AttackSpeed = 1;
-		SeeRange = 5;
+		SeeRange = 1000;
 		canAttack = false;
 		enemyPoint = 10;
 

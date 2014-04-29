@@ -65,8 +65,11 @@ public class Warrior : PlayerScript1 {
 
 
 		//Regen
-		if (playerHealth>= 100){
+		if (playerHealth>= 200){
 			playerHealth = 100;
+		}
+		if (playerHealth<= 0){
+			playerHealth = 0;
 		}
 			
 
@@ -76,7 +79,7 @@ public class Warrior : PlayerScript1 {
 	IEnumerator Regen(){
 		bool regen = true;
 		while (regen){
-			yield return new WaitForSeconds(2);
+			yield return new WaitForSeconds(0.5);
 			playerHealth += 10;
 		}
 	}

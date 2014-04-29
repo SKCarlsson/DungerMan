@@ -22,7 +22,7 @@ public class ProjectileWizardNormalScript : Wizard {
 	{
 		if(other.collider.tag =="Posh")
 		{
-			other.collider.GetComponent<Enemy>().takeDamage(25);
+			other.collider.GetComponent<Enemy>().takeDamage(40);
 			Destroy(gameObject);
 		}
 		Debug.Log(other.collider.GetComponent<Enemy>().Health);

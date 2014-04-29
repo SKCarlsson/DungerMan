@@ -25,7 +25,7 @@ public class JenniferScript : Enemy {
 		Health = 100;
 		Damage = 30;
 		Speed = 3.5f;
-		AttackRange = 20;
+		AttackRange = 6;
 		AttackSpeed = 2;
 		SeeRange = 1000;
 		canAttack = false;
