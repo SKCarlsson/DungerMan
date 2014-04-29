@@ -7,6 +7,7 @@ public class NetworkManager : MonoBehaviour {
 	bool isRefreshing = false;
 	float refreshRequestLength = 3.0f;
 	HostData[] hostData;
+	private int waveCount = 0;
 	private int enemyCount = 0;
 	public Camera cam;
 	private Camera camo;
@@ -30,16 +31,36 @@ public class NetworkManager : MonoBehaviour {
 		rotation = cam.transform.rotation;
 		}
 
+<<<<<<< HEAD
 	void Update(){
 		print (player1);
 		print (player2);
+=======
+<<<<<<< HEAD
+	void Update(){
+=======
+	
+>>>>>>> FETCH_HEAD
+>>>>>>> 101004dc78d29761e6f5cd98fd1f2d8707a8dd1c
 
+		if ( GameObject.Find ("Player 2(Clone)") != null ||  GameObject.Find ("Player 1(Clone)") != null && GameObject.Find ("Player 2(Clone)") != null ){
+			EnemySpawn();
 		}
 
+	}
+
 	void LateUpdate(){
+<<<<<<< HEAD
 	
 			
 		camo2.transform.rotation = rotation;
+=======
+<<<<<<< HEAD
+	
+=======
+
+>>>>>>> FETCH_HEAD
+>>>>>>> 101004dc78d29761e6f5cd98fd1f2d8707a8dd1c
 		camo.transform.rotation = rotation;
 
 		}
@@ -84,7 +105,12 @@ public class NetworkManager : MonoBehaviour {
 
 	private void SpawnPlayer()
 	{
+<<<<<<< HEAD
 		if(GameObject.FindGameObjectsWithTag("Player").Length ==0) {
+=======
+<<<<<<< HEAD
+		if(GameObject.FindGameObjectsWithTag("Player").Length == 0) {
+>>>>>>> 101004dc78d29761e6f5cd98fd1f2d8707a8dd1c
 			print("player 1");
 			Debug.Log ("Spawning Player....");
 			
@@ -94,7 +120,20 @@ public class NetworkManager : MonoBehaviour {
 			// adds the warrior script to the player1 gameobject
 			player1.AddComponent ("Warrior");
 			
+<<<<<<< HEAD
 			player1.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
+=======
+			//player1.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
+
+			camo = Instantiate (cam, new Vector3 (7, 21, 5), Quaternion.Euler (90, 0, 0)) as Camera;
+			
+			camo.transform.parent = player1.transform;
+		
+		}
+
+=======
+		Debug.Log("Spawning Player....");
+>>>>>>> 101004dc78d29761e6f5cd98fd1f2d8707a8dd1c
 
 <<<<<<< HEAD
 			camo = Instantiate (cam, new Vector3 (7, 21, 5), Quaternion.Euler (90, 0, 0)) as Camera;
@@ -113,14 +152,27 @@ public class NetworkManager : MonoBehaviour {
 						player2 = GameObject.Find ("Player 2(Clone)");
 						// adds the warrior script to the player1 gameobject
 <<<<<<< HEAD
+<<<<<<< HEAD
 						player2.AddComponent ("Warrior");
 			
 						player2.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
 =======
+>>>>>>> 101004dc78d29761e6f5cd98fd1f2d8707a8dd1c
+=======
 						player1.AddComponent ("Warrior");
+>>>>>>> FETCH_HEAD
 
-		player1.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
+						player2.AddComponent ("Warrior");
 			
+<<<<<<< HEAD
+						//player2.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
+						
+						camo = Instantiate (cam, new Vector3 (5, 21, 5), Quaternion.Euler (90, 0, 0)) as Camera;
+			
+						camo.transform.parent = player2.transform;
+			
+				}
+=======
 					
 	/* Code for instantiating sprites as GameObjects
 		//How to instantiate a sprite in the form of a gameobject
@@ -137,25 +189,71 @@ public class NetworkManager : MonoBehaviour {
 		camo = Instantiate(cam, new Vector3(5, 21, 5), Quaternion.Euler(180, 0, 0)) as Camera;
 >>>>>>> FETCH_HEAD
 						
+<<<<<<< HEAD
 						
 						camo2 = Instantiate (cam, new Vector3 (5, 21, 5), Quaternion.Euler (90, 0, 0)) as Camera;
 			
 						camo2.transform.parent = player2.transform;
 			
 				}
+=======
+						camo.transform.parent = player1.transform;
+>>>>>>> FETCH_HEAD
+>>>>>>> 101004dc78d29761e6f5cd98fd1f2d8707a8dd1c
 
 
 	}
 
 	private void SpawnPlayer2()
 	{
+<<<<<<< HEAD
 		if(GameObject.FindGameObjectsWithTag("Player").Length ==0) {
+=======
+<<<<<<< HEAD
+		if(GameObject.FindGameObjectsWithTag("Player").Length  == 0) {
+			
+						Network.Instantiate (Resources.Load ("Player 1"), new Vector3 (7f, 1f, 5f), Quaternion.identity, 0);
+			
+						player1 = GameObject.Find ("Player 1(Clone)");
+						// adds the warrior script to the player1 gameobject
+						player1.AddComponent ("Wizard");
+			
+						//player1.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
+=======
+			Network.Instantiate (Resources.Load ("Player 2"), new Vector3 (7f, 1f, 5f), Quaternion.identity, 0);
+>>>>>>> FETCH_HEAD
+>>>>>>> 101004dc78d29761e6f5cd98fd1f2d8707a8dd1c
 			
 						Network.Instantiate (Resources.Load ("Player 2"), new Vector3 (7f, 1f, 5f), Quaternion.identity, 0);
+			
+<<<<<<< HEAD
+						player2 = GameObject.Find ("Player 2(Clone)");
+						// adds the warrior script to the player1 gameobject
+						player2.AddComponent ("Wizard");
+=======
+<<<<<<< HEAD
+						camo = Instantiate (cam, new Vector3 (7, 21, 5), Quaternion.Euler (90, 0, 0)) as Camera;
+			
+						camo.transform.parent = player1.transform;
+			
+				} else {
+						Network.Instantiate (Resources.Load ("Player 2"), new Vector3 (5f, 1f, 5f), Quaternion.identity, 0);
 			
 						player2 = GameObject.Find ("Player 2(Clone)");
 						// adds the warrior script to the player1 gameobject
 						player2.AddComponent ("Wizard");
+			
+						//player2.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
+
+
+						camo = Instantiate (cam, new Vector3 (5, 21, 5), Quaternion.Euler (90, 0, 0)) as Camera;
+		
+						camo.transform.parent = player2.transform;
+	
+				}
+=======
+			player2.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
+>>>>>>> 101004dc78d29761e6f5cd98fd1f2d8707a8dd1c
 			
 						player2.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
 			
@@ -174,32 +272,40 @@ public class NetworkManager : MonoBehaviour {
 						player1.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
 
 
+<<<<<<< HEAD
 						camo = Instantiate (cam, new Vector3 (5, 21, 5), Quaternion.Euler (90, 0, 0)) as Camera;
 		
 						camo.transform.parent = player1.transform;
 	
 				}
+=======
+>>>>>>> FETCH_HEAD
+>>>>>>> 101004dc78d29761e6f5cd98fd1f2d8707a8dd1c
 			
 	}
 
 	private void EnemySpawn(){
 
-
-			while (enemyCount < 5) {
-
-
-			Network.Instantiate (Resources.Load ("Posh"), new Vector3 ( Random.Range (-10.0f, 10.0f),1f, Random.Range (-10.0f, 10.0f)), Quaternion.identity, 0);
-			enemyCount = GameObject.FindGameObjectsWithTag ("Posh").Length;
-			/*	Vector3 poshPos = transform.position; // copy to an auxiliary variable...
-			poshPos.y = 1.0f; // modify the component you want in the variable...
-			poshPos.x = Random.Range (-10.0f, 10.0f);
-			poshPos.z = Random.Range (-10.0f, 10.0f);
-			
-			posh = Instantiate(Resources.Load("Posh")) as GameObject; 
-			posh.transform.position = poshPos; // and save the modified value*/ 
+		enemyCount = GameObject.FindGameObjectsWithTag ("Posh").Length;
 
 
-				}
+		if (enemyCount <= 0 && waveCount >= 0 && waveCount < 5) {
+			print ("spawn1");
+						Network.Instantiate (Resources.Load ("Posh"), new Vector3 (-10f, 1f, -10f), Quaternion.identity, 0);
+						Network.Instantiate (Resources.Load ("Posh"), new Vector3 (10f, 1f, -10f), Quaternion.identity, 0);
+						Network.Instantiate (Resources.Load ("Posh"), new Vector3 (-10f, 1f, 10f), Quaternion.identity, 0);
+						Network.Instantiate (Resources.Load ("Posh"), new Vector3 (10f, 1f, 10f), Quaternion.identity, 0);
+			waveCount +=1;	
+			} 
+		else if (enemyCount <= 0 && waveCount >= 5 && waveCount < 10) {
+			print ("spawn2");
+						Network.Instantiate (Resources.Load ("Posh"), new Vector3 (-10f, 1f, -10f), Quaternion.identity, 0);
+						Network.Instantiate (Resources.Load ("Posh"), new Vector3 (10f, 1f, -10f), Quaternion.identity, 0);
+						Network.Instantiate (Resources.Load ("Posh"), new Vector3 (-10f, 1f, 10f), Quaternion.identity, 0);
+						Network.Instantiate (Resources.Load ("Posh"), new Vector3 (10f, 1f, 10f), Quaternion.identity, 0);
+			waveCount +=1;
+		}
+
 		}
 
 	void OnPlayerDisconnected(NetworkPlayer player)

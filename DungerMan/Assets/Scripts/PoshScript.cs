@@ -39,7 +39,7 @@ public class PoshScript : Enemy {
 	{
 
 		takeDamage();
-		OnGUI ();
+		//OnGUI (); THIS DOES SO THEY WONT ATTACK GOD DAMMIT MIKE.
 
 
 		if (players [0] != null) {
@@ -58,33 +58,6 @@ public class PoshScript : Enemy {
 			}
 		}
 
-
-
-
-
-
-
-		/*if (player != null) {
-			// updates the dist(distance between player1 and enemy) variable for use in the enemy class.
-						dist = Vector3.Distance (this.transform.position, player.transform.position);
-		if (playerNum == player) {
-				// sets the cc to be the Playerscript of player 2
-						cc = GameObject.Find ("Player 1(Clone)").GetComponent<PlayerScript1> ();
-						}
-				} 
-		if (player2 != null) {
-			// updates the dist2(distance between player2 and enemy) variable for use in the enemy class.
-						dist2 = Vector3.Distance (this.transform.position, player2.transform.position);
-		if (playerNum == player2) {
-				// sets the cc to be the Playerscript of player 2
-						cc = GameObject.Find ("Player 2(Clone)").GetComponent<PlayerScript1> ();
-						}
-				}*/
-
-		if(Health <= 0){
-			Points += 10;
-			Debug.Log("Points Updated: " + Points);
-		}
 
 
 		// runs the autoattack function from the enemy class

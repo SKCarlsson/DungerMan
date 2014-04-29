@@ -1,5 +1,6 @@
 ﻿<Properties>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AudioScript.cs">
     <Files>
@@ -32,6 +33,14 @@
 >>>>>>> af2b61168ac5079906ded2d8446cc07a4cdbb88e
 >>>>>>> FETCH_HEAD
 >>>>>>> b19c5154a1e2650ccd82f7cbbefd2e26bacc6c17
+=======
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/NetworkManager.cs">
+    <Files>
+      <File FileName="Assets/Scripts/NetworkManager.cs" Line="105" Column="3" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="76" Column="1" />
+      <File FileName="Assets/Scripts/PoshScript.cs" Line="60" Column="3" />
+>>>>>>> 101004dc78d29761e6f5cd98fd1f2d8707a8dd1c
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
