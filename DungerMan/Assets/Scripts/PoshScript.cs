@@ -12,7 +12,7 @@ public class PoshScript : Enemy {
 	// Use this for initialization
 	void Start () {
 
-		ss = GameObject.Find ("Score").GetComponent<ScoreScript>();
+		ss = GameObject.Find ("Score(Clone)").GetComponent<ScoreScript>();
 
 		players = GameObject.FindGameObjectsWithTag("Player");
 

@@ -17,4 +17,10 @@ public class ScoreScript : MonoBehaviour {
 		print (points);
 	
 	}
+
+	public void OnGUI(){
+		if(GameObject.FindGameObjectsWithTag ("Player").Length >= 1)
+		GUI.Box(new Rect(Screen.width/2,Screen.height/8,250,80),"Points: " + points);
+		Debug.Log("Points Updated");
+	}
 }
