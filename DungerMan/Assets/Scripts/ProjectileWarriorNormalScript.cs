@@ -22,7 +22,7 @@ public class ProjectileWarriorNormalScript : Warrior {
 	{
 		if(other.collider.tag =="Posh")
 		{
-			other.collider.GetComponent<Enemy>().Health -= 50;
+			other.collider.GetComponent<Enemy>().takeDamage(75);
 			Destroy(gameObject);
 		}
 	}

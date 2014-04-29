@@ -215,7 +215,7 @@ public class NetworkManager : MonoBehaviour {
 				}
 
 		}
-	[RPC]
+
 	private void EnemySpawn(){
 
 		enemyCount = GameObject.FindGameObjectsWithTag ("Posh").Length;
@@ -292,14 +292,13 @@ public class NetworkManager : MonoBehaviour {
 				SpawnPlayer ();
 				player2init = true;
 				SpawnScore();
-				networkView.RPC ("EnemySpawn", RPCMode.AllBuffered, null);
-				//EnemySpawn();
+				EnemySpawn();
 			}
 			if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 + 80, 500, 160), "Wizzard")) {
 				SpawnPlayer2 ();
 				player2init = true;
-				networkView.RPC ("EnemySpawn", RPCMode.AllBuffered, null);
-				//EnemySpawn();
+				SpawnScore();
+				EnemySpawn();
 			}
 						
 		}

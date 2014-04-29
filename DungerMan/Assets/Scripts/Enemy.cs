@@ -80,21 +80,28 @@ public abstract class Enemy : MonoBehaviour {
 				}
 	}
 
-	[RPC]
-	public void takeDamage()
+
+	public void takeDamage(int damage)
 	{
 	
+
+		networkView.RPC ("net_takeDamage", RPCMode.All, damage);
+
+
 		if (Health <= 0) {
-			networkView.RPC ("die", RPCMode.AllBuffered, null);
-			//die();
+			die();
 				}
 
 	}
 	[RPC]
-	public void die()
+	public void net_takeDamage(int damage){
+		Health -= damage;
+	}
+
+	protected void die()
 	{
 		enemyCount += 1;
-		ss.points += enemyPoint;
+		ss.addPoint();
 		print ("diie");
 		Network.Destroy (gameObject);
 		Destroy (gameObject);

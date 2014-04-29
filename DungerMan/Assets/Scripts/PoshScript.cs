@@ -41,7 +41,6 @@ public class PoshScript : Enemy {
 	public void Update () 
 	{
 
-		networkView.RPC ("takeDamage", RPCMode.AllBuffered, null);
 		//takeDamage();
 		//OnGUI (); THIS DOES SO THEY WONT ATTACK GOD DAMMIT MIKE.
 
