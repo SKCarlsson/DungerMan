@@ -22,6 +22,11 @@ public class NetworkManager : MonoBehaviour {
 	bool player1init = false;
 	bool player2init = false;
 
+	//Variables for the walls
+
+	private int zCor = 48;
+	private int xCor = 48;
+
 
 
 
@@ -86,7 +91,38 @@ public class NetworkManager : MonoBehaviour {
 			Debug.Log ("Wooot...  a server found?");
 	}
 
+	private void SpawnWalls() 
+	{
+		//Right side of arena
+		for(int i = 0; i < 13; i++)
+		{
+			Network.Instantiate (Resources.Load ("Cube"), new Vector3 (48, 0, zCor), Quaternion.identity, 0);
+			zCor -= 8;
+		}
+		zCor = 48;
+		//Top side of arena
+		for(int i = 0; i < 13; i++)
+		{
+			Network.Instantiate (Resources.Load ("Cube"), new Vector3 (xCor, 0, 48), Quaternion.identity, 0);
+			xCor -= 8;
+		}
+		xCor = 48;
+		//Left side of arena
+		for(int i = 0; i < 13; i++)
+		{
+			Network.Instantiate (Resources.Load ("Cube"), new Vector3 (-48, 0, zCor), Quaternion.identity, 0);
+			zCor -= 8;
+		}
+		zCor = 48;
 
+		for(int i = 0; i < 13; i++)
+		{
+			Network.Instantiate (Resources.Load ("Cube"), new Vector3 (xCor, 0, -48), Quaternion.identity, 0);
+			xCor -= 8;
+		}
+		xCor = 48;
+		
+	}
 
 	private void SpawnPlayer()
 	{
@@ -221,10 +257,12 @@ public class NetworkManager : MonoBehaviour {
 			GUI.Box(new Rect(Screen.width/2-250,Screen.height/2-350,500,160),"Choose Role:");
 			if(GUI.Button(new Rect(Screen.width/2-250,Screen.height/2-100,500,160),"Warrior")){
 				SpawnPlayer();
+				SpawnWalls();
 				player1init = true;
 			}
 			if(GUI.Button(new Rect(Screen.width/2-250,Screen.height/2+80,500,160),"Wizzard")){
 				SpawnPlayer2();
+				SpawnWalls();
 				player1init = true;
 			}
 		}
