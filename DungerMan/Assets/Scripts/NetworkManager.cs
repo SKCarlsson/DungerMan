@@ -146,6 +146,8 @@ public class NetworkManager : MonoBehaviour {
 			// adds the warrior script to the player1 gameobject
 			player1.AddComponent ("Warrior");
 
+			player1.AddComponent("Bars");
+
 			//player1.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
 
 			camo = Instantiate (cam, new Vector3 (7, 21, 5), Quaternion.Euler (90, 0, 0)) as Camera;
@@ -161,6 +163,8 @@ public class NetworkManager : MonoBehaviour {
 						// adds the warrior script to the player1 gameobject
 
 						player2.AddComponent ("Warrior");
+
+							player1.AddComponent("Bars");
 			
 						//player2.renderer.material = Resources.Load ("Warrior", typeof(Material)) as Material;
 						
@@ -182,6 +186,8 @@ public class NetworkManager : MonoBehaviour {
 						player1 = GameObject.Find ("Player 1(Clone)");
 						// adds the warrior script to the player1 gameobject
 						player1.AddComponent ("Wizard");
+
+						player1.AddComponent("WizBars");
 			
 						//player1.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
 
@@ -196,6 +202,8 @@ public class NetworkManager : MonoBehaviour {
 						player2 = GameObject.Find ("Player 2(Clone)");
 						// adds the warrior script to the player1 gameobject
 						player2.AddComponent ("Wizard");
+
+					player1.AddComponent("WizBars");
 			
 						//player2.renderer.material = Resources.Load ("Wizard", typeof(Material)) as Material;
 

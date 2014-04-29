@@ -87,7 +87,7 @@ public class Wizard : PlayerScript1 {
 		buttonWaitB = false;
 		yield return new WaitForSeconds(5);
 		buttonWaitB = true;
-	}*
+	}
 	
 	
 	
