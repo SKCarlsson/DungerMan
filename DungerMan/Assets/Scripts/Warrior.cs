@@ -13,7 +13,7 @@ public class Warrior : PlayerScript1 {
 		aButtonAction = GameObject.Find ("AButton").GetComponent<AButton> ();
 		bButtonAction = GameObject.Find ("BButton").GetComponent<BButton> ();
 
-
+		//animBool = false;
 		Damage = 50;
 		playerHealth = 200;
 
@@ -31,7 +31,8 @@ public class Warrior : PlayerScript1 {
 		//print (aButtonAction.touch);
 
 		if((aButtonAction.touch && buttonWaitA)){
-
+			animation.Play("WarriorAtk");
+			//animBool = true;
 			StartCoroutine("buttonwaita");
 			Instantiate((GameObject)Resources.Load("ProjectileWarriorNormal"), transform.position + transform.forward*1.5f, transform.rotation);
 			hitWarrior.Play();
@@ -43,8 +44,12 @@ public class Warrior : PlayerScript1 {
 
 
 		}
+		//animBool = false;
 		if(bButtonAction.touch == true && buttonWaitB){
+
 			if (Mana >= 75){
+				//animBool = true;
+				animation.Play("WarriorAtk");
 				StartCoroutine("buttonwaitb");
 				Instantiate((GameObject)Resources.Load("ProjectileWarriorSpecial"), transform.position + transform.forward*3f, transform.rotation);
 				Mana -= 75;
@@ -52,6 +57,7 @@ public class Warrior : PlayerScript1 {
 				Debug.Log ("Not enough rage!");
 			}
 		}
+		//animBool = false;
 
 
 
@@ -60,7 +66,7 @@ public class Warrior : PlayerScript1 {
 
 	}
 
-	public override void SpecialAttackA () 
+	/*public override void SpecialAttackA () 
 	{
 		StartCoroutine("buttonwaita");
 		playerHealth += 20;
@@ -85,7 +91,7 @@ public class Warrior : PlayerScript1 {
 		buttonWaitB = false;
 		yield return new WaitForSeconds(5);
 		buttonWaitB = true;
-	}
+	}*/
 
 		
 
