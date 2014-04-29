@@ -34,7 +34,7 @@ public class Wizard : PlayerScript1 {
 			if (Mana >= 10){
 				animation.Play("WizardAtk");
 				StartCoroutine("buttonwaita");
-				Network.Instantiate((GameObject)Resources.Load("ProjectileWizardNormal"), transform.position + transform.forward*1.5f, transform.rotation);
+				Network.Instantiate((GameObject)Resources.Load("ProjectileWizardNormal"), transform.position + transform.forward*1.5f, transform.rotation,0);
 				hitWarlock.Play();
 				Mana -= 10;
 			} else {
@@ -44,7 +44,7 @@ public class Wizard : PlayerScript1 {
 		if(bButtonAction.touch == true && buttonWaitB){
 			if (Mana >= 100){
 				StartCoroutine("buttonwaitb");
-				Network.Instantiate((GameObject)Resources.Load("ProjectileWizardSpecial"), transform.position + transform.forward*7f, transform.rotation);
+				Network.Instantiate((GameObject)Resources.Load("ProjectileWizardSpecial"), transform.position + transform.forward*7f, transform.rotation,0);
 				Mana -= 100;
 			} else {
 				Debug.Log ("Not enough Mana!");
