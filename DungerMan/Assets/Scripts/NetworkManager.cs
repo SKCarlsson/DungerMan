@@ -272,12 +272,14 @@ public class NetworkManager : MonoBehaviour {
 				SpawnPlayer();
 				SpawnWalls();
 				player1init = true;
+				//EnemySpawn();
 			}
 
 			if(GUI.Button(new Rect(Screen.width/2-250,Screen.height/2+80,500,160),"Wizzard")){
 				SpawnPlayer2();
 				SpawnWalls();
 				player1init = true;
+				//EnemySpawn();
 			}
 		}
 

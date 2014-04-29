@@ -78,7 +78,7 @@ public class Warrior : PlayerScript1 {
 			StartCoroutine("buttonwaitb");
 			playerHealth += 20;
 			Debug.Log ("ITS WORKING!!" + playerHealth);	
-	}
+	}*/
 
 	IEnumerator buttonwaita(){
 		buttonWaitA = false;
@@ -91,7 +91,7 @@ public class Warrior : PlayerScript1 {
 		buttonWaitB = false;
 		yield return new WaitForSeconds(5);
 		buttonWaitB = true;
-	}*/
+	}
 
 		
 

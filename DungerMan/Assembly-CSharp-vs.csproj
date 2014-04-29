@@ -53,13 +53,9 @@
      <Compile Include="Assets\Scripts\Bars.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
-<<<<<<< HEAD
-=======
-     <Compile Include="Assets\Scripts\EnemySpawn.cs" />
      <Compile Include="Assets\Scripts\GUIScript.cs" />
      <Compile Include="Assets\Scripts\HealthBarz.cs" />
      <Compile Include="Assets\Scripts\JoyMove.cs" />
->>>>>>> FETCH_HEAD
      <Compile Include="Assets\Scripts\LevelDesign.cs" />
      <Compile Include="Assets\Scripts\NetworkManager.cs" />
      <Compile Include="Assets\Scripts\NetworkMenu.cs" />
@@ -73,6 +69,7 @@
      <Compile Include="Assets\Scripts\ScoreScript.cs" />
      <Compile Include="Assets\Scripts\TouchLogic.cs" />
      <Compile Include="Assets\Scripts\Warrior.cs" />
+     <Compile Include="Assets\Scripts\WizBars.cs" />
      <Compile Include="Assets\Scripts\Wizard.cs" />
      <Compile Include="Assets\test.cs" />
   </ItemGroup>
