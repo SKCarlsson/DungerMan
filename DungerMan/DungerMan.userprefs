@@ -1,13 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Wizard.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/NetworkManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Wizard.cs" Line="47" Column="13" />
-      <File FileName="Assets/Scripts/Warrior.cs" Line="54" Column="13" />
-      <File FileName="Assets/Scripts/ProjectileWarriorNormalScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ProjectileWarriorSpecialScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ProjectileWizardNormalScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ProjectileWizardSpecialScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PoshScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/JenniferScript.cs" Line="30" Column="18" />
+      <File FileName="Assets/Scripts/NetworkManager.cs" Line="301" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

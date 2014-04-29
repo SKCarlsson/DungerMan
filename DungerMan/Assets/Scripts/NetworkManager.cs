@@ -43,7 +43,7 @@ public class NetworkManager : MonoBehaviour {
 
 
 		if ( GameObject.Find ("Player 1(Clone)") != null && GameObject.Find ("Player 2(Clone)") != null ){
-			//EnemySpawn();
+			EnemySpawn();
 		}
 
 	}
@@ -292,13 +292,13 @@ public class NetworkManager : MonoBehaviour {
 				SpawnPlayer ();
 				player2init = true;
 				SpawnScore();
-				EnemySpawn();
+				//EnemySpawn();
 			}
 			if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 + 80, 500, 160), "Wizzard")) {
 				SpawnPlayer2 ();
 				player2init = true;
 				SpawnScore();
-				EnemySpawn();
+				//EnemySpawn();
 			}
 						
 		}
