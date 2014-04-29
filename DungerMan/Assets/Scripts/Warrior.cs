@@ -2,8 +2,13 @@
 using System.Collections;
 
 public class Warrior : PlayerScript1 {
+	public AudioSource hitWarrior;
 
 	void Start () {
+		hitWarrior = (AudioSource)gameObject.AddComponent("AudioSource");
+		AudioClip myHitWarrior;
+		myHitWarrior = (AudioClip)Resources.Load ("Sounds/Warrior Sound");
+		hitWarrior.clip = myHitWarrior;
 
 		aButtonAction = GameObject.Find ("AButton").GetComponent<AButton> ();
 		bButtonAction = GameObject.Find ("BButton").GetComponent<BButton> ();
@@ -29,6 +34,7 @@ public class Warrior : PlayerScript1 {
 
 			StartCoroutine("buttonwaita");
 			Instantiate((GameObject)Resources.Load("ProjectileWarriorNormal"), transform.position + transform.forward*1.5f, transform.rotation);
+			hitWarrior.Play();
 			if (Mana >= 75){
 				Mana = 100;
 			} else {
