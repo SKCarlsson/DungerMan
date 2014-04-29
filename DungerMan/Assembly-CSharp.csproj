@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\ProjectileWarriorSpecialScript.cs" />
      <Compile Include="Assets\Scripts\ProjectileWizardNormalScript.cs" />
      <Compile Include="Assets\Scripts\ProjectileWizardSpecialScript.cs" />
+     <Compile Include="Assets\Scripts\ScoreScript.cs" />
      <Compile Include="Assets\Scripts\TouchLogic.cs" />
      <Compile Include="Assets\Scripts\Warrior.cs" />
      <Compile Include="Assets\Scripts\Wizard.cs" />

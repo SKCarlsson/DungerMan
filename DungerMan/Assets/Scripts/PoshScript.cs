@@ -12,6 +12,8 @@ public class PoshScript : Enemy {
 	// Use this for initialization
 	void Start () {
 
+		ss = GameObject.Find ("Score").GetComponent<ScoreScript>();
+
 		players = GameObject.FindGameObjectsWithTag("Player");
 
 		// gives all the variables from the enemy class some values:
@@ -27,6 +29,7 @@ public class PoshScript : Enemy {
 		AttackSpeed = 1;
 		SeeRange = 5;
 		canAttack = false;
+		enemyPoint = 10;
 
 
 		// sets the speed, as this is defined by the nav mesh agent:

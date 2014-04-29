@@ -33,9 +33,6 @@ public class NetworkManager : MonoBehaviour {
 
 	void Update(){
 
-		print (player1);
-		print (player2);
-
 
 		if ( GameObject.Find ("Player 2(Clone)") != null ||  GameObject.Find ("Player 1(Clone)") != null && GameObject.Find ("Player 2(Clone)") != null ){
 			EnemySpawn();
@@ -93,7 +90,6 @@ public class NetworkManager : MonoBehaviour {
 
 		if(GameObject.FindGameObjectsWithTag("Player").Length ==0) {
 
-			print("player 1");
 			Debug.Log ("Spawning Player....");
 			
 			Network.Instantiate (Resources.Load ("Player 1"), new Vector3 (7f, 1f, 5f), Quaternion.identity, 0);
@@ -171,7 +167,6 @@ public class NetworkManager : MonoBehaviour {
 
 
 		if (enemyCount <= 0 && waveCount >= 0 && waveCount < 5) {
-			print ("spawn1");
 						Network.Instantiate (Resources.Load ("Posh"), new Vector3 (-10f, 1f, -10f), Quaternion.identity, 0);
 						Network.Instantiate (Resources.Load ("Posh"), new Vector3 (10f, 1f, -10f), Quaternion.identity, 0);
 						Network.Instantiate (Resources.Load ("Posh"), new Vector3 (-10f, 1f, 10f), Quaternion.identity, 0);
@@ -179,7 +174,6 @@ public class NetworkManager : MonoBehaviour {
 			waveCount +=1;	
 			} 
 		else if (enemyCount <= 0 && waveCount >= 5 && waveCount < 10) {
-			print ("spawn2");
 						Network.Instantiate (Resources.Load ("Posh"), new Vector3 (-10f, 1f, -10f), Quaternion.identity, 0);
 						Network.Instantiate (Resources.Load ("Posh"), new Vector3 (10f, 1f, -10f), Quaternion.identity, 0);
 						Network.Instantiate (Resources.Load ("Posh"), new Vector3 (-10f, 1f, 10f), Quaternion.identity, 0);
@@ -221,10 +215,12 @@ public class NetworkManager : MonoBehaviour {
 			GUI.Box(new Rect(Screen.width/2-250,Screen.height/2-350,500,160),"Choose Role:");
 			if(GUI.Button(new Rect(Screen.width/2-250,Screen.height/2-100,500,160),"Warrior")){
 				SpawnPlayer();
+				EnemySpawn ();
 				player1init = true;
 			}
 			if(GUI.Button(new Rect(Screen.width/2-250,Screen.height/2+80,500,160),"Wizzard")){
 				SpawnPlayer2();
+				EnemySpawn ();
 				player1init = true;
 			}
 		}
@@ -236,12 +232,12 @@ public class NetworkManager : MonoBehaviour {
 			GUI.Box (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 350, 500, 160), "Choose Role:");
 			if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 - 100, 500, 160), "Warrior")) {
 				SpawnPlayer ();
-				EnemySpawn ();
+				//EnemySpawn ();
 				player2init = true;
 			}
 			if (GUI.Button (new Rect (Screen.width / 2 - 250, Screen.height / 2 + 80, 500, 160), "Wizzard")) {
 				SpawnPlayer2 ();
-				EnemySpawn ();
+				//EnemySpawn ();
 				player2init = true;
 			}
 						
