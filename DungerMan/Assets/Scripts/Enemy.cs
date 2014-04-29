@@ -5,6 +5,8 @@ public abstract class Enemy : MonoBehaviour {
 
 	protected PlayerScript1 cc;
 
+
+	protected GameObject[] players;
 	protected GameObject player;
 	protected GameObject player2;
 
@@ -29,13 +31,45 @@ public abstract class Enemy : MonoBehaviour {
 	protected float dist2;// distance between player 2 and the enemy
 	protected bool canAttack = false;
 	protected bool haveWaited = true;
-
+	public void update(){
+		Debug.Log("Points: " + Points);
+	}
 	public abstract void ability ();
 	//protected PlayerScript cc = GameObject.Find ("Player(Clone)").GetComponent<PlayerScript>();
 
 	protected void autoAttack()
 		// maybe an array of players can be made so that we only need one player prefab
 		{
+
+		// checks if distance between player 1 and the enemy is bigger than the distance between player2 and the enemy:
+		if(dist>dist2){
+			// if this is true, the distance variable gets assigned the distance between player2 and the enemy
+			distance = dist2;
+			// and the playerNum variable gets the gameobject of player2
+			playerNum = players[1];
+		}
+		else {
+			// else it must be player 1, which is closest:
+			distance = dist;
+			playerNum = players[0];
+		}
+		// makes the enemy go to the player which is closest:
+		if (distance < SeeRange && distance > AttackRange) {
+						agent.SetDestination (playerNum.transform.position);
+						canAttack = false;
+				} else if (distance <= AttackRange) {
+						agent.SetDestination (this.transform.position);	
+						canAttack = true;
+				} else
+						canAttack = false;
+
+
+
+
+
+
+		// old shit
+		/*
 		// checks if distance between player 1 and the enemy is bigger than the distance between player2 and the enemy:
 		if(dist>dist2){
 			// if this is true, the distance variable gets assigned the distance between player2 and the enemy
@@ -57,6 +91,7 @@ public abstract class Enemy : MonoBehaviour {
 						canAttack = true;
 				} else
 						canAttack = false;
+						*/
 		}
 
 	protected void Attack()
@@ -76,17 +111,12 @@ public abstract class Enemy : MonoBehaviour {
 
 	}
 
-	public void update(){
-		GUI.Box(new Rect(Screen.width/2,Screen.height/8,250,80),"Points: " + Points);
-		Debug.Log("GUI Updated");
-	}
+
 
 	public void die()
 	{
 		print ("diie");
 		Network.Destroy (gameObject);
-		Points += 10;
-		Debug.Log("Points Updated: " + Points);
 		Destroy (gameObject);
 
 
@@ -99,11 +129,11 @@ public abstract class Enemy : MonoBehaviour {
 		
 	}
 
-	/*public void OnGUI(){
+	public void OnGUI(){
 		if(GameObject.FindGameObjectsWithTag ("Player").Length >= 1)
 		GUI.Box(new Rect(Screen.width/2,Screen.height/8,250,80),"Points: " + Points);
 		Debug.Log("Points Updated");
-	}*/
+	}
 
 
 }
