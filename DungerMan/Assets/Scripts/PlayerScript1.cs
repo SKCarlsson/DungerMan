@@ -22,7 +22,7 @@ public abstract class PlayerScript1 : MonoBehaviour {
 	public AButton AButtonScript;
 
 	//Energy
-	protected int Mana;
+	public int Mana;
 
 	//
 
