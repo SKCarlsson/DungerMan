@@ -24,6 +24,9 @@ public abstract class PlayerScript1 : MonoBehaviour {
 	//Energy
 	protected int Mana;
 
+	//Animation bool
+	public bool animBool;
+
 	//
 
 
@@ -69,8 +72,8 @@ public abstract class PlayerScript1 : MonoBehaviour {
 	}
 
 	//Check in Abutton whether or not the boolean is true or false, if it is true, execute SpecialAttack
-	public abstract void SpecialAttackA ();
-	public abstract void SpecialAttackB ();
+	//public abstract void SpecialAttackA ();
+	//public abstract void SpecialAttackB ();
 
 
 

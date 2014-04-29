@@ -25,11 +25,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: WarriorSprite_AtkAnim
+  m_Name: WarriorAtk
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 4bd46edc140464169ad1c843d2490e47, type: 2}
+  - {fileID: 7400000, guid: 235cc8394a5f34f2197c9dba6aa5697e, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0

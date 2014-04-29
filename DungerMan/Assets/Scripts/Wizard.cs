@@ -32,6 +32,7 @@ public class Wizard : PlayerScript1 {
 		
 		if((aButtonAction.touch && buttonWaitA)){
 			if (Mana >= 10){
+				animation.Play("WizardAtk");
 				StartCoroutine("buttonwaita");
 				Instantiate((GameObject)Resources.Load("ProjectileWizardNormal"), transform.position + transform.forward*1.5f, transform.rotation);
 				hitWarlock.Play();
@@ -51,7 +52,7 @@ public class Wizard : PlayerScript1 {
 		}
 	}
 	
-	public override void SpecialAttackA () 
+/*	public override void SpecialAttackA () 
 	{
 		StartCoroutine("buttonwaita");
 		playerHealth += 20;
@@ -63,7 +64,7 @@ public class Wizard : PlayerScript1 {
 		StartCoroutine("buttonwaitb");
 		playerHealth += 20;
 		Debug.Log ("ITS WORKING!!" + playerHealth);	
-	}
+	}*/
 	IEnumerator ReplenishMana(){
 		while (replenish){
 			yield return new WaitForSeconds(0.5f);
@@ -86,7 +87,7 @@ public class Wizard : PlayerScript1 {
 		buttonWaitB = false;
 		yield return new WaitForSeconds(5);
 		buttonWaitB = true;
-	}
+	}*
 	
 	
 	

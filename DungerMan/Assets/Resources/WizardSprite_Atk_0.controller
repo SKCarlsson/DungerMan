@@ -25,11 +25,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: WizardSprite_AtkAnim
+  m_Name: WizardAtk
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 263e76e4bc41c45c288cf6e5810be1c0, type: 2}
+  - {fileID: 7400000, guid: 5e4b8da26391a4ef5911cffb9eb6877a, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
