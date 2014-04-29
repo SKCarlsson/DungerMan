@@ -35,7 +35,7 @@ public class NetworkManager : MonoBehaviour {
 
 	void Update(){
 
-		if ( GameObject.Find ("Player 1(Clone)") != null && GameObject.Find ("Player 2(Clone)") != null ){
+		if ( player1 != null && player2 != null ){
 			EnemySpawn();
 		}
 

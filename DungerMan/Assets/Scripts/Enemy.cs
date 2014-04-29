@@ -34,6 +34,8 @@ public abstract class Enemy : MonoBehaviour {
 
 	void Update(){
 
+		print ("enemyCount:" +enemyCount);
+
 	}
 
 
