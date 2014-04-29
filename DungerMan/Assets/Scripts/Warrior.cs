@@ -79,7 +79,7 @@ public class Warrior : PlayerScript1 {
 	IEnumerator Regen(){
 		bool regen = true;
 		while (regen){
-			yield return new WaitForSeconds(0.5);
+			yield return new WaitForSeconds(0.5f);
 			playerHealth += 10;
 		}
 	}
