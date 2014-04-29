@@ -34,7 +34,7 @@ public class Warrior : PlayerScript1 {
 			animation.Play("WarriorAtk");
 			//animBool = true;
 			StartCoroutine("buttonwaita");
-			Instantiate((GameObject)Resources.Load("ProjectileWarriorNormal"), transform.position + transform.forward*3.5f, transform.rotation);
+			Network.Instantiate((GameObject)Resources.Load("ProjectileWarriorNormal"), transform.position + transform.forward*3.5f, transform.rotation);
 			hitWarrior.Play();
 			if (Mana >= 75){
 				Mana = 100;
@@ -51,7 +51,7 @@ public class Warrior : PlayerScript1 {
 				//animBool = true;
 				animation.Play("WarriorAtk");
 				StartCoroutine("buttonwaitb");
-				Instantiate((GameObject)Resources.Load("ProjectileWarriorSpecial"), transform.position + transform.forward*4f, transform.rotation);
+				Network.Instantiate((GameObject)Resources.Load("ProjectileWarriorSpecial"), transform.position + transform.forward*6f, transform.rotation);
 				Mana -= 75;
 			} else {
 				Debug.Log ("Not enough rage!");
