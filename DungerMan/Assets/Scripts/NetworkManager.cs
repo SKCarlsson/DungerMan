@@ -55,8 +55,8 @@ public class NetworkManager : MonoBehaviour {
 
 	private void StartServer()
 	{
-		Network.InitializeServer(16, 25001, false);
-		MasterServer.RegisterHost(registeredGameName, "Dunger Man", "Mike Jens Simon Lars Dunger Man");
+		Network.InitializeServer(16, 25001, false); //(Number of connections allowed, port number(Unity master server))
+		MasterServer.RegisterHost(registeredGameName, "Dunger Man", "Mike Jens Simon Lars Dunger Man"); //Variable for gamename, The actual game name, The name on the master server
 	}
 
 	void OnServerInitialized()
