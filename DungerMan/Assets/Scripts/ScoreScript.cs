@@ -7,6 +7,7 @@ public class ScoreScript : MonoBehaviour {
 	public AudioSource goodJob;
 	public AudioSource perfect;
 	public AudioSource monsterKill;
+	// Initaialize the variable points which is what clients read
 
 	public int points = 0;
 
@@ -58,16 +59,17 @@ public class ScoreScript : MonoBehaviour {
 
 	
 	}
+	//A function to run another web fucntion, this form allows external functions to run net functions in this script
 
 	public void addPoint(int enemyPoint){
 		networkView.RPC ("net_addPoints", RPCMode.All, enemyPoint);
 	}
-
+	//The net functions that adds a point to all the players screens
 	[RPC]
 	public void net_addPoints(int enemyPoint){
 		points += enemyPoint;
 	}
-
+	// The gui that shows the current points
 	public void OnGUI(){
 		if(GameObject.FindGameObjectsWithTag ("Player").Length >= 1)
 		GUI.Box(new Rect(Screen.width/2,Screen.height/8,250,80),"Points: " + points);

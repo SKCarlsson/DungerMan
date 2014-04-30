@@ -3,7 +3,7 @@ using System.Collections;
 
 public class WizBars : MonoBehaviour
 {
-	
+	// FOR COMMENTS READ Bars.cs
 	Rect box = new Rect(10, 10, 200, 40);
 	Rect box2 = new Rect(10, 60, 200, 40);
 	
