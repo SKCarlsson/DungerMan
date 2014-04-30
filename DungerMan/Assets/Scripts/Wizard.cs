@@ -30,6 +30,9 @@ public class Wizard : PlayerScript1 {
 	// Update is called once per frame
 	void Update () {
 
+		takeDamage ();// checks if the player should be dead
+
+
 		if((aButtonAction.touch && buttonWaitA)){
 			if (Mana >= 10){
 				animation.Play("WizardAtk");
