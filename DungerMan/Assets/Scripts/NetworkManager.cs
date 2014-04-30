@@ -3,10 +3,10 @@ using System.Collections;
 
 public class NetworkManager : MonoBehaviour {
 
-	string registeredGameName = "DungerManMLJS";
+	string registeredGameName = "DungerManMLJS"; // The name on the unity master server
 	bool isRefreshing = false;
 	float refreshRequestLength = 3.0f;
-	HostData[] hostData;
+	HostData[] hostData; // An array to hold all hosted servers available from your connection
 	private int waveCount = 0;
 	private int enemyCount = 0;
 	public Camera cam;
@@ -50,8 +50,8 @@ public class NetworkManager : MonoBehaviour {
 
 	private void StartServer()
 	{
-		Network.InitializeServer(16, 25001, false);
-		MasterServer.RegisterHost(registeredGameName, "Dunger Man", "Mike Jens Simon Lars Dunger Man");
+		Network.InitializeServer(16, 25001, false); // Initializing a server which can hold 16 clients, at port 25001(Unity master server)
+		MasterServer.RegisterHost(registeredGameName, "Dunger Man", "Mike Jens Simon Lars Dunger Man"); //Hosting a game with the name Dunger Man for clients to see and the text in brackets is the name of the game on unity's master server
 	}
 
 	void OnServerInitialized()
@@ -242,14 +242,14 @@ public class NetworkManager : MonoBehaviour {
 
 		}
 
-	void OnPlayerDisconnected(NetworkPlayer player)
+	void OnPlayerDisconnected(NetworkPlayer player) // Clean up when leaving
 	{
 		Debug.Log("Player disconnected from: " + player.ipAddress + ":" + player.port);
 		Network.RemoveRPCs(player);
 		Network.DestroyPlayerObjects(player);
 	}
 
-	void OnApplicationQuit()
+	void OnApplicationQuit() // Clean up when quitting
 	{
 		if(Network.isServer)
 		{
@@ -321,7 +321,7 @@ public class NetworkManager : MonoBehaviour {
 			StartCoroutine("RefreshHostList");
 			}
 
-			if(hostData != null)
+			if(hostData != null) // if a server is available this will run
 			{
 				for(int i = 0; i<hostData.Length; i++)
 				{
